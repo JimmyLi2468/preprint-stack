@@ -5,41 +5,51 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Preprint Stack</title>
 <meta name="description" content="Swipe through today's arXiv papers.">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 28 28'%3E%3Crect x='9' y='3' width='15' height='19' rx='2' fill='%23c9cfd8' stroke='%23171a20' stroke-width='1.6'/%3E%3Crect x='4' y='7' width='15' height='19' rx='2' fill='%23fff' stroke='%23171a20' stroke-width='1.6'/%3E%3Cpath d='M8 13h7M8 17h7M8 21h4' stroke='%23b31b1b' stroke-width='1.6' stroke-linecap='round'/%3E%3C/svg%3E">
+<meta name="theme-color" content="#b31b1b" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#7f1414" media="(prefers-color-scheme: dark)">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Preprints">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<link rel="icon" type="image/svg+xml" href="icons/icon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=STIX+Two+Text:ital,wght@0,400;0,600;0,700;1,400&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&display=swap">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
 <link rel="stylesheet" href="app.css">
 </head>
 <body>
-<div class="app">
-  <header class="topbar">
-    <a class="brand" href="#stack">
-      <svg class="brand-mark" viewBox="0 0 28 28" aria-hidden="true">
-        <rect x="9" y="3" width="15" height="19" rx="2" class="bm-back"/>
-        <rect x="4" y="7" width="15" height="19" rx="2" class="bm-front"/>
-        <path d="M8 13h7M8 17h7M8 21h4" class="bm-lines"/>
-      </svg>
-      <span class="brand-name">Preprint Stack</span>
-    </a>
-    <nav class="nav" aria-label="Main">
-      <a href="#stack" data-nav="stack">Today</a>
-      <a href="#saved" data-nav="saved">Saved<span class="badge" id="saved-count"></span></a>
-      <a href="#settings" data-nav="settings">Settings</a>
-    </nav>
+<div class="app" data-view="stack">
+  <header class="bar">
+    <div class="bar-inner">
+      <!-- Today: date and position on the left, Saved and Settings on the right -->
+      <div class="bar-today">
+        <p class="bar-date" id="status-date">Preprint Stack</p>
+        <p class="bar-sub"><span id="status-count"></span><span id="status-topics"></span></p>
+      </div>
+      <!-- Saved and Settings: back to the stack, with the page name -->
+      <a class="bar-back" href="#stack">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5.5 8.5 12l6.5 6.5"/></svg>Papers
+      </a>
+      <h1 class="bar-title" id="bar-title"></h1>
+      <div class="bar-actions">
+        <a class="icon-button" href="#saved" data-nav="saved" aria-label="Saved papers">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.5 3.5h11v17l-5.5-4-5.5 4z"/></svg>
+          <span class="badge" id="saved-count"></span>
+        </a>
+        <a class="icon-button" href="#settings" data-nav="settings" aria-label="Settings">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h10M18 7h2M4 17h4M12 17h8"/><circle cx="16" cy="7" r="2.2"/><circle cx="10" cy="17" r="2.2"/></svg>
+        </a>
+        <button class="bar-text-button" type="button" id="copy-saved">Copy</button>
+      </div>
+    </div>
+    <div class="progress" aria-hidden="true"><span id="progress"></span></div>
   </header>
 
   <!-- Today's stack -->
   <main class="view view-stack" id="view-stack" hidden>
-    <div class="status">
-      <div class="status-main">
-        <p class="status-date" id="status-date"></p>
-        <p class="status-topics" id="status-topics"></p>
-      </div>
-      <p class="status-count" id="status-count"></p>
-      <div class="progress" aria-hidden="true"><span id="progress"></span></div>
-    </div>
     <p class="notice" id="notice" hidden></p>
     <div class="deck" id="deck">
       <div class="deck-message" id="deck-message" hidden></div>
@@ -49,109 +59,96 @@
   <!-- Saved papers -->
   <main class="view page" id="view-saved" hidden>
     <div class="page-inner">
-      <div class="page-head">
-        <h1>Saved papers</h1>
-        <div class="page-actions" id="saved-actions">
-          <button class="btn btn-sm" type="button" id="copy-saved">Copy list</button>
-          <button class="btn btn-sm btn-quiet" type="button" id="clear-saved">Clear all</button>
-        </div>
-      </div>
       <div class="empty" id="saved-empty">
-        <p>Nothing saved yet.</p>
-        <p>Tap Save under a paper, or press <kbd>S</kbd>, to keep it here.</p>
+        <p class="empty-title">Nothing saved yet</p>
+        <p>Tap Save on a paper, or double-tap the card, to keep it here.</p>
       </div>
       <ol class="saved-list" id="saved-list"></ol>
+      <div class="group" id="saved-tools">
+        <div class="group-body">
+          <button class="row row-button destructive" type="button" id="clear-saved">Clear all saved papers</button>
+        </div>
+      </div>
     </div>
   </main>
 
   <!-- Settings -->
   <main class="view page" id="view-settings" hidden>
     <div class="page-inner">
-      <div class="page-head">
-        <h1>Settings</h1>
-      </div>
       <p class="welcome" id="welcome" hidden>Choose the arXiv categories you follow. Each day you get one stack with the papers announced in them.</p>
 
-      <section class="panel" aria-labelledby="topics-heading">
-        <div class="panel-head">
-          <h2 id="topics-heading">Topics</h2>
-          <span class="panel-meta" id="topic-total"></span>
+      <section class="group" aria-labelledby="topics-heading">
+        <h2 class="group-title" id="topics-heading">Topics <span id="topic-total"></span></h2>
+        <div class="group-body">
+          <div class="chosen" id="chosen-topics"></div>
+          <div class="search-row">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4 4"/></svg>
+            <label class="visually-hidden" for="topic-search">Search categories</label>
+            <input class="search" id="topic-search" type="search" placeholder="Search categories" autocomplete="off" autocorrect="off" spellcheck="false">
+          </div>
+          <div class="topic-groups" id="topic-groups"></div>
         </div>
-        <p class="help">Papers are pulled from these arXiv categories every day.</p>
-        <div class="chosen" id="chosen-topics"></div>
-        <label class="visually-hidden" for="topic-search">Find a category</label>
-        <input class="field" id="topic-search" type="search" placeholder="Search, e.g. “quantum” or “cs.CV”" autocomplete="off">
-        <div class="topic-groups" id="topic-groups"></div>
+        <p class="group-foot">Papers come from these arXiv categories.</p>
       </section>
 
-      <section class="panel" aria-labelledby="include-heading">
-        <h2 id="include-heading">Which papers to include</h2>
-        <div class="options">
-          <label class="option" for="inc-new">
-            <input type="checkbox" id="inc-new">
-            <span><b>New submissions</b><span class="option-help">Papers posted for the first time today.</span></span>
-          </label>
-          <label class="option" for="inc-cross">
-            <input type="checkbox" id="inc-cross">
-            <span><b>Cross-lists</b><span class="option-help">New papers from other categories that list one of your topics as a secondary subject.</span></span>
-          </label>
-          <label class="option" for="inc-replace">
-            <input type="checkbox" id="inc-replace">
-            <span><b>Replacements</b><span class="option-help">Older papers whose authors posted a new version.</span></span>
-          </label>
+      <section class="group" aria-labelledby="include-heading">
+        <h2 class="group-title" id="include-heading">Include</h2>
+        <div class="group-body">
+          <label class="row" for="inc-new"><span class="row-text">New submissions</span><input class="switch" type="checkbox" id="inc-new"></label>
+          <label class="row" for="inc-cross"><span class="row-text">Cross-lists</span><input class="switch" type="checkbox" id="inc-cross"></label>
+          <label class="row" for="inc-replace"><span class="row-text">Updated versions</span><input class="switch" type="checkbox" id="inc-replace"></label>
         </div>
+        <p class="group-foot">Cross-lists are new papers from other fields that list one of your topics. Updated versions are older papers whose authors posted a revision.</p>
       </section>
 
-      <section class="panel" aria-labelledby="keywords-heading">
-        <h2 id="keywords-heading"><label for="keywords">Priority keywords</label></h2>
-        <p class="help">Papers that mention any of these go to the front of the stack, with the words highlighted. Separate with commas.</p>
-        <input class="field" id="keywords" type="text" placeholder="diffusion, protein folding, RLHF" autocomplete="off" spellcheck="false">
+      <section class="group" aria-labelledby="keywords-heading">
+        <h2 class="group-title" id="keywords-heading"><label for="keywords">Priority keywords</label></h2>
+        <div class="group-body">
+          <input class="row-input" id="keywords" type="text" placeholder="diffusion, protein folding" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+        </div>
+        <p class="group-foot">Papers that mention these come first, with the words highlighted. Separate with commas.</p>
       </section>
 
-      <section class="panel" aria-labelledby="history-heading">
-        <h2 id="history-heading">Reading position</h2>
-        <div class="options">
-          <label class="option" for="resume">
-            <input type="checkbox" id="resume">
-            <span><b>Start where I left off</b><span class="option-help">Opens at the first paper you haven't moved past yet. Earlier papers are still a swipe away.</span></span>
-          </label>
+      <section class="group" aria-labelledby="reading-heading">
+        <h2 class="group-title" id="reading-heading">Reading</h2>
+        <div class="group-body">
+          <div class="row row-stack">
+            <label class="row-text" for="abstract-size">Abstract text size</label>
+            <div class="size-slider">
+              <span class="size-a small" aria-hidden="true">A</span>
+              <input type="range" id="abstract-size" min="0" max="4" step="1" value="2">
+              <span class="size-a large" aria-hidden="true">A</span>
+            </div>
+            <p class="abstract size-preview">Abstracts on your cards appear at this size. Pick whatever reads comfortably.</p>
+          </div>
+          <label class="row" for="resume"><span class="row-text">Start where I left off</span><input class="switch" type="checkbox" id="resume"></label>
+          <button class="row row-button destructive" type="button" id="forget-seen">Forget reading position</button>
         </div>
-        <div class="row">
-          <button class="btn btn-sm" type="button" id="forget-seen">Forget my reading position</button>
-          <span class="panel-meta" id="seen-total"></span>
-        </div>
+        <p class="group-foot" id="seen-total"></p>
       </section>
 
-      <section class="panel" aria-labelledby="theme-heading">
-        <h2 id="theme-heading">Appearance</h2>
-        <div class="setting-row">
-          <span class="setting-label" id="theme-label">Theme</span>
-          <div class="segmented" role="radiogroup" aria-labelledby="theme-label">
-            <label for="theme-system"><input type="radio" name="theme" id="theme-system" value="system"><span>System</span></label>
-            <label for="theme-light"><input type="radio" name="theme" id="theme-light" value="light"><span>Light</span></label>
-            <label for="theme-dark"><input type="radio" name="theme" id="theme-dark" value="dark"><span>Dark</span></label>
+      <section class="group" aria-labelledby="theme-heading">
+        <h2 class="group-title" id="theme-heading">Appearance</h2>
+        <div class="group-body">
+          <div class="row">
+            <span class="row-text" id="theme-label">Theme</span>
+            <div class="segmented" role="radiogroup" aria-labelledby="theme-label">
+              <label for="theme-system"><input type="radio" name="theme" id="theme-system" value="system"><span>Auto</span></label>
+              <label for="theme-light"><input type="radio" name="theme" id="theme-light" value="light"><span>Light</span></label>
+              <label for="theme-dark"><input type="radio" name="theme" id="theme-dark" value="dark"><span>Dark</span></label>
+            </div>
           </div>
         </div>
-        <div class="setting-row">
-          <span class="setting-label" id="size-label">Abstract text size</span>
-          <div class="segmented size-picker" role="radiogroup" aria-labelledby="size-label">
-            <label for="size-0"><input type="radio" name="abstract-size" id="size-0" value="0" aria-label="Smallest"><span style="font-size: .8rem">A</span></label>
-            <label for="size-1"><input type="radio" name="abstract-size" id="size-1" value="1" aria-label="Small"><span style="font-size: .9rem">A</span></label>
-            <label for="size-2"><input type="radio" name="abstract-size" id="size-2" value="2" aria-label="Default"><span style="font-size: 1rem">A</span></label>
-            <label for="size-3"><input type="radio" name="abstract-size" id="size-3" value="3" aria-label="Large"><span style="font-size: 1.15rem">A</span></label>
-            <label for="size-4"><input type="radio" name="abstract-size" id="size-4" value="4" aria-label="Largest"><span style="font-size: 1.3rem">A</span></label>
-          </div>
-        </div>
-        <p class="abstract size-preview">Abstracts on your cards appear at this size. Pick the one that reads comfortably on your screen.</p>
       </section>
 
       <div class="page-cta">
-        <a class="btn btn-primary btn-lg" id="settings-cta" href="#stack">Show today's papers</a>
+        <a class="cta" id="settings-cta" href="#stack">Show today's papers</a>
       </div>
     </div>
   </main>
 </div>
 
+<div class="sheet-backdrop" id="share-backdrop" hidden></div>
 <div class="share-menu" id="share-menu" role="menu" hidden>
   <button type="button" role="menuitem" data-share="copy">Copy link</button>
   <button type="button" role="menuitem" data-share="cite">Copy title, authors and link</button>

@@ -19,10 +19,12 @@ To use it on your phone, start it with `python3 server.py --lan` and open the ad
 | --- | --- | --- |
 | Next paper | swipe left | → |
 | Previous paper | swipe right | ← |
-| Save to your reading list (tap again to unsave) | Save button on the card | S |
+| Save to your reading list (tap again to unsave) | Save button, or double-tap the card | S |
 | Open the PDF | PDF button | P |
 | Share | Share button | |
 | Scroll the abstract | scroll | ↑ ↓ |
+
+On an iPhone, open the site in Safari, tap Share, then **Add to Home Screen**. It then opens full screen like an app, with its own icon.
 
 The app remembers where you stopped: reopening it starts at the first paper you haven't moved past, and earlier papers are still a swipe away.
 

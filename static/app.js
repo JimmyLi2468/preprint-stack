@@ -73,6 +73,7 @@ function parseDay(iso) {
   return new Date(y, m - 1, d);
 }
 const longDay = iso => parseDay(iso)?.toLocaleDateString('en-US', { weekday: 'long', day: 'numeric', month: 'long' }) ?? '';
+const barDay = iso => parseDay(iso)?.toLocaleDateString('en-US', { weekday: 'long', month: 'short', day: 'numeric' }) ?? '';
 const shortDay = ms => new Date(ms).toLocaleDateString('en-GB', { day: 'numeric', month: 'short' });
 const ABSTRACT_SCALES = [0.82, 0.91, 1, 1.12, 1.26];
 
@@ -367,15 +368,12 @@ function buildCard(paper) {
       <h2 class="card-title"><a href="${absUrl(paper)}" target="_blank" rel="noopener"></a></h2>
       <p class="card-authors"></p>
       <p class="subjects-line"><span class="visually-hidden">Subjects: </span>${subjectsLine(paper)}</p>
-      <section class="abstract-block">
-        <h3>Abstract</h3>
-        <p class="abstract"></p>
-      </section>
+      <p class="abstract"></p>
     </div>
     <div class="card-foot">
-      <button class="btn btn-save" type="button" data-action="save" aria-pressed="false">${ICONS.bookmark}<span>Save</span></button>
-      <a class="btn btn-primary" href="${pdfUrl(paper)}" target="_blank" rel="noopener">${ICONS.pdf}PDF</a>
-      <button class="btn" type="button" data-action="share">${ICONS.share}Share</button>
+      <button class="act act-save" type="button" data-action="save" aria-pressed="false">${ICONS.bookmark}<span>Save</span></button>
+      <a class="act act-primary" href="${pdfUrl(paper)}" target="_blank" rel="noopener">${ICONS.pdf}PDF</a>
+      <button class="act" type="button" data-action="share">${ICONS.share}Share</button>
     </div>`;
   fillText($('.card-title a', el), paper.title, pattern);
   fillAuthors($('.card-authors', el), paper.authors);
@@ -402,7 +400,7 @@ function renderDeck() {
     el.style.zIndex = String(10 - depth);
     el.inert = depth > 0;
     const on = isSaved(paper);
-    const save = $('.btn-save', el);
+    const save = $('.act-save', el);
     save.classList.toggle('is-saved', on);
     save.setAttribute('aria-pressed', String(on));
     $('span', save).textContent = on ? 'Saved' : 'Save';
@@ -424,7 +422,7 @@ function endMessage() {
     <p class="eyebrow">End of the stack</p>
     <h2>That's all ${stack.length} papers${esc(day)}.</h2>
     <p>You saved ${savedHere === 1 ? '1 paper' : `${savedHere} papers`}. Swipe right to go back. arXiv announces new papers Sunday through Thursday at 8 pm US Eastern.</p>
-    <div class="row">
+    <div class="button-row">
       <a class="btn btn-primary" href="#saved">Review saved papers</a>
       <button class="btn" type="button" data-action="restart">Back to the first paper</button>
     </div>`;
@@ -432,13 +430,13 @@ function endMessage() {
 
 function renderStatus() {
   const data = feed?.data;
-  $('#status-date').textContent = !prefs.topics.length ? 'No topics selected'
+  $('#status-date').textContent = !prefs.topics.length ? 'Preprint Stack'
     : !data ? 'Loading…'
     : data.source === 'latest' ? 'Latest submissions'
-    : `Announced ${longDay(data.date)}`;
-  $('#status-topics').textContent = prefs.topics.join(' · ');
+    : barDay(data.date);
+  $('#status-topics').textContent = prefs.topics.join(', ');
   const position = Math.min(index + 1, stack.length);
-  $('#status-count').innerHTML = data && stack.length ? `<b>${position}</b>of ${stack.length}` : '';
+  $('#status-count').textContent = data && stack.length ? `${position} of ${stack.length}` : '';
   $('#progress').style.width = data && stack.length ? `${(Math.min(index + 1, stack.length) / stack.length) * 100}%` : '0';
   $('#saved-count').textContent = saved.length || '';
 }
@@ -635,6 +633,31 @@ function topElement() {
   deckEl.addEventListener('pointercancel', finish);
 })();
 
+// Double-tap a card to save it, like liking a photo.
+(() => {
+  let lastTap = 0;
+  let lastX = 0;
+  let lastY = 0;
+  deckEl.addEventListener('pointerup', e => {
+    const card = e.target.closest('.card[data-depth="0"]');
+    if (!card || e.button > 0 || e.target.closest('a, button')) { lastTap = 0; return; }
+    const now = performance.now();
+    if (now - lastTap < 320 && Math.hypot(e.clientX - lastX, e.clientY - lastY) < 30) {
+      lastTap = 0;
+      window.getSelection()?.removeAllRanges();
+      if (!isSaved(card.paper)) toggleSave(card.paper);
+      const pop = document.createElement('div');
+      pop.className = 'pop';
+      pop.innerHTML = ICONS.bookmark;
+      card.append(pop);
+      setTimeout(() => pop.remove(), 900);
+    } else {
+      lastTap = now;
+      lastX = e.clientX;
+      lastY = e.clientY;
+    }
+  });
+})();
 
 deckEl.addEventListener('click', e => {
   const button = e.target.closest('[data-action]');
@@ -697,6 +720,7 @@ function openShareMenu(paper, anchor) {
   shareMenu.querySelector('[data-share="native"]').hidden = !navigator.share;
 
   shareMenu.hidden = false;
+  $('#share-backdrop').hidden = !matchMedia('(max-width: 560px)').matches;
   const r = anchor.getBoundingClientRect();
   const m = shareMenu.getBoundingClientRect();
   let top = r.top - m.height - 8;
@@ -709,6 +733,7 @@ function openShareMenu(paper, anchor) {
 
 function closeShareMenu() {
   shareMenu.hidden = true;
+  $('#share-backdrop').hidden = true;
   sharePaper = null;
 }
 
@@ -739,7 +764,8 @@ function renderSaved() {
   const list = $('#saved-list');
   list.replaceChildren(...saved.map(savedItem));
   $('#saved-empty').hidden = saved.length > 0;
-  $('#saved-actions').hidden = !saved.length;
+  $('#saved-tools').hidden = !saved.length;
+  $('#copy-saved').hidden = !saved.length;
   renderStatus();
 }
 
@@ -755,11 +781,11 @@ function savedItem(paper) {
     </p>
     <h2 class="saved-title"><a href="${absUrl(paper)}" target="_blank" rel="noopener"></a></h2>
     <p class="saved-authors"></p>
-    <details><summary>Abstract</summary><p class="abstract"></p></details>
+    <details><summary>Show abstract</summary><p class="abstract"></p></details>
     <div class="saved-actions">
-      <a class="btn btn-primary btn-sm" href="${pdfUrl(paper)}" target="_blank" rel="noopener">${ICONS.pdf}PDF</a>
-      <button class="btn btn-sm" type="button" data-action="share">${ICONS.share}Share</button>
-      <button class="btn btn-sm btn-quiet" type="button" data-action="remove">Remove</button>
+      <a class="act act-primary" href="${pdfUrl(paper)}" target="_blank" rel="noopener">${ICONS.pdf}PDF</a>
+      <button class="act" type="button" data-action="share">${ICONS.share}Share</button>
+      <button class="act act-quiet" type="button" data-action="remove">Remove</button>
     </div>`;
   fillText($('.saved-title a', li), paper.title, null);
   $('.saved-authors', li).textContent = authorsShort(paper);
@@ -806,7 +832,7 @@ function confirmButton(button, label, run) {
   }, 4000);
 }
 
-$('#clear-saved').addEventListener('click', e => confirmButton(e.currentTarget, 'Click again to clear', () => {
+$('#clear-saved').addEventListener('click', e => confirmButton(e.currentTarget, 'Tap again to clear all saved papers', () => {
   const previous = saved;
   saved = [];
   saveSaved();
@@ -823,12 +849,13 @@ function buildSettings() {
   const groups = $('#topic-groups');
   groups.innerHTML = window.ARXIV_TAXONOMY.map(group => `
     <details class="topic-group">
-      <summary><span>${esc(group.name)}</span><span class="group-count"></span></summary>
+      <summary><span class="group-name">${esc(group.name)}</span><span class="group-count"></span></summary>
       <div class="topic-list">
         ${group.cats.map(([code, name]) => `
           <label class="topic" for="topic-${esc(code)}" data-search="${esc(`${code} ${name}`.toLowerCase())}">
             <input type="checkbox" id="topic-${esc(code)}" value="${esc(code)}">
             <span class="topic-text"><span class="topic-name">${esc(name)}</span><span class="topic-code">${esc(code)}</span></span>
+            <span class="check" aria-hidden="true"></span>
           </label>`).join('')}
       </div>
     </details>`).join('');
@@ -867,7 +894,7 @@ function buildSettings() {
     savePrefs();
     stackDirty = true;
   });
-  $('#forget-seen').addEventListener('click', e => confirmButton(e.currentTarget, 'Click again to confirm', () => {
+  $('#forget-seen').addEventListener('click', e => confirmButton(e.currentTarget, 'Tap again to forget', () => {
     seen = {};
     saveSeen();
     stackDirty = true;
@@ -879,11 +906,11 @@ function buildSettings() {
     savePrefs();
     applyTheme();
   }));
-  document.querySelectorAll('input[name="abstract-size"]').forEach(radio => radio.addEventListener('change', e => {
+  $('#abstract-size').addEventListener('input', e => {
     prefs.abstractSize = Number(e.target.value);
     savePrefs();
     applyAbstractSize();
-  }));
+  });
 }
 
 function toggleTopic(code, on) {
@@ -911,9 +938,9 @@ function syncSettings() {
   $('#welcome').hidden = prefs.topics.length > 0;
   $('#chosen-topics').innerHTML = prefs.topics.map(code => `
     <button class="chosen-chip" type="button" data-code="${esc(code)}" aria-label="Remove ${esc(CATEGORY_NAMES.get(code) || code)}">
-      <span class="code">${esc(code)}</span>${esc(CATEGORY_NAMES.get(code) || '')}<span class="x" aria-hidden="true">×</span>
+      ${esc(code)}<span class="x" aria-hidden="true">×</span>
     </button>`).join('');
-  $('#topic-total').textContent = prefs.topics.length ? `${prefs.topics.length} selected` : '';
+  $('#topic-total').textContent = prefs.topics.length ? `· ${prefs.topics.length} selected` : '';
   document.querySelectorAll('#topic-groups input').forEach(input => { input.checked = prefs.topics.includes(input.value); });
   document.querySelectorAll('.topic-group').forEach(group => {
     const n = [...group.querySelectorAll('input')].filter(i => i.checked).length;
@@ -923,12 +950,13 @@ function syncSettings() {
   if (document.activeElement !== $('#keywords')) $('#keywords').value = prefs.keywords;
   $('#resume').checked = prefs.resume;
   const seenCount = Object.keys(seen).length;
-  $('#seen-total').textContent = `${seenCount} ${seenCount === 1 ? 'paper' : 'papers'} read past`;
+  $('#seen-total').textContent = seenCount ? `You've moved past ${seenCount} ${seenCount === 1 ? 'paper' : 'papers'}.` : '';
   $('#forget-seen').disabled = !seenCount;
   const themeInput = $(`#theme-${prefs.theme}`) || $('#theme-system');
   themeInput.checked = true;
-  ($(`#size-${prefs.abstractSize}`) || $('#size-2')).checked = true;
+  $('#abstract-size').value = String(prefs.abstractSize);
 
+  $('.page-cta').hidden = !onboarding;
   const cta = $('#settings-cta');
   cta.setAttribute('aria-disabled', String(!prefs.topics.length));
   cta.textContent = prefs.topics.length ? "Show today's papers" : 'Pick at least one topic';
@@ -947,12 +975,17 @@ function applyTheme() {
 // ================================================================ routing
 
 const VIEWS = ['stack', 'saved', 'settings'];
+const TITLES = { saved: 'Saved', settings: 'Settings' };
 let currentView = null;
+let onboarding = !prefs.topics.length; // first visit: Settings shows a big "Show today's papers" button
 
 function route() {
   const requested = location.hash.slice(1);
   const view = VIEWS.includes(requested) ? requested : prefs.topics.length ? 'stack' : 'settings';
   currentView = view;
+  if (view === 'stack') onboarding = false;
+  $('.app').dataset.view = view;
+  $('#bar-title').textContent = TITLES[view] || '';
   for (const v of VIEWS) $(`#view-${v}`).hidden = v !== view;
   document.querySelectorAll('[data-nav]').forEach(link => {
     if (link.dataset.nav === view) link.setAttribute('aria-current', 'page');
