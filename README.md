@@ -19,9 +19,10 @@ To use it on your phone, start it with `python3 server.py --lan` and open the ad
 | --- | --- | --- |
 | Next paper | swipe left | → |
 | Previous paper | swipe right | ← |
-| Save to your reading list (tap again to unsave) | Save button, or double-tap the card | S |
+| Save to your reading list (tap again to unsave) | bookmark button, or double-tap the card | S |
 | Open the PDF | PDF button | P |
-| Share | Share button | |
+| Share | share button | |
+| See every paper in today's stack, and jump to one | list button at the top | |
 | Scroll the abstract | scroll | ↑ ↓ |
 
 On an iPhone, open the site in Safari, tap Share, then **Add to Home Screen**. It then opens full screen like an app, with its own icon.

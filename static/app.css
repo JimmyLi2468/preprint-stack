@@ -1,28 +1,33 @@
-/* Layout: phone-first. An arXiv-red bar runs under the status bar; below it one card fills
-   the screen with its actions in the thumb zone. Swipe left for the next paper, right to go back. */
+/* Layout: phone-first. A plain top bar that blends into the page, a thin red progress bar, then
+   one card filling the screen with floating Save / PDF / Share buttons that stay put while cards swipe. */
 :root {
-  --bar: #b31b1b;
-  --bar-ink: #ffffff;
-  --bar-ink-2: #f7d9d6;
-  --bar-track: rgb(255 255 255 / .25);
-  --bar-press: rgb(255 255 255 / .16);
-  --desk: #efebeb;
+  --bg: #ffffff;
+  --grouped: #f3f1f1;
+  --bar: var(--bg);
+  --bar-ink: #141212;
+  --bar-ink-2: #6f6868;
+  --bar-press: rgb(0 0 0 / .06);
   --paper: #ffffff;
+  --card-line: #ece7e7;
   --chip: #f3efef;
   --press: #e8e2e2;
   --ink: #1c1919;
   --ink-2: #5b5454;
   --ink-3: #8e8686;
-  --rule: #e8e2e2;
+  --rule: #ebe5e5;
   --accent: #b31b1b;
-  --accent-fill: #b31b1b;
-  --accent-soft: #f9e5e3;
+  --accent-soft: #fbe6e4;
+  --hot: #e5322b;
+  --accent-fill: var(--hot);
   --on-accent: #ffffff;
+  --track: #efe9e9;
+  --fab: #ffffff;
   --switch-off: #e2dcdc;
   --knob: #ffffff;
   --mark: #ffe98a;
-  --shadow-card: 0 1px 2px rgb(70 20 20 / .06), 0 10px 28px -12px rgb(70 20 20 / .28);
-  --shadow-sm: 0 1px 2px rgb(70 20 20 / .1), 0 1px 6px -1px rgb(70 20 20 / .08);
+  --shadow-card: 0 1px 2px rgb(40 10 10 / .05), 0 10px 26px -14px rgb(40 10 10 / .22);
+  --shadow-sm: 0 1px 2px rgb(40 10 10 / .08), 0 1px 6px -1px rgb(40 10 10 / .07);
+  --shadow-fab: 0 1px 2px rgb(0 0 0 / .1), 0 6px 18px -4px rgb(0 0 0 / .22);
 
   --font-paper: "Source Serif 4", Georgia, "Times New Roman", serif;
   --font-ui: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
@@ -42,33 +47,35 @@
 :root.ios-short { --safe-bottom: 0px; }
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
-    --bar: #7f1414; --bar-ink: #ffffff; --bar-ink-2: #e9c4c0; --bar-track: rgb(255 255 255 / .22); --bar-press: rgb(255 255 255 / .14);
-    --desk: #121010; --paper: #1d1a1a; --chip: #2a2626; --press: #343030;
+    --bg: #000000; --grouped: #000000; --bar-ink: #f4f1f1; --bar-ink-2: #a39b9b; --bar-press: rgb(255 255 255 / .1);
+    --paper: #1c1a1a; --card-line: #2a2626; --chip: #2a2626; --press: #343030;
     --ink: #efebeb; --ink-2: #b6aeae; --ink-3: #807878; --rule: #2f2a2a;
-    --accent: #f26b61; --accent-fill: #bf2f28; --accent-soft: #3d201e; --on-accent: #ffffff;
-    --switch-off: #3b3535; --knob: #ffffff; --mark: #6a5418;
+    --accent: #f26b61; --accent-soft: #3d201e; --hot: #f0473c; --on-accent: #ffffff;
+    --track: #2a2626; --fab: #2c2828; --switch-off: #3b3535; --knob: #ffffff; --mark: #6a5418;
     --shadow-card: 0 1px 2px rgb(0 0 0 / .4), 0 14px 32px -12px rgb(0 0 0 / .8);
     --shadow-sm: 0 1px 2px rgb(0 0 0 / .4);
+    --shadow-fab: 0 2px 4px rgb(0 0 0 / .5), 0 8px 20px -4px rgb(0 0 0 / .7);
     color-scheme: dark;
   }
 }
 :root[data-theme="dark"] {
-  --bar: #7f1414; --bar-ink: #ffffff; --bar-ink-2: #e9c4c0; --bar-track: rgb(255 255 255 / .22); --bar-press: rgb(255 255 255 / .14);
-  --desk: #121010; --paper: #1d1a1a; --chip: #2a2626; --press: #343030;
+  --bg: #000000; --grouped: #000000; --bar-ink: #f4f1f1; --bar-ink-2: #a39b9b; --bar-press: rgb(255 255 255 / .1);
+  --paper: #1c1a1a; --card-line: #2a2626; --chip: #2a2626; --press: #343030;
   --ink: #efebeb; --ink-2: #b6aeae; --ink-3: #807878; --rule: #2f2a2a;
-  --accent: #f26b61; --accent-fill: #bf2f28; --accent-soft: #3d201e; --on-accent: #ffffff;
-  --switch-off: #3b3535; --knob: #ffffff; --mark: #6a5418;
+  --accent: #f26b61; --accent-soft: #3d201e; --hot: #f0473c; --on-accent: #ffffff;
+  --track: #2a2626; --fab: #2c2828; --switch-off: #3b3535; --knob: #ffffff; --mark: #6a5418;
   --shadow-card: 0 1px 2px rgb(0 0 0 / .4), 0 14px 32px -12px rgb(0 0 0 / .8);
   --shadow-sm: 0 1px 2px rgb(0 0 0 / .4);
+  --shadow-fab: 0 2px 4px rgb(0 0 0 / .5), 0 8px 20px -4px rgb(0 0 0 / .7);
   color-scheme: dark;
 }
 
 *, *::before, *::after { box-sizing: border-box; }
 [hidden] { display: none !important; }
 html, body { height: 100%; margin: 0; overflow: hidden; overscroll-behavior: none; }
-html { background: var(--bar); }
+html { background: var(--bg); }
 body {
-  background: var(--desk);
+  background: var(--bg);
   color: var(--ink);
   font: 16px/1.4 var(--font-ui);
   -webkit-font-smoothing: antialiased;
@@ -83,7 +90,9 @@ mark { background: var(--mark); color: inherit; border-radius: 2px; padding: 0 .
 .visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
 svg path, svg polyline, svg circle { fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
 
-.app { position: fixed; inset: 0; display: grid; grid-template-rows: auto minmax(0, 1fr); background: var(--desk); }
+.app { position: fixed; inset: 0; display: grid; grid-template-rows: auto minmax(0, 1fr); background: var(--bg); }
+/* Pages with grouped lists sit on a soft gray, and the bar blends into whichever page is showing. */
+.app:not([data-view="stack"]) { --bar: var(--grouped); background: var(--grouped); }
 
 /* ---------------------------------------------------------------- top bar */
 
@@ -120,7 +129,7 @@ svg path, svg polyline, svg circle { fill: none; stroke: currentColor; stroke-wi
 .icon-button svg { width: 24px; height: 24px; }
 .badge {
   position: absolute; top: 4px; right: 2px; min-width: 18px; height: 18px; padding: 0 5px;
-  border-radius: 999px; background: var(--bar-ink); color: var(--bar);
+  border-radius: 999px; background: var(--hot); color: var(--on-accent);
   font: 700 .68rem/18px var(--font-ui); text-align: center; font-variant-numeric: tabular-nums;
 }
 .badge:empty { display: none; }
@@ -128,12 +137,11 @@ svg path, svg polyline, svg circle { fill: none; stroke: currentColor; stroke-wi
   display: none; border: 0; background: none; cursor: pointer;
   min-height: 44px; padding: 0 8px; color: var(--bar-ink); font: 400 1.0625rem/1 var(--font-ui);
 }
-.progress { height: 3px; background: var(--bar-track); }
-.progress span { display: block; height: 100%; width: 0; background: var(--bar-ink); transition: width .35s ease; }
+.progress { flex: none; height: 4px; margin: 0 6px; border-radius: 999px; background: var(--track); overflow: hidden; }
+.progress span { display: block; height: 100%; width: 0; border-radius: inherit; background: var(--hot); transition: width .35s ease; }
 
 .app:not([data-view="stack"]) .bar-today,
-.app:not([data-view="stack"]) .icon-button,
-.app:not([data-view="stack"]) .progress { display: none; }
+.app:not([data-view="stack"]) .icon-button { display: none; }
 .app:not([data-view="stack"]) .bar-back { display: inline-flex; }
 .app:not([data-view="stack"]) .bar-title { display: block; }
 .app[data-view="saved"] .bar-text-button { display: block; }
@@ -143,21 +151,20 @@ svg path, svg polyline, svg circle { fill: none; stroke: currentColor; stroke-wi
 .view-stack {
   display: flex; flex-direction: column; gap: 8px;
   width: 100%; max-width: 700px; min-height: 0; margin-inline: auto;
-  padding: 8px max(10px, env(safe-area-inset-right, 0px)) max(8px, calc(var(--safe-bottom) - 12px)) max(10px, env(safe-area-inset-left, 0px));
+  padding: 2px max(10px, env(safe-area-inset-right, 0px)) max(8px, calc(var(--safe-bottom) - 12px)) max(10px, env(safe-area-inset-left, 0px));
+  --card-gap: 10px; /* room under the top card for the edges of the cards beneath */
 }
 /* iOS's own strip already sits below the page, so hug it. */
-.ios-short .view-stack { padding-bottom: 4px; }
-.ios-short .card { inset: 0 0 8px 0; }
+.ios-short .view-stack { padding-bottom: 4px; --card-gap: 8px; }
 .ios-short .card[data-depth="1"] { transform: translateY(4px) scale(.966); }
 .ios-short .card[data-depth="2"] { transform: translateY(8px) scale(.932); }
-.ios-short .deck-message { inset: 0 0 8px; }
 .notice { margin: 0; padding: 10px 14px; border-radius: 12px; background: var(--paper); color: var(--ink-2); font-size: .84rem; line-height: 1.4; }
 .deck { position: relative; flex: 1 1 auto; min-height: 0; }
 
 .card {
-  position: absolute; inset: 0 0 10px 0;
-  display: grid; grid-template-rows: minmax(0, 1fr) auto;
-  background: var(--paper); border-radius: 18px; box-shadow: var(--shadow-card);
+  position: absolute; inset: 0 0 var(--card-gap) 0;
+  display: grid; grid-template-rows: minmax(0, 1fr);
+  background: var(--paper); border-radius: 18px; box-shadow: 0 0 0 1px var(--card-line), var(--shadow-card);
   overflow: hidden; touch-action: pan-y;
   transform-origin: 50% 100%;
   transition: transform .38s cubic-bezier(.2, .8, .2, 1), opacity .38s ease;
@@ -165,7 +172,7 @@ svg path, svg polyline, svg circle { fill: none; stroke: currentColor; stroke-wi
 .card[data-depth="1"] { transform: translateY(5px) scale(.966); }
 .card[data-depth="2"] { transform: translateY(10px) scale(.932); }
 /* Cards underneath only show their edge; the next card's text stays visible so it shows through mid-swipe. */
-.card[data-depth="1"] .card-foot, .card[data-depth="2"] .card-foot, .card[data-depth="2"] .card-body { visibility: hidden; }
+.card[data-depth="2"] .card-body { visibility: hidden; }
 .dragging { transition: none !important; user-select: none; -webkit-user-select: none; }
 .card.leaving { transition: transform .42s cubic-bezier(.4, .2, .6, 1), opacity .42s ease; opacity: 0; pointer-events: none; }
 .card.entering { animation: deal .42s cubic-bezier(.2, .8, .2, 1) backwards; }
@@ -174,11 +181,11 @@ svg path, svg polyline, svg circle { fill: none; stroke: currentColor; stroke-wi
 .card-body {
   min-height: 0; overflow-y: auto; overscroll-behavior: contain; touch-action: pan-y;
   display: flex; flex-direction: column; gap: 12px;
-  padding: 20px 18px 32px;
+  padding: 18px 18px 116px; /* the bottom padding lets the last lines scroll clear of the floating buttons */
   scrollbar-width: none;
-  /* Fade the last lines so it's obvious the abstract keeps going. */
-  -webkit-mask-image: linear-gradient(to bottom, #000 calc(100% - 32px), transparent);
-  mask-image: linear-gradient(to bottom, #000 calc(100% - 32px), transparent);
+  /* Fade the text out behind the floating buttons, which also shows the abstract keeps going. */
+  -webkit-mask-image: linear-gradient(to bottom, #000 calc(100% - 112px), transparent calc(100% - 46px));
+  mask-image: linear-gradient(to bottom, #000 calc(100% - 112px), transparent calc(100% - 46px));
 }
 .card-body::-webkit-scrollbar { display: none; }
 .card-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 10px; font: 400 .8rem/1.3 var(--font-mono); color: var(--ink-3); }
@@ -205,10 +212,28 @@ svg path, svg polyline, svg circle { fill: none; stroke: currentColor; stroke-wi
 .abstract .katex, .card-title .katex { font-size: 1.02em; }
 .nobr { white-space: nowrap; }
 
-.card-foot {
-  display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px;
-  padding: 10px 10px 12px; border-top: 1px solid var(--rule); background: var(--paper);
+.actions {
+  position: absolute; left: 0; right: 0; bottom: calc(var(--card-gap) + 16px); z-index: 30;
+  display: flex; justify-content: center; align-items: center; gap: 18px;
+  pointer-events: none;
 }
+.fab {
+  pointer-events: auto; display: grid; place-items: center; flex: none;
+  width: 54px; height: 54px; border-radius: 50%; border: 0; padding: 0;
+  background: var(--fab); color: var(--ink); box-shadow: 0 0 0 1px var(--card-line), var(--shadow-fab);
+  cursor: pointer; text-decoration: none; transition: transform .12s ease;
+}
+.fab svg { width: 24px; height: 24px; }
+.fab:active { transform: scale(.93); }
+.fab-pdf {
+  display: flex; gap: 8px; width: auto; min-width: 156px; height: 58px; padding: 0 30px; border-radius: 999px;
+  background: var(--hot); color: var(--on-accent); box-shadow: var(--shadow-fab);
+  font: 600 1.1rem/1 var(--font-ui); letter-spacing: .01em;
+}
+.fab-pdf svg { width: 22px; height: 22px; }
+#act-save.is-saved { color: var(--hot); }
+#act-save.is-saved svg path { fill: currentColor; }
+
 .act {
   display: flex; align-items: center; justify-content: center; gap: 6px;
   min-height: 46px; padding: 0 10px; border: 0; border-radius: 13px;
@@ -223,7 +248,7 @@ svg path, svg polyline, svg circle { fill: none; stroke: currentColor; stroke-wi
 .act-save.is-saved svg path { fill: currentColor; }
 .act-quiet { color: var(--ink-2); }
 
-.pop { position: absolute; left: 50%; top: 42%; z-index: 3; width: 104px; height: 104px; margin: -52px 0 0 -52px; color: var(--accent-fill); pointer-events: none; animation: pop .8s ease-out forwards; }
+.pop { position: absolute; left: 50%; top: 42%; z-index: 3; width: 104px; height: 104px; margin: -52px 0 0 -52px; color: var(--hot); pointer-events: none; animation: pop .8s ease-out forwards; }
 .pop svg { width: 100%; height: 100%; filter: drop-shadow(0 6px 16px rgb(0 0 0 / .25)); }
 .pop svg path { fill: currentColor; stroke: var(--paper); stroke-width: 1.2; }
 @keyframes pop {
@@ -235,10 +260,10 @@ svg path, svg polyline, svg circle { fill: none; stroke: currentColor; stroke-wi
 }
 
 .deck-message {
-  position: absolute; inset: 0 0 10px;
+  position: absolute; inset: 0 0 var(--card-gap);
   display: flex; flex-direction: column; justify-content: center; align-items: flex-start; gap: 12px;
   padding: 28px 24px;
-  background: var(--paper); border-radius: 18px; box-shadow: var(--shadow-card);
+  background: var(--paper); border-radius: 18px; box-shadow: 0 0 0 1px var(--card-line), var(--shadow-card);
   touch-action: pan-y;
   transition: transform .3s cubic-bezier(.2, .8, .2, 1);
 }
@@ -359,7 +384,7 @@ svg path, svg polyline, svg circle { fill: none; stroke: currentColor; stroke-wi
 .size-a.small { font-size: .85rem; }
 .size-a.large { font-size: 1.45rem; }
 .size-slider input { flex: 1; min-width: 0; height: 30px; margin: 0; accent-color: var(--accent-fill); }
-.abstract.size-preview { margin: 0; padding: 12px 14px; border: 0; border-radius: 11px; background: var(--desk); }
+.abstract.size-preview { margin: 0; padding: 12px 14px; border: 0; border-radius: 11px; background: var(--grouped); }
 
 .segmented { display: inline-flex; flex: none; padding: 2px; border-radius: 9px; background: var(--chip); }
 .segmented label { position: relative; cursor: pointer; }
@@ -375,6 +400,28 @@ svg path, svg polyline, svg circle { fill: none; stroke: currentColor; stroke-wi
   font: 600 1.0625rem/1 var(--font-ui); text-decoration: none; box-shadow: var(--shadow-card);
 }
 .cta[aria-disabled="true"] { opacity: .45; pointer-events: none; }
+
+/* all papers */
+.list-summary { margin: 0 16px; font-size: .8rem; letter-spacing: .03em; text-transform: uppercase; color: var(--ink-3); }
+.paper-list { list-style: none; margin: 0; padding: 0; border-radius: 13px; overflow: hidden; background: var(--paper); }
+.paper-row { position: relative; }
+.paper-row + .paper-row::before { content: ""; position: absolute; top: 0; left: 16px; right: 0; height: 1px; background: var(--rule); }
+.paper-row-button {
+  display: flex; flex-direction: column; gap: 4px; width: 100%; padding: 12px 16px 13px;
+  border: 0; background: none; text-align: left; cursor: pointer; color: var(--ink);
+}
+.paper-row-button:active { background: var(--chip); }
+.paper-row-meta { display: flex; align-items: center; gap: 8px; font: .74rem/1.2 var(--font-mono); color: var(--ink-3); }
+.paper-row-meta .type { font-size: .7rem; padding: 3px 8px; }
+.paper-row-meta svg { width: 14px; height: 14px; color: var(--hot); }
+.paper-row-meta svg path { fill: currentColor; }
+.paper-row-num { min-width: 2.2ch; font-variant-numeric: tabular-nums; }
+.paper-row-title { font: 600 1.02rem/1.3 var(--font-paper); text-wrap: pretty; }
+.paper-row-authors { font-size: .84rem; line-height: 1.35; color: var(--accent); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.paper-row.is-seen .paper-row-title, .paper-row.is-seen .paper-row-authors { opacity: .55; }
+.paper-row.is-current { background: var(--accent-soft); }
+.paper-row.is-current .type-new { background: var(--paper); }
+.now { font: 600 .7rem/1 var(--font-ui); padding: 3px 8px; border-radius: 999px; background: var(--hot); color: var(--on-accent); }
 
 /* saved */
 .empty { padding: 32px 22px; border-radius: 14px; background: var(--paper); text-align: center; color: var(--ink-2); }
@@ -406,7 +453,7 @@ svg path, svg polyline, svg circle { fill: none; stroke: currentColor; stroke-wi
 .share-menu > *:hover, .share-menu > *:focus-visible, .share-menu > *:active { background: var(--chip); outline: none; }
 
 .toast {
-  position: fixed; z-index: 30; left: 50%; bottom: calc(92px + var(--safe-bottom));
+  position: fixed; z-index: 30; left: 50%; bottom: calc(118px + var(--safe-bottom));
   display: flex; align-items: center; gap: 14px; max-width: calc(100vw - 32px);
   padding: 11px 16px; border-radius: 14px;
   background: var(--ink); color: var(--paper); font-size: .9rem; box-shadow: var(--shadow-card);
@@ -423,7 +470,6 @@ svg path, svg polyline, svg circle { fill: none; stroke: currentColor; stroke-wi
   :root { --abstract-base: 1.125rem; }
   .view-stack { padding-top: 16px; padding-bottom: 16px; }
   .card-body { padding: 28px 34px 36px; gap: 14px; }
-  .card-foot { padding: 12px 20px 14px; }
   .card-title { font-size: 1.9rem; }
   .card-authors { font-size: 1.05rem; }
   .card[data-depth="0"] { cursor: grab; }

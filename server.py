@@ -67,6 +67,15 @@ def detex_accents(text):
     return SPECIAL_LETTER_RE.sub(lambda m: SPECIAL_LETTERS[m.group(1) or m.group(2)], text)
 
 
+def tex_typography(text):
+    """Turn TeX quotes and dashes (``x'', ---, --) into real characters, leaving $math$ alone."""
+    parts = re.split(r"(\$[^$]*\$)", text)
+    for i in range(0, len(parts), 2):
+        parts[i] = (parts[i].replace("``", "\u201c").replace("''", "\u201d")
+                    .replace("---", "\u2014").replace("--", "\u2013"))
+    return "".join(parts)
+
+
 def squash(text):
     return " ".join((text or "").split())
 
@@ -144,9 +153,9 @@ def parse_rss(xml_bytes):
         papers.append({
             "id": id_match.group(1),
             "version": id_match.group(2),
-            "title": detex_accents(squash(item.findtext("title"))),
+            "title": tex_typography(detex_accents(squash(item.findtext("title")))),
             "authors": split_authors(item.findtext("dc:creator", "", NS)),
-            "abstract": detex_accents(squash(abstract)),
+            "abstract": tex_typography(detex_accents(squash(abstract))),
             "categories": [c.text for c in item.findall("category") if c.text],
             "type": item.findtext("arxiv:announce_type", "new", NS).strip(),
             "date": date,
@@ -172,10 +181,10 @@ def parse_api(xml_bytes):
         papers.append({
             "id": id_match.group(1),
             "version": id_match.group(2) or "v1",
-            "title": detex_accents(squash(entry.findtext("atom:title", "", NS))),
+            "title": tex_typography(detex_accents(squash(entry.findtext("atom:title", "", NS)))),
             "authors": [detex_accents(squash(a.findtext("atom:name", "", NS)))
                         for a in entry.findall("atom:author", NS)],
-            "abstract": detex_accents(squash(entry.findtext("atom:summary", "", NS))),
+            "abstract": tex_typography(detex_accents(squash(entry.findtext("atom:summary", "", NS)))),
             "categories": categories,
             "type": "new",
             "date": published[:10] or None,

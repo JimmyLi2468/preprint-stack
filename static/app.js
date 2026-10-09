@@ -369,6 +369,7 @@ function showLoading() {
   $('#status-date').textContent = 'Loading…';
   $('#status-count').textContent = '';
   $('#progress').style.width = '0';
+  syncActions();
 }
 
 function buildCard(paper) {
@@ -389,11 +390,6 @@ function buildCard(paper) {
       <p class="card-authors"></p>
       <p class="subjects-line"><span class="visually-hidden">Subjects: </span>${subjectsLine(paper)}</p>
       <p class="abstract"></p>
-    </div>
-    <div class="card-foot">
-      <button class="act act-save" type="button" data-action="save" aria-pressed="false">${ICONS.bookmark}<span>Save</span></button>
-      <a class="act act-primary" href="${pdfUrl(paper)}" target="_blank" rel="noopener">${ICONS.pdf}PDF</a>
-      <button class="act" type="button" data-action="share">${ICONS.share}Share</button>
     </div>`;
   fillText($('.card-title a', el), paper.title, pattern);
   fillAuthors($('.card-authors', el), paper.authors);
@@ -419,14 +415,26 @@ function renderDeck() {
     el.dataset.depth = depth;
     el.style.zIndex = String(10 - depth);
     el.inert = depth > 0;
-    const on = isSaved(paper);
-    const save = $('.act-save', el);
-    save.classList.toggle('is-saved', on);
-    save.setAttribute('aria-pressed', String(on));
-    $('span', save).textContent = on ? 'Saved' : 'Save';
   });
   setMessage(!feed || index < stack.length ? '' : endMessage());
+  syncActions();
 }
+
+/** The floating Save / PDF / Share buttons always act on the paper on top. */
+function syncActions() {
+  const paper = stack[index];
+  $('#actions').hidden = !paper;
+  if (!paper) return;
+  const on = isSaved(paper);
+  const save = $('#act-save');
+  save.classList.toggle('is-saved', on);
+  save.setAttribute('aria-pressed', String(on));
+  save.setAttribute('aria-label', on ? 'Saved' : 'Save');
+  $('#act-pdf').href = pdfUrl(paper);
+}
+
+$('#act-save').addEventListener('click', () => toggleSave());
+$('#act-share').addEventListener('click', e => share(stack[index], e.currentTarget));
 
 function endMessage() {
   const day = feed.data.source === 'latest' ? '' : ` from ${longDay(feed.data.date)}`;
@@ -682,9 +690,7 @@ deckEl.addEventListener('click', e => {
   const button = e.target.closest('[data-action]');
   if (!button) return;
   const action = button.dataset.action;
-  if (action === 'share') share(button.closest('.card').paper, button);
-  else if (action === 'save') toggleSave(button.closest('.card').paper);
-  else if (action === 'retry') loadFeed({ force: true });
+  if (action === 'retry') loadFeed({ force: true });
   else if (action === 'restart') restart();
 });
 
@@ -773,9 +779,58 @@ shareMenu.addEventListener('click', async e => {
 });
 
 document.addEventListener('pointerdown', e => {
-  if (!shareMenu.hidden && !shareMenu.contains(e.target) && !e.target.closest('[data-action="share"]')) closeShareMenu();
+  if (!shareMenu.hidden && !shareMenu.contains(e.target) && !e.target.closest('[data-action="share"], #act-share')) closeShareMenu();
 });
 window.addEventListener('resize', closeShareMenu);
+
+// ================================================================ list of all papers
+
+function renderList() {
+  const list = $('#paper-list');
+  if (!feed || !stack.length) {
+    list.replaceChildren();
+    list.hidden = true;
+    $('#list-summary').textContent = !prefs.topics.length ? 'Pick topics in Settings first'
+      : feed ? 'No papers in your topics today' : 'Loading papers…';
+    return;
+  }
+  list.hidden = false;
+  const pattern = keywordPattern();
+  const day = feed.data.source === 'latest' ? 'Latest submissions' : longDay(feed.data.date);
+  $('#list-summary').textContent = `${stack.length} papers · ${day}`;
+  list.replaceChildren(...stack.map((paper, i) => listRow(paper, i, pattern)));
+  requestAnimationFrame(() => list.querySelector('.is-current')?.scrollIntoView({ block: 'center' }));
+}
+
+function listRow(paper, i, pattern) {
+  const li = document.createElement('li');
+  const current = i === index;
+  li.className = `paper-row${current ? ' is-current' : ''}${!current && seen[paperKey(paper)] ? ' is-seen' : ''}`;
+  li.innerHTML = `
+    <button class="paper-row-button" type="button" data-index="${i}">
+      <span class="paper-row-meta">
+        <span class="paper-row-num">${i + 1}</span>
+        <span class="type type-${kindOf(paper.type)}">${TYPE_LABEL[kindOf(paper.type)]}</span>
+        <span>${esc(paper.categories[0] || '')}</span>
+        ${current ? '<span class="now">Current</span>' : ''}
+        ${isSaved(paper) ? ICONS.bookmark : ''}
+      </span>
+      <span class="paper-row-title"></span>
+      <span class="paper-row-authors"></span>
+    </button>`;
+  fillText($('.paper-row-title', li), paper.title, pattern);
+  $('.paper-row-authors', li).textContent = authorsShort(paper);
+  return li;
+}
+
+// Tap a paper to jump straight to it in the stack.
+$('#paper-list').addEventListener('click', e => {
+  const row = e.target.closest('[data-index]');
+  if (!row) return;
+  index = Number(row.dataset.index);
+  resetDeck();
+  location.hash = '#stack';
+});
 
 // ================================================================ saved page
 
@@ -986,7 +1041,7 @@ function applyAbstractSize() {
   document.documentElement.style.setProperty('--abstract-scale', String(scale));
 }
 
-const BAR_COLORS = { light: '#b31b1b', dark: '#7f1414' };
+const BAR_COLORS = { light: '#ffffff', dark: '#000000' };
 
 function applyTheme() {
   if (prefs.theme === 'light' || prefs.theme === 'dark') document.documentElement.dataset.theme = prefs.theme;
@@ -1000,8 +1055,8 @@ function applyTheme() {
 
 // ================================================================ routing
 
-const VIEWS = ['stack', 'saved', 'settings'];
-const TITLES = { saved: 'Saved', settings: 'Settings' };
+const VIEWS = ['stack', 'list', 'saved', 'settings'];
+const TITLES = { list: 'All papers', saved: 'Saved', settings: 'Settings' };
 let currentView = null;
 let onboarding = !prefs.topics.length; // first visit: Settings shows a big "Show today's papers" button
 
@@ -1019,6 +1074,11 @@ function route() {
   });
   closeShareMenu();
   if (view === 'stack') { renderStatus(); loadFeed(); }
+  else if (view === 'list') {
+    if (feed && stackDirty) buildStack();
+    renderList();
+    if (!feed && prefs.topics.length) loadFeed().then(() => { if (currentView === 'list') renderList(); });
+  }
   else if (view === 'saved') renderSaved();
   else {
     if (!settingsBuilt) buildSettings();

@@ -5,11 +5,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Preprint Stack</title>
 <meta name="description" content="Swipe through today's arXiv papers.">
-<meta name="theme-color" content="#b31b1b" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#7f1414" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
 <meta name="apple-mobile-web-app-title" content="Preprints">
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
@@ -26,12 +26,15 @@
     <div class="bar-inner">
       <!-- Today: date and position on the left, Saved and Settings on the right -->
       <p class="bar-today"><span id="status-count"></span><span id="status-date">Preprint Stack</span></p>
-      <!-- Saved and Settings: back to the stack, with the page name -->
+      <!-- Other pages: back to the stack, with the page name -->
       <a class="bar-back" href="#stack">
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5.5 8.5 12l6.5 6.5"/></svg>Papers
       </a>
       <h1 class="bar-title" id="bar-title"></h1>
       <div class="bar-actions">
+        <a class="icon-button" href="#list" data-nav="list" aria-label="All papers">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6.5h11M9 12h11M9 17.5h11"/><circle cx="4.5" cy="6.5" r="1.1"/><circle cx="4.5" cy="12" r="1.1"/><circle cx="4.5" cy="17.5" r="1.1"/></svg>
+        </a>
         <a class="icon-button" href="#saved" data-nav="saved" aria-label="Saved papers">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.5 3.5h11v17l-5.5-4-5.5 4z"/></svg>
           <span class="badge" id="saved-count"></span>
@@ -42,14 +45,34 @@
         <button class="bar-text-button" type="button" id="copy-saved">Copy</button>
       </div>
     </div>
-    <div class="progress" aria-hidden="true"><span id="progress"></span></div>
   </header>
 
   <!-- Today's stack -->
   <main class="view view-stack" id="view-stack" hidden>
+    <div class="progress" aria-hidden="true"><span id="progress"></span></div>
     <p class="notice" id="notice" hidden></p>
     <div class="deck" id="deck">
       <div class="deck-message" id="deck-message" hidden></div>
+      <!-- Floating actions for whichever paper is on top; they stay put while cards swipe past. -->
+      <div class="actions" id="actions" hidden>
+        <button class="fab" id="act-save" type="button" aria-label="Save" aria-pressed="false">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.5 3.5h11v17l-5.5-4-5.5 4z"/></svg>
+        </button>
+        <a class="fab fab-pdf" id="act-pdf" href="#" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/><path d="M9 13h6M9 17h4"/></svg>PDF
+        </a>
+        <button class="fab" id="act-share" type="button" aria-label="Share">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 15V3"/><path d="m7.5 7.5 4.5-4.5 4.5 4.5"/><path d="M6 11H5v9h14v-9h-1"/></svg>
+        </button>
+      </div>
+    </div>
+  </main>
+
+  <!-- Every paper in today's stack -->
+  <main class="view page" id="view-list" hidden>
+    <div class="page-inner">
+      <p class="list-summary" id="list-summary"></p>
+      <ol class="paper-list" id="paper-list"></ol>
     </div>
   </main>
 
