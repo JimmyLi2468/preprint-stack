@@ -31,7 +31,11 @@
   --edge: 0px; /* extra room under the status bar; set for iPhone home-screen apps below */
 }
 /* iOS blurs a band reaching ~30pt below the status bar in home-screen apps; keep text out of it. */
-:root.ios-app { --edge: 30px; }
+:root.ios-app { --edge: 20px; }
+:root { --safe-bottom: env(safe-area-inset-bottom, 0px); }
+/* Some iOS versions stop a home-screen app's page a status bar's height above the bottom edge,
+   so the home indicator is already outside the page and needs no padding. */
+:root.ios-short { --safe-bottom: 0px; }
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
     --bar: #7f1414; --bar-ink: #ffffff; --bar-ink-2: #e9c4c0; --bar-track: rgb(255 255 255 / .22); --bar-press: rgb(255 255 255 / .14);
@@ -75,7 +79,7 @@ mark { background: var(--mark); color: inherit; border-radius: 2px; padding: 0 .
 .visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
 svg path, svg polyline, svg circle { fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
 
-.app { position: fixed; top: 0; left: 0; right: 0; height: var(--app-height, 100%); display: grid; grid-template-rows: auto minmax(0, 1fr); background: var(--desk); }
+.app { position: fixed; inset: 0; display: grid; grid-template-rows: auto minmax(0, 1fr); background: var(--desk); }
 
 /* ---------------------------------------------------------------- top bar */
 
@@ -83,8 +87,8 @@ svg path, svg polyline, svg circle { fill: none; stroke: currentColor; stroke-wi
 .bar-inner {
   position: relative;
   display: flex; align-items: center; gap: 4px;
-  min-height: 48px; max-width: 700px; margin-inline: auto;
-  padding: 2px max(6px, env(safe-area-inset-right, 0px)) 2px max(16px, env(safe-area-inset-left, 0px));
+  min-height: 46px; max-width: 700px; margin-inline: auto;
+  padding: 0 max(6px, env(safe-area-inset-right, 0px)) 2px max(16px, env(safe-area-inset-left, 0px));
 }
 .bar-today {
   flex: 1; min-width: 0; margin: 0;
@@ -135,7 +139,7 @@ svg path, svg polyline, svg circle { fill: none; stroke: currentColor; stroke-wi
 .view-stack {
   display: flex; flex-direction: column; gap: 8px;
   width: 100%; max-width: 700px; min-height: 0; margin-inline: auto;
-  padding: 10px max(10px, env(safe-area-inset-right, 0px)) max(8px, calc(env(safe-area-inset-bottom, 0px) - 12px)) max(10px, env(safe-area-inset-left, 0px));
+  padding: 8px max(10px, env(safe-area-inset-right, 0px)) max(8px, calc(var(--safe-bottom) - 12px)) max(10px, env(safe-area-inset-left, 0px));
 }
 .notice { margin: 0; padding: 10px 14px; border-radius: 12px; background: var(--paper); color: var(--ink-2); font-size: .84rem; line-height: 1.4; }
 .deck { position: relative; flex: 1 1 auto; min-height: 0; }
@@ -254,7 +258,7 @@ svg path, svg polyline, svg circle { fill: none; stroke: currentColor; stroke-wi
 
 .page {
   overflow-y: auto; overscroll-behavior: contain; min-height: 0;
-  padding: 18px max(16px, env(safe-area-inset-right, 0px)) calc(28px + env(safe-area-inset-bottom, 0px)) max(16px, env(safe-area-inset-left, 0px));
+  padding: 18px max(16px, env(safe-area-inset-right, 0px)) calc(28px + var(--safe-bottom)) max(16px, env(safe-area-inset-left, 0px));
 }
 .page-inner { max-width: 640px; margin-inline: auto; display: flex; flex-direction: column; gap: 24px; }
 .welcome { margin: 0 4px; font: 400 1.08rem/1.45 var(--font-paper); color: var(--ink-2); }
@@ -392,7 +396,7 @@ svg path, svg polyline, svg circle { fill: none; stroke: currentColor; stroke-wi
 .share-menu > *:hover, .share-menu > *:focus-visible, .share-menu > *:active { background: var(--chip); outline: none; }
 
 .toast {
-  position: fixed; z-index: 30; left: 50%; bottom: calc(92px + env(safe-area-inset-bottom, 0px));
+  position: fixed; z-index: 30; left: 50%; bottom: calc(92px + var(--safe-bottom));
   display: flex; align-items: center; gap: 14px; max-width: calc(100vw - 32px);
   padding: 11px 16px; border-radius: 14px;
   background: var(--ink); color: var(--paper); font-size: .9rem; box-shadow: var(--shadow-card);
@@ -417,7 +421,7 @@ svg path, svg polyline, svg circle { fill: none; stroke: currentColor; stroke-wi
 }
 /* Phones: the fallback share menu becomes a bottom sheet. */
 @media (max-width: 560px) {
-  .share-menu { top: auto !important; left: 8px !important; right: 8px; bottom: calc(8px + env(safe-area-inset-bottom, 0px)); }
+  .share-menu { top: auto !important; left: 8px !important; right: 8px; bottom: calc(8px + var(--safe-bottom)); }
   .share-menu > * { padding: 14px 16px; font-size: 1.0625rem; text-align: center; }
 }
 

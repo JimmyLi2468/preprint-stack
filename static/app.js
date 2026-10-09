@@ -1028,8 +1028,9 @@ document.addEventListener('visibilitychange', () => {
   }
 });
 
-// iPhone home-screen apps lay the page out one status bar shorter than the screen while
-// drawing it from the very top, leaving a dead strip at the bottom. Stretch to the real height.
+// Some iOS versions draw a home-screen app from under the status bar but stop the page that
+// much short of the bottom edge, where iOS paints its own strip. The page can't reach the home
+// indicator then, so it shouldn't pad for it either.
 function fitHomeScreenApp() {
   const root = document.documentElement;
   root.classList.toggle('ios-app', navigator.standalone === true);
@@ -1037,8 +1038,8 @@ function fitHomeScreenApp() {
   const landscape = matchMedia('(orientation: landscape)').matches;
   const screenHeight = landscape ? Math.min(screen.width, screen.height) : Math.max(screen.width, screen.height);
   const gap = screenHeight - window.innerHeight;
-  if (gap > 0 && gap <= 80) root.style.setProperty('--app-height', `${screenHeight}px`); // not when the keyboard is up
-  else if (gap <= 0) root.style.removeProperty('--app-height');
+  if (gap > 0 && gap <= 80) root.classList.add('ios-short');
+  else if (gap <= 0) root.classList.remove('ios-short'); // a larger gap means the keyboard is up; leave it
 }
 fitHomeScreenApp();
 window.addEventListener('resize', fitHomeScreenApp);
