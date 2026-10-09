@@ -30,8 +30,9 @@
   --abstract-base: 1.0625rem;
   --edge: 0px; /* extra room under the status bar; set for iPhone home-screen apps below */
 }
-/* iOS blurs a band reaching ~30pt below the status bar in home-screen apps; keep text out of it. */
-:root.ios-app { --edge: 20px; }
+/* When iOS draws a home-screen app under the status bar, it blurs a band reaching ~30pt below it;
+   keep text out of that band. */
+:root.ios-under-status-bar { --edge: 20px; }
 :root { --safe-bottom: env(safe-area-inset-bottom, 0px); }
 /* Some iOS versions stop a home-screen app's page a status bar's height above the bottom edge,
    so the home indicator is already outside the page and needs no padding. */

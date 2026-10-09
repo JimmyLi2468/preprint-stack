@@ -986,9 +986,16 @@ function applyAbstractSize() {
   document.documentElement.style.setProperty('--abstract-scale', String(scale));
 }
 
+const BAR_COLORS = { light: '#b31b1b', dark: '#7f1414' };
+
 function applyTheme() {
   if (prefs.theme === 'light' || prefs.theme === 'dark') document.documentElement.dataset.theme = prefs.theme;
   else delete document.documentElement.dataset.theme;
+  // Browser and status bar tint follows the chosen theme, not only the system one.
+  document.querySelectorAll('meta[name="theme-color"]').forEach(meta => {
+    const scheme = meta.media.includes('dark') ? 'dark' : 'light';
+    meta.content = BAR_COLORS[prefs.theme in BAR_COLORS ? prefs.theme : scheme];
+  });
 }
 
 // ================================================================ routing
@@ -1033,13 +1040,21 @@ document.addEventListener('visibilitychange', () => {
 // indicator then, so it shouldn't pad for it either.
 function fitHomeScreenApp() {
   const root = document.documentElement;
-  root.classList.toggle('ios-app', navigator.standalone === true);
   if (navigator.standalone !== true) return;
+  // How far iOS lets the page reach up under the status bar (0 when the page starts below it).
+  const probe = document.createElement('div');
+  probe.style.cssText = 'position:fixed;top:0;height:env(safe-area-inset-top,0px);visibility:hidden';
+  document.body.append(probe);
+  const underStatusBar = probe.offsetHeight;
+  probe.remove();
+  root.classList.toggle('ios-under-status-bar', underStatusBar > 0);
+
   const landscape = matchMedia('(orientation: landscape)').matches;
   const screenHeight = landscape ? Math.min(screen.width, screen.height) : Math.max(screen.width, screen.height);
   const gap = screenHeight - window.innerHeight;
-  if (gap > 0 && gap <= 80) root.classList.add('ios-short');
-  else if (gap <= 0) root.classList.remove('ios-short'); // a larger gap means the keyboard is up; leave it
+  if (gap > 80) return; // the keyboard is up; keep the current layout
+  // Drawn from under the status bar yet shorter than the screen: the page stops above the home indicator.
+  root.classList.toggle('ios-short', underStatusBar > 0 && gap > 0);
 }
 fitHomeScreenApp();
 window.addEventListener('resize', fitHomeScreenApp);
