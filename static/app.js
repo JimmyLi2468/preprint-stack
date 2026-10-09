@@ -21,6 +21,7 @@ const DEFAULT_PREFS = {
   keywords: '',
   resume: true,
   theme: 'system',
+  abstractSize: 2,
 };
 
 const prefs = (() => {
@@ -58,11 +59,11 @@ const kindOf = type => (type === 'new' ? 'new' : type === 'cross' ? 'cross' : 'r
 const isSaved = p => saved.some(s => s.id === p.id);
 const CATEGORY_NAMES = new Map(window.ARXIV_TAXONOMY.flatMap(group => group.cats));
 const TYPE_LABEL = { new: 'New', cross: 'Cross-list', replace: 'Replacement' };
-const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 const AUTHOR_PREVIEW = 8;
 
 const ICONS = {
   pdf: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/><path d="M9 13h6M9 17h4"/></svg>',
+  bookmark: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.5 3.5h11v17l-5.5-4-5.5 4z"/></svg>',
   share: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 15V3"/><path d="m7.5 7.5 4.5-4.5 4.5 4.5"/><path d="M6 11H5v9h14v-9h-1"/></svg>',
 };
 
@@ -71,9 +72,18 @@ function parseDay(iso) {
   const [y, m, d] = iso.split('-').map(Number);
   return new Date(y, m - 1, d);
 }
-const stampDate = iso => { const d = parseDay(iso); return d ? `${d.getDate()} ${MONTHS[d.getMonth()]} ${d.getFullYear()}` : ''; };
 const longDay = iso => parseDay(iso)?.toLocaleDateString('en-US', { weekday: 'long', day: 'numeric', month: 'long' }) ?? '';
 const shortDay = ms => new Date(ms).toLocaleDateString('en-GB', { day: 'numeric', month: 'short' });
+const ABSTRACT_SCALES = [0.82, 0.91, 1, 1.12, 1.26];
+
+/** "High Energy Physics - Theory (hep-th); General Relativity and ..." with the primary subject in bold. */
+function subjectsLine(paper) {
+  return paper.categories.map((code, i) => {
+    const label = esc(CATEGORY_NAMES.has(code) ? `${CATEGORY_NAMES.get(code)} (${code})` : code);
+    return i === 0 ? `<b>${label}</b>` : label;
+  }).join('; ');
+}
+
 const authorsShort = p => (p.authors.length > 3 ? `${p.authors.slice(0, 3).join(', ')} et al.` : p.authors.join(', '));
 
 function keywordPattern() {
@@ -257,7 +267,6 @@ async function loadFeed({ force = false, quiet = false } = {}) {
     resetDeck();
     renderStatus();
     renderNotice();
-    renderControls();
     setMessage(`
       <p class="eyebrow">No topics yet</p>
       <h2>Pick the arXiv categories you want in your daily stack.</h2>
@@ -333,7 +342,6 @@ function showLoading() {
   stack = [];
   index = 0;
   resetDeck();
-  renderControls();
   setMessage(`
     <div class="skeleton" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
     <p>Fetching today's papers from arXiv…</p>`);
@@ -345,34 +353,27 @@ function showLoading() {
 function buildCard(paper) {
   const pattern = keywordPattern();
   const hits = keywordHits(paper, pattern);
-  const primary = paper.categories[0] || '';
   const el = document.createElement('article');
   el.className = 'card entering';
   el.dataset.key = paperKey(paper);
   el.paper = paper;
   el.innerHTML = `
-    <div class="margin-stamp" aria-hidden="true">arXiv:${esc(paper.id + paper.version)}&nbsp;&nbsp;[${esc(primary)}]&nbsp;&nbsp;${esc(stampDate(paper.date))}</div>
     <div class="card-body">
       <div class="card-meta">
         <span class="type type-${kindOf(paper.type)}">${TYPE_LABEL[kindOf(paper.type)]}</span>
         <span class="arxiv-id">arXiv:${esc(paper.id)}</span>
-        <span class="saved-flag" hidden>Saved</span>
         ${hits.length ? `<span class="hit">Mentions ${esc(hits.join(', '))}</span>` : ''}
       </div>
       <h2 class="card-title"><a href="${absUrl(paper)}" target="_blank" rel="noopener"></a></h2>
       <p class="card-authors"></p>
-      <ul class="subjects" aria-label="Subjects">
-        ${paper.categories.map((code, i) => `
-          <li class="subject${i === 0 ? ' primary' : ''}"${i === 0 ? ' title="Primary subject"' : ''}>
-            <span class="code">${esc(code)}</span>${CATEGORY_NAMES.has(code) ? esc(CATEGORY_NAMES.get(code)) : ''}
-          </li>`).join('')}
-      </ul>
+      <p class="subjects-line"><span class="visually-hidden">Subjects: </span>${subjectsLine(paper)}</p>
       <section class="abstract-block">
         <h3>Abstract</h3>
         <p class="abstract"></p>
       </section>
     </div>
     <div class="card-foot">
+      <button class="btn btn-save" type="button" data-action="save" aria-pressed="false">${ICONS.bookmark}<span>Save</span></button>
       <a class="btn btn-primary" href="${pdfUrl(paper)}" target="_blank" rel="noopener">${ICONS.pdf}PDF</a>
       <button class="btn" type="button" data-action="share">${ICONS.share}Share</button>
     </div>`;
@@ -400,22 +401,13 @@ function renderDeck() {
     el.dataset.depth = depth;
     el.style.zIndex = String(10 - depth);
     el.inert = depth > 0;
-    $('.saved-flag', el).hidden = !isSaved(paper);
+    const on = isSaved(paper);
+    const save = $('.btn-save', el);
+    save.classList.toggle('is-saved', on);
+    save.setAttribute('aria-pressed', String(on));
+    $('span', save).textContent = on ? 'Saved' : 'Save';
   });
   setMessage(!feed || index < stack.length ? '' : endMessage());
-  renderControls();
-}
-
-function renderControls() {
-  const paper = stack[index];
-  const on = Boolean(paper) && isSaved(paper);
-  const save = $('#btn-save');
-  save.disabled = !paper;
-  save.classList.toggle('is-saved', on);
-  save.setAttribute('aria-pressed', String(on));
-  $('.ctl-label', save).textContent = on ? 'Saved' : 'Save';
-  $('#btn-prev').disabled = index === 0;
-  $('#btn-next').disabled = index >= stack.length;
 }
 
 function endMessage() {
@@ -526,8 +518,7 @@ function restart() {
   renderStatus();
 }
 
-function toggleSave() {
-  const paper = stack[index];
+function toggleSave(paper = stack[index]) {
   if (!paper) return;
   if (isSaved(paper)) saved = saved.filter(s => s.id !== paper.id);
   else saved.unshift({ ...paper, savedAt: Date.now() });
@@ -644,15 +635,13 @@ function topElement() {
   deckEl.addEventListener('pointercancel', finish);
 })();
 
-$('#btn-prev').addEventListener('click', () => prev());
-$('#btn-next').addEventListener('click', next);
-$('#btn-save').addEventListener('click', toggleSave);
 
 deckEl.addEventListener('click', e => {
   const button = e.target.closest('[data-action]');
   if (!button) return;
   const action = button.dataset.action;
   if (action === 'share') share(button.closest('.card').paper, button);
+  else if (action === 'save') toggleSave(button.closest('.card').paper);
   else if (action === 'retry') loadFeed({ force: true });
   else if (action === 'restart') restart();
 });
@@ -890,6 +879,11 @@ function buildSettings() {
     savePrefs();
     applyTheme();
   }));
+  document.querySelectorAll('input[name="abstract-size"]').forEach(radio => radio.addEventListener('change', e => {
+    prefs.abstractSize = Number(e.target.value);
+    savePrefs();
+    applyAbstractSize();
+  }));
 }
 
 function toggleTopic(code, on) {
@@ -933,10 +927,16 @@ function syncSettings() {
   $('#forget-seen').disabled = !seenCount;
   const themeInput = $(`#theme-${prefs.theme}`) || $('#theme-system');
   themeInput.checked = true;
+  ($(`#size-${prefs.abstractSize}`) || $('#size-2')).checked = true;
 
   const cta = $('#settings-cta');
   cta.setAttribute('aria-disabled', String(!prefs.topics.length));
   cta.textContent = prefs.topics.length ? "Show today's papers" : 'Pick at least one topic';
+}
+
+function applyAbstractSize() {
+  const scale = ABSTRACT_SCALES[prefs.abstractSize] ?? 1;
+  document.documentElement.style.setProperty('--abstract-scale', String(scale));
 }
 
 function applyTheme() {
@@ -977,5 +977,6 @@ document.addEventListener('visibilitychange', () => {
 });
 
 applyTheme();
+applyAbstractSize();
 route();
 loadMath();

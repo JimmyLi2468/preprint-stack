@@ -8,7 +8,7 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 28 28'%3E%3Crect x='9' y='3' width='15' height='19' rx='2' fill='%23c9cfd8' stroke='%23171a20' stroke-width='1.6'/%3E%3Crect x='4' y='7' width='15' height='19' rx='2' fill='%23fff' stroke='%23171a20' stroke-width='1.6'/%3E%3Cpath d='M8 13h7M8 17h7M8 21h4' stroke='%23b31b1b' stroke-width='1.6' stroke-linecap='round'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=STIX+Two+Text:ital,wght@0,400;0,600;1,400&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=STIX+Two+Text:ital,wght@0,400;0,600;0,700;1,400&display=swap">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
 <link rel="stylesheet" href="app.css">
 </head>
@@ -44,22 +44,6 @@
     <div class="deck" id="deck">
       <div class="deck-message" id="deck-message" hidden></div>
     </div>
-    <div class="controls">
-      <button class="ctl ctl-nav" id="btn-prev" type="button" aria-label="Previous paper">
-        <span class="disc"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14.5 5.5 8 12l6.5 6.5"/></svg></span>
-        <span class="ctl-label">Back</span>
-      </button>
-      <button class="ctl ctl-save" id="btn-save" type="button" aria-pressed="false">
-        <span class="disc"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.5 3.5h11v17l-5.5-4-5.5 4z"/></svg></span>
-        <span class="ctl-label">Save</span>
-      </button>
-      <button class="ctl ctl-nav" id="btn-next" type="button" aria-label="Next paper">
-        <span class="disc"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9.5 5.5 16 12l-6.5 6.5"/></svg></span>
-        <span class="ctl-label">Next</span>
-      </button>
-    </div>
-    <p class="hint hint-keys"><kbd>←</kbd> back <kbd>→</kbd> next <kbd>S</kbd> save <kbd>P</kbd> PDF <kbd>↑</kbd><kbd>↓</kbd> scroll</p>
-    <p class="hint hint-touch">Swipe left for the next paper, right to go back</p>
   </main>
 
   <!-- Saved papers -->
@@ -140,11 +124,25 @@
 
       <section class="panel" aria-labelledby="theme-heading">
         <h2 id="theme-heading">Appearance</h2>
-        <div class="segmented" role="radiogroup" aria-labelledby="theme-heading">
-          <label for="theme-system"><input type="radio" name="theme" id="theme-system" value="system"><span>System</span></label>
-          <label for="theme-light"><input type="radio" name="theme" id="theme-light" value="light"><span>Light</span></label>
-          <label for="theme-dark"><input type="radio" name="theme" id="theme-dark" value="dark"><span>Dark</span></label>
+        <div class="setting-row">
+          <span class="setting-label" id="theme-label">Theme</span>
+          <div class="segmented" role="radiogroup" aria-labelledby="theme-label">
+            <label for="theme-system"><input type="radio" name="theme" id="theme-system" value="system"><span>System</span></label>
+            <label for="theme-light"><input type="radio" name="theme" id="theme-light" value="light"><span>Light</span></label>
+            <label for="theme-dark"><input type="radio" name="theme" id="theme-dark" value="dark"><span>Dark</span></label>
+          </div>
         </div>
+        <div class="setting-row">
+          <span class="setting-label" id="size-label">Abstract text size</span>
+          <div class="segmented size-picker" role="radiogroup" aria-labelledby="size-label">
+            <label for="size-0"><input type="radio" name="abstract-size" id="size-0" value="0" aria-label="Smallest"><span style="font-size: .8rem">A</span></label>
+            <label for="size-1"><input type="radio" name="abstract-size" id="size-1" value="1" aria-label="Small"><span style="font-size: .9rem">A</span></label>
+            <label for="size-2"><input type="radio" name="abstract-size" id="size-2" value="2" aria-label="Default"><span style="font-size: 1rem">A</span></label>
+            <label for="size-3"><input type="radio" name="abstract-size" id="size-3" value="3" aria-label="Large"><span style="font-size: 1.15rem">A</span></label>
+            <label for="size-4"><input type="radio" name="abstract-size" id="size-4" value="4" aria-label="Largest"><span style="font-size: 1.3rem">A</span></label>
+          </div>
+        </div>
+        <p class="abstract size-preview">Abstracts on your cards appear at this size. Pick the one that reads comfortably on your screen.</p>
       </section>
 
       <div class="page-cta">
