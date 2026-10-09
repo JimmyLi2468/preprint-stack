@@ -28,11 +28,14 @@
   --font-ui: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   --font-mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
   --abstract-base: 1.0625rem;
-  --edge: 0px; /* extra room under the status bar; set for iPhone home-screen apps below */
+  --edge: 0px;
 }
-/* When iOS draws a home-screen app under the status bar, it blurs a band reaching ~30pt below it;
-   keep text out of that band. */
-:root.ios-under-status-bar { --edge: 20px; }
+/* In a home-screen app (not in Safari), iOS blurs a band reaching ~30pt below the status bar.
+   Add 20px of bar there to keep text clear: 20px whenever the page is drawn under the status bar. */
+@media (display-mode: standalone) {
+  :root { --edge: min(20px, calc(env(safe-area-inset-top, 0px) * 100)); }
+}
+:root.ios-app { --edge: min(20px, calc(env(safe-area-inset-top, 0px) * 100)); }
 :root { --safe-bottom: env(safe-area-inset-bottom, 0px); }
 /* Some iOS versions stop a home-screen app's page a status bar's height above the bottom edge,
    so the home indicator is already outside the page and needs no padding. */
@@ -142,6 +145,12 @@ svg path, svg polyline, svg circle { fill: none; stroke: currentColor; stroke-wi
   width: 100%; max-width: 700px; min-height: 0; margin-inline: auto;
   padding: 8px max(10px, env(safe-area-inset-right, 0px)) max(8px, calc(var(--safe-bottom) - 12px)) max(10px, env(safe-area-inset-left, 0px));
 }
+/* iOS's own strip already sits below the page, so hug it. */
+.ios-short .view-stack { padding-bottom: 4px; }
+.ios-short .card { inset: 0 0 8px 0; }
+.ios-short .card[data-depth="1"] { transform: translateY(4px) scale(.966); }
+.ios-short .card[data-depth="2"] { transform: translateY(8px) scale(.932); }
+.ios-short .deck-message { inset: 0 0 8px; }
 .notice { margin: 0; padding: 10px 14px; border-radius: 12px; background: var(--paper); color: var(--ink-2); font-size: .84rem; line-height: 1.4; }
 .deck { position: relative; flex: 1 1 auto; min-height: 0; }
 

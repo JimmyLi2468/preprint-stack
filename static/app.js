@@ -1040,6 +1040,7 @@ document.addEventListener('visibilitychange', () => {
 // indicator then, so it shouldn't pad for it either.
 function fitHomeScreenApp() {
   const root = document.documentElement;
+  root.classList.toggle('ios-app', navigator.standalone === true);
   if (navigator.standalone !== true) return;
   // How far iOS lets the page reach up under the status bar (0 when the page starts below it).
   const probe = document.createElement('div');
@@ -1047,7 +1048,6 @@ function fitHomeScreenApp() {
   document.body.append(probe);
   const underStatusBar = probe.offsetHeight;
   probe.remove();
-  root.classList.toggle('ios-under-status-bar', underStatusBar > 0);
 
   const landscape = matchMedia('(orientation: landscape)').matches;
   const screenHeight = landscape ? Math.min(screen.width, screen.height) : Math.max(screen.width, screen.height);
@@ -1058,6 +1058,9 @@ function fitHomeScreenApp() {
 }
 fitHomeScreenApp();
 window.addEventListener('resize', fitHomeScreenApp);
+// iOS reports the status bar inset a moment after launch, so check again once things settle.
+window.addEventListener('load', () => { fitHomeScreenApp(); setTimeout(fitHomeScreenApp, 600); });
+document.addEventListener('visibilitychange', () => { if (document.visibilityState === 'visible') fitHomeScreenApp(); });
 
 applyTheme();
 applyAbstractSize();
