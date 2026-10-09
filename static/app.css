@@ -17,11 +17,15 @@
   --rule: #ebe5e5;
   --accent: #b31b1b;
   --accent-soft: #fbe6e4;
-  --hot: #e5322b;
+  --hot: #ec726f;
   --accent-fill: var(--hot);
   --on-accent: #ffffff;
   --track: #efe9e9;
-  --fab: #ffffff;
+  --fab-top: #ffffff;
+  --fab-bottom: #f0eded;
+  --fab-rim: rgb(255 255 255 / .9);
+  --fab-edge: rgb(0 0 0 / .09);
+  --fab-ink: #1c1919;
   --switch-off: #e2dcdc;
   --knob: #ffffff;
   --mark: #ffe98a;
@@ -50,8 +54,9 @@
     --bg: #000000; --grouped: #000000; --bar-ink: #f4f1f1; --bar-ink-2: #a39b9b; --bar-press: rgb(255 255 255 / .1);
     --paper: #1c1a1a; --card-line: #2a2626; --chip: #2a2626; --press: #343030;
     --ink: #efebeb; --ink-2: #b6aeae; --ink-3: #807878; --rule: #2f2a2a;
-    --accent: #f26b61; --accent-soft: #3d201e; --hot: #f0473c; --on-accent: #ffffff;
-    --track: #2a2626; --fab: #2c2828; --switch-off: #3b3535; --knob: #ffffff; --mark: #6a5418;
+    --accent: #f26b61; --accent-soft: #3d201e; --hot: #ec726f; --on-accent: #ffffff;
+    --track: #2a2626; --switch-off: #3b3535; --knob: #ffffff; --mark: #6a5418;
+    --fab-top: #48484b; --fab-bottom: #343436; --fab-rim: rgb(255 255 255 / .14); --fab-edge: rgb(0 0 0 / .6); --fab-ink: #ffffff;
     --shadow-card: 0 1px 2px rgb(0 0 0 / .4), 0 14px 32px -12px rgb(0 0 0 / .8);
     --shadow-sm: 0 1px 2px rgb(0 0 0 / .4);
     --shadow-fab: 0 2px 4px rgb(0 0 0 / .5), 0 8px 20px -4px rgb(0 0 0 / .7);
@@ -62,8 +67,9 @@
   --bg: #000000; --grouped: #000000; --bar-ink: #f4f1f1; --bar-ink-2: #a39b9b; --bar-press: rgb(255 255 255 / .1);
   --paper: #1c1a1a; --card-line: #2a2626; --chip: #2a2626; --press: #343030;
   --ink: #efebeb; --ink-2: #b6aeae; --ink-3: #807878; --rule: #2f2a2a;
-  --accent: #f26b61; --accent-soft: #3d201e; --hot: #f0473c; --on-accent: #ffffff;
-  --track: #2a2626; --fab: #2c2828; --switch-off: #3b3535; --knob: #ffffff; --mark: #6a5418;
+  --accent: #f26b61; --accent-soft: #3d201e; --hot: #ec726f; --on-accent: #ffffff;
+  --track: #2a2626; --switch-off: #3b3535; --knob: #ffffff; --mark: #6a5418;
+  --fab-top: #48484b; --fab-bottom: #343436; --fab-rim: rgb(255 255 255 / .14); --fab-edge: rgb(0 0 0 / .6); --fab-ink: #ffffff;
   --shadow-card: 0 1px 2px rgb(0 0 0 / .4), 0 14px 32px -12px rgb(0 0 0 / .8);
   --shadow-sm: 0 1px 2px rgb(0 0 0 / .4);
   --shadow-fab: 0 2px 4px rgb(0 0 0 / .5), 0 8px 20px -4px rgb(0 0 0 / .7);
@@ -213,24 +219,30 @@ svg path, svg polyline, svg circle { fill: none; stroke: currentColor; stroke-wi
 .nobr { white-space: nowrap; }
 
 .actions {
-  position: absolute; left: 0; right: 0; bottom: calc(var(--card-gap) + 16px); z-index: 30;
-  display: flex; justify-content: center; align-items: center; gap: 18px;
+  position: absolute; left: 12px; right: 12px; bottom: calc(var(--card-gap) + 14px); z-index: 30;
+  display: grid; grid-template-columns: 66px minmax(0, 1fr) 66px; gap: 12px;
+  max-width: 372px; margin-inline: auto;
   pointer-events: none;
 }
+/* Glassy capsules: a soft top-to-bottom sheen, a bright rim on top and a dark edge around. */
 .fab {
-  pointer-events: auto; display: grid; place-items: center; flex: none;
-  width: 54px; height: 54px; border-radius: 50%; border: 0; padding: 0;
-  background: var(--fab); color: var(--ink); box-shadow: 0 0 0 1px var(--card-line), var(--shadow-fab);
-  cursor: pointer; text-decoration: none; transition: transform .12s ease;
+  pointer-events: auto; display: flex; align-items: center; justify-content: center; gap: 9px;
+  height: 56px; padding: 0; border: 0; border-radius: 999px;
+  background: linear-gradient(180deg, var(--fab-top), var(--fab-bottom));
+  color: var(--fab-ink);
+  box-shadow: inset 0 1px 0 var(--fab-rim), 0 0 0 1px var(--fab-edge), var(--shadow-fab);
+  cursor: pointer; text-decoration: none; transition: transform .12s ease, filter .12s ease;
 }
-.fab svg { width: 24px; height: 24px; }
-.fab:active { transform: scale(.93); }
+.fab svg { width: 25px; height: 25px; }
+.fab svg path { stroke-width: 2; }
+.fab:active { transform: scale(.95); filter: brightness(.94); }
 .fab-pdf {
-  display: flex; gap: 8px; width: auto; min-width: 156px; height: 58px; padding: 0 30px; border-radius: 999px;
-  background: var(--hot); color: var(--on-accent); box-shadow: var(--shadow-fab);
-  font: 600 1.1rem/1 var(--font-ui); letter-spacing: .01em;
+  background: linear-gradient(180deg, #f17e7a, #e96b68);
+  color: #ffffff;
+  box-shadow: inset 0 1px 0 rgb(255 255 255 / .28), 0 0 0 1px rgb(0 0 0 / .12), var(--shadow-fab);
+  font: 600 1.18rem/1 var(--font-ui); letter-spacing: .005em;
 }
-.fab-pdf svg { width: 22px; height: 22px; }
+.fab-pdf svg { width: 24px; height: 24px; }
 #act-save.is-saved { color: var(--hot); }
 #act-save.is-saved svg path { fill: currentColor; }
 

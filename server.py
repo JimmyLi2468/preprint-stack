@@ -71,8 +71,9 @@ def tex_typography(text):
     """Turn TeX quotes and dashes (``x'', ---, --) into real characters, leaving $math$ alone."""
     parts = re.split(r"(\$[^$]*\$)", text)
     for i in range(0, len(parts), 2):
-        parts[i] = (parts[i].replace("``", "\u201c").replace("''", "\u201d")
-                    .replace("---", "\u2014").replace("--", "\u2013"))
+        part = (parts[i].replace("``", "\u201c").replace("''", "\u201d")
+                .replace("---", "\u2014").replace("--", "\u2013"))
+        parts[i] = re.sub("\u201c([^\"\u201c\u201d]*)\"", "\u201c\\1\u201d", part)  # ``x" closed with a plain quote
     return "".join(parts)
 
 
