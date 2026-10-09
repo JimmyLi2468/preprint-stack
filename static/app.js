@@ -186,7 +186,27 @@ function renderMath(el) {
       ],
       throwOnError: false,
     });
+    keepPunctuationWithMath(el);
   } catch { /* leave the LaTeX source visible */ }
+}
+
+/** Stop a line from breaking between a formula and the bracket or comma right after it. */
+function keepPunctuationWithMath(el) {
+  el.querySelectorAll('.katex').forEach(katex => {
+    let math = katex; // auto-render wraps each formula in its own span
+    while (math.parentNode !== el && math.parentNode.childNodes.length === 1) math = math.parentNode;
+    const before = math.previousSibling;
+    const after = math.nextSibling;
+    const lead = before?.nodeType === 3 ? before.data.match(/[(\[{]+$/)?.[0] : null;
+    const trail = after?.nodeType === 3 ? after.data.match(/^[)\]}.,;:!?'’”]+/)?.[0] : null;
+    if (!lead && !trail) return;
+    const wrap = document.createElement('span');
+    wrap.className = 'nobr';
+    math.replaceWith(wrap);
+    if (lead) { before.data = before.data.slice(0, -lead.length); wrap.append(lead); }
+    wrap.append(math);
+    if (trail) { after.data = after.data.slice(trail.length); wrap.append(trail); }
+  });
 }
 
 function loadScript(src) {
@@ -434,7 +454,6 @@ function renderStatus() {
     : !data ? 'Loading…'
     : data.source === 'latest' ? 'Latest submissions'
     : barDay(data.date);
-  $('#status-topics').textContent = prefs.topics.join(', ');
   const position = Math.min(index + 1, stack.length);
   $('#status-count').textContent = data && stack.length ? `${position} of ${stack.length}` : '';
   $('#progress').style.width = data && stack.length ? `${(Math.min(index + 1, stack.length) / stack.length) * 100}%` : '0';
@@ -1008,6 +1027,21 @@ document.addEventListener('visibilitychange', () => {
     loadFeed({ force: true, quiet: true });
   }
 });
+
+// iPhone home-screen apps lay the page out one status bar shorter than the screen while
+// drawing it from the very top, leaving a dead strip at the bottom. Stretch to the real height.
+function fitHomeScreenApp() {
+  const root = document.documentElement;
+  root.classList.toggle('ios-app', navigator.standalone === true);
+  if (navigator.standalone !== true) return;
+  const landscape = matchMedia('(orientation: landscape)').matches;
+  const screenHeight = landscape ? Math.min(screen.width, screen.height) : Math.max(screen.width, screen.height);
+  const gap = screenHeight - window.innerHeight;
+  if (gap > 0 && gap <= 80) root.style.setProperty('--app-height', `${screenHeight}px`); // not when the keyboard is up
+  else if (gap <= 0) root.style.removeProperty('--app-height');
+}
+fitHomeScreenApp();
+window.addEventListener('resize', fitHomeScreenApp);
 
 applyTheme();
 applyAbstractSize();
