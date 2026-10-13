@@ -8,7 +8,7 @@
      "hep-th"
     ],
     "inst": [
-     "Departamento de Física, Universidade Federal da Paraíba, João Pessoa, Paraíba, Brazil",
+     "Departamento de Física, Universidade Federal da Paraíba, Jo\\ ao Pessoa, Paraíba, Brazil",
      "Departamento de Física, Universidade Federal de Campina Grande, Paraíba, Brazil",
      "Center for Theoretical Physics, Khazar University, Baku, Azerbaijan"
     ],
@@ -37,7 +37,7 @@
      "hep-th"
     ],
     "inst": [
-     "Departamento de Física, Universidade Federal da Paraíba, João Pessoa, Paraíba, Brazil"
+     "Departamento de Fí sica, Universidade Federal da Paraíba"
     ],
     "name": "A. Yu. Petrov",
     "paper": "2610.13575"
@@ -84,7 +84,7 @@
      "physics"
     ],
     "inst": [
-     "Dipartimento di Fisica “E.R. Caianiello”, Università degli Studi di Salerno, Italy",
+     "Dipartimento di Fisica ``E.R. Caianiello'', Università degli Studi di Salerno, Italy",
      "Unità CNISM di Salerno, Università degli Studi di Salerno, Italy"
     ],
     "name": "Adolfo Avella",
@@ -277,7 +277,7 @@
      "hep-th"
     ],
     "inst": [
-     "School of Fundamental Physics and Mathematical Sciences, Hangzhou Institute for Advanced Study, UCAS, China",
+     "School of Fundamental Physics and Mathematical, Sciences, Hangzhou Institute for Advanced Study, UCAS, China",
      "Department of Physics, Blackett Laboratory, Imperial College London, UK",
      "International Centre for Theoretical Physics Asia-Pacific, Beijing/Hangzhou, China"
     ],
@@ -308,7 +308,7 @@
      "hep-th"
     ],
     "inst": [
-     "National Institute for Theoretical and Computational Sciences, School of Physics, and Mandelstam Institute for Theoretical Physics, University of the Witwatersrand, Johannesburg, South Africa"
+     "Mandelstam Institute for Theoretical Physics, School of Physics, University of the Witwatersrand, Johannesburg, South Africa"
     ],
     "name": "Anurag Sarkar",
     "paper": "2610.13240"
@@ -379,7 +379,7 @@
      "hep-th"
     ],
     "inst": [
-     "Department of Physics, Nara Women’s University, Nara, Japan"
+     "organization= Department of Physics, Nara Women's University, city= Nara, country= Japan"
     ],
     "name": "Ayane Tezuka",
     "paper": "2610.13191"
@@ -452,7 +452,7 @@
      "hep-th"
     ],
     "inst": [
-     "Facultad de Ciencias Físico Matemáticas, Benemérita Universidad Autónoma de Puebla Avenida San Claudio y 18 Sur, Puebla, Puebla, México"
+     "Facultad de Ciencias Físico Matemáticas, Benemérita Universidad Autónoma de Puebla"
     ],
     "name": "Cupatitzio Ramírez Romero",
     "paper": "2610.13019"
@@ -622,7 +622,7 @@
      "cond-mat"
     ],
     "inst": [
-     "Jülich Centre for Neutron Science (JCNS) at the Heinz Maier-Leibnitz Zentrum (MLZ), Forschungszentrum Jülich, Germany"
+     "IRIG, CEA and Université Grenoble Alpes, CEA Grenoble, France"
     ],
     "name": "Eric Ressouche",
     "paper": "2610.13444"
@@ -865,8 +865,7 @@
      "hep-th"
     ],
     "inst": [
-     "Department of Physics, Swansea University, United Kingdom",
-     "Dipartimento di Fisica e Astronomia, Università di Bologna, Italy"
+     "Department of Physics, Swansea University, United Kingdom, Dipartimento di Fisica e Astronomia, Università di Bologna, Italy"
     ],
     "name": "Gianmassimo Tasinato",
     "paper": "2610.13739"
@@ -978,7 +977,7 @@
     ],
     "inst": [
      "Department of Physics, Indian Institute of Technology Kanpur, India",
-     "MAEER’s Maharashtra Institute of Technology, Mumbai, India"
+     "MAEER's Maharashtra Institute of Technology, Mumbai, India"
     ],
     "name": "Himanshu Chourasiya",
     "paper": "2610.13900"
@@ -1017,7 +1016,7 @@
      "hep-th"
     ],
     "inst": [
-     "Center for Liberal Arts and Sciences, Sanyo-Onoda City University, Sanyo-Onoda, Yamaguchi, Japan"
+     "organization= Center for Liberal Arts and Sciences, Sanyo-Onoda City University, city= Sanyo-Onoda, state= Yamaguchi, country= Japan"
     ],
     "name": "Isao Kishimoto",
     "paper": "2610.13191"
@@ -1268,7 +1267,7 @@
      "cond-mat"
     ],
     "inst": [
-     "Jülich Centre for Neutron Science (JCNS) at the Heinz Maier-Leibnitz Zentrum (MLZ), Forschungszentrum Jülich, Germany"
+     "Jülich Centre for Neutron Science (JCNS) at ILL, Forschungszentrum Jülich, France"
     ],
     "name": "Karin Schmalzl",
     "paper": "2610.13444"
@@ -1314,7 +1313,7 @@
     ],
     "inst": [
      "Department of Physics, Hanyang University, Republic of Korea",
-     "Department of Energy Systems Research, Ajou University, Republic of Korea"
+     "Department of Energy Systems, Research, Ajou University, Republic of Korea"
     ],
     "name": "Kwang Jun Ahn",
     "paper": "2610.13946"
@@ -1369,7 +1368,7 @@
      "hep-th"
     ],
     "inst": [
-     "Beijing Institute of Mathematical Sciences and Applications (BIMSA), China"
+     "Beijing Institute of Mathematical Sciences, and Applications (BIMSA), China"
     ],
     "name": "Laurentiu Rodina",
     "paper": "2610.12615"
@@ -1384,7 +1383,7 @@
      "hep-th"
     ],
     "inst": [
-     "Department of Astrophysics/IMAPP, Radboud University, The Netherlands empty preface empty"
+     "Department of Astrophysics/IMAPP, Radboud University, The Netherlands"
     ],
     "name": "Lieke van Son",
     "paper": "2610.13514"
@@ -1483,7 +1482,7 @@
      "hep-th"
     ],
     "inst": [
-     "School of Physics, Institute for Research in Fundamental Sciences (IPM), Tehran, Iran"
+     "School of Physics, Institute for Research in Fundamental, Sciences (IPM), Tehran, Iran"
     ],
     "name": "M. Shams Nejati",
     "paper": "2610.13150"
@@ -1736,7 +1735,7 @@
      "hep-th"
     ],
     "inst": [
-     "Facultad de Ciencias Físico Matemáticas, Benemérita Universidad Autónoma de Puebla Avenida San Claudio y 18 Sur, Puebla, Puebla, México"
+     "Facultad de Ciencias Físico Matemáticas, Benemérita Universidad Autónoma de Puebla"
     ],
     "name": "Nephtalí Eliceo Martínez Pérez",
     "paper": "2610.13019"
@@ -1843,7 +1842,7 @@
      "cond-mat"
     ],
     "inst": [
-     "Jülich Centre for Neutron Science (JCNS) at the Heinz Maier-Leibnitz Zentrum (MLZ), Forschungszentrum Jülich, Germany"
+     "Institut Laue-Langevin, France"
     ],
     "name": "Oscar Fabelo",
     "paper": "2610.13444"
@@ -1973,7 +1972,7 @@
      "hep-th"
     ],
     "inst": [
-     "CBPF − - Centro Brasileiro de Pesquisas Físicas, Rio de Janeiro, Brazil",
+     "CBPF Centro Brasileiro de Pesquisas Físicas, Rio de Janeiro, Brazil",
      "KU Leuven Campus Kortrijk-Kulak, Department of Physics, Belgium"
     ],
     "name": "Philipe De Fabritiis",
@@ -2030,8 +2029,7 @@
      "cond-mat"
     ],
     "inst": [
-     "School of Physical Sciences, Indian Institute of Technology Mandi, Kamand, India",
-     "National Synchrotron Light Source-II, Brookhaven National Laboratory, Upton, USA"
+     "School of Physical Sciences, Indian Institute of Technology Mandi, Kamand, India"
     ],
     "name": "R. Bindu",
     "paper": "2610.13155"
@@ -2557,7 +2555,7 @@
      "hep-th"
     ],
     "inst": [
-     "Instituto de Física, Universidade Federal de Alagoas, Maceió, Alagoas, Brazil"
+     "Instituto de Fí sica, Universidade Federal de Alagoas, Maceió, Alagoas, Brazil"
     ],
     "name": "T. Mariz",
     "paper": "2610.13575"
@@ -2672,7 +2670,7 @@
      "hep-th"
     ],
     "inst": [
-     "Department of Physics, Nara Women’s University, Nara, Japan"
+     "organization= Department of Physics, Nara Women's University, city= Nara, country= Japan"
     ],
     "name": "Tomohiko Takahashi",
     "paper": "2610.13191"
@@ -2712,7 +2710,7 @@
      "hep-th"
     ],
     "inst": [
-     "Instituto de Física, Universidade Federal de Alagoas, Maceió, Alagoas, Brazil"
+     "Instituto de Fí sica, Universidade Federal de Alagoas, Maceió, Alagoas, Brazil"
     ],
     "name": "V. Prata",
     "paper": "2610.13575"
@@ -2865,19 +2863,6 @@
     "paper": "2610.13899"
    }
   ],
-  "wellisson b de lima": [
-   {
-    "date": "2026-10-12",
-    "fields": [
-     "hep-th"
-    ],
-    "inst": [
-     "KU Leuven Campus Kortrijk-Kulak, Department of Physics, Belgium"
-    ],
-    "name": "Wellisson B. De Lima",
-    "paper": "2610.13284"
-   }
-  ],
   "wilfrid prellier": [
    {
     "date": "2026-10-12",
@@ -2898,7 +2883,7 @@
      "cond-mat"
     ],
     "inst": [
-     "Jülich Centre for Neutron Science (JCNS) at the Heinz Maier-Leibnitz Zentrum (MLZ), Forschungszentrum Jülich, Germany"
+     "Jülich Centre for Neutron Science (JCNS) at ILL, Forschungszentrum Jülich, France"
     ],
     "name": "Wolfgang Schmidt",
     "paper": "2610.13444"
@@ -2937,10 +2922,7 @@
      "cond-mat"
     ],
     "inst": [
-     "Jülich Centre for Neutron Science (JCNS) at the Heinz Maier-Leibnitz Zentrum (MLZ), Forschungszentrum Jülich, Germany",
-     "Jülich Centre for Neutron Science (JCNS) at ILL, Forschungszentrum Jülich, France",
-     "IRIG, CEA and Université Grenoble Alpes, CEA Grenoble, France",
-     "Institut Laue-Langevin, France"
+     "Jülich Centre for Neutron Science (JCNS) at the Heinz Maier-Leibnitz Zentrum (MLZ), Forschungszentrum Jülich, Germany"
     ],
     "name": "Yixi Su",
     "paper": "2610.13444"
@@ -2953,7 +2935,7 @@
      "hep-th"
     ],
     "inst": [
-     "School of Fundamental Physics and Mathematical Sciences, Hangzhou Institute for Advanced Study, UCAS, China",
+     "School of Fundamental Physics and Mathematical, Sciences, Hangzhou Institute for Advanced Study, UCAS, China",
      "Institute of Theoretical Physics, Chinese Academy of Sciences, China",
      "University of Chinese Academy of Sciences, China"
     ],
