@@ -46,6 +46,15 @@ GitHub pauses scheduled workflows in a repository that has had no commits for 60
 
 To try the hosted build on your computer: `python3 build_site.py`, then serve the `_site` folder with any static file server.
 
+## Author affiliations
+
+For papers in hep-th and cond-mat.str-el, including papers cross-listed into them, author names with a dotted underline show their institution when tapped.
+
+- The daily job reads affiliations from each paper's first page: arXiv's HTML version where it marks up authors, otherwise the title page in the LaTeX source. It only keeps confident matches and leaves the rest out rather than guessing.
+- When a paper doesn't list someone's institution, the app shows the most recent one seen on their other papers from the last ~18 months, labeled "Last listed" with the date. Those come from `index/authors.json`, which the job adds to and saves back to the repository each day. That daily save also keeps GitHub from pausing the job.
+- To fix a mistake, add the person to `index/overrides.json`.
+- To change which categories get affiliations, edit `AFFILIATION_TOPICS` in `build_site.py`. Each category adds a few minutes to the build.
+
 ## How it works
 
 - Each day's papers come from arXiv's announcement RSS feeds (`rss.arxiv.org`), one feed per topic. A paper that shows up in several of your topics appears once.
@@ -57,6 +66,8 @@ To try the hosted build on your computer: `python3 build_site.py`, then serve th
 
 - `server.py`: local web server and arXiv fetching
 - `build_site.py`: builds the hosted copy with every category's papers prefetched
+- `affiliations.py`: reads author affiliations from papers and keeps the author index
+- `index/authors.json`, `index/overrides.json`: the author index and manual corrections
 - `.github/workflows/publish.yml`: rebuilds and publishes the hosted copy each weekday
 - `static/index.html`, `static/app.css`, `static/app.js`: the app
 - `static/taxonomy.js`: arXiv's category list, generated from https://arxiv.org/category_taxonomy

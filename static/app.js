@@ -119,18 +119,34 @@ function fillText(el, text, pattern) {
   renderMath(el);
 }
 
-function fillAuthors(el, authors) {
-  if (authors.length <= AUTHOR_PREVIEW + 1) {
-    el.textContent = authors.join(', ');
-    return;
+/** Author names; ones with a known institution become buttons that open the affiliation popup. */
+function fillAuthors(el, paper, showAll = false) {
+  const { authors } = paper;
+  const affiliations = paper.affiliations || [];
+  const count = showAll || authors.length <= AUTHOR_PREVIEW + 1 ? authors.length : AUTHOR_PREVIEW;
+  el.textContent = '';
+  for (let i = 0; i < count; i++) {
+    if (i) el.append(', ');
+    if (affiliations[i]?.inst?.length) {
+      const name = document.createElement('button');
+      name.type = 'button';
+      name.className = 'author';
+      name.dataset.author = String(i);
+      name.textContent = authors[i];
+      el.append(name);
+    } else {
+      el.append(authors[i]);
+    }
   }
-  el.textContent = `${authors.slice(0, AUTHOR_PREVIEW).join(', ')}, `;
-  const more = document.createElement('button');
-  more.type = 'button';
-  more.className = 'link-button';
-  more.textContent = `+${authors.length - AUTHOR_PREVIEW} more`;
-  more.addEventListener('click', () => { el.textContent = authors.join(', '); });
-  el.append(more);
+  if (count < authors.length) {
+    el.append(', ');
+    const more = document.createElement('button');
+    more.type = 'button';
+    more.className = 'link-button';
+    more.textContent = `+${authors.length - count} more`;
+    more.addEventListener('click', () => fillAuthors(el, paper, true));
+    el.append(more);
+  }
 }
 
 async function copyText(text) {
@@ -392,7 +408,7 @@ function buildCard(paper) {
       <p class="abstract"></p>
     </div>`;
   fillText($('.card-title a', el), paper.title, pattern);
-  fillAuthors($('.card-authors', el), paper.authors);
+  fillAuthors($('.card-authors', el), paper);
   fillText($('.abstract', el), paper.abstract, pattern);
   el.addEventListener('animationend', () => el.classList.remove('entering'), { once: true });
   return el;
@@ -486,6 +502,7 @@ const OFF_LEFT = 'translateX(calc(-100% - 8vw)) rotate(-14deg)';
 function next() {
   if (index >= stack.length) return;
   closeShareMenu();
+  closeAffiliation();
   const paper = stack[index];
   const key = paperKey(paper);
   const el = cardEls.get(key);
@@ -515,6 +532,7 @@ function flyOut(el) {
 function prev(incoming) {
   if (index === 0) return;
   closeShareMenu();
+  closeAffiliation();
   const paper = stack[index - 1];
   const key = paperKey(paper);
   deckEl.querySelectorAll(`.card.leaving[data-key="${CSS.escape(key)}"]`).forEach(el => el.remove());
@@ -687,6 +705,11 @@ function topElement() {
 })();
 
 deckEl.addEventListener('click', e => {
+  const author = e.target.closest('.author');
+  if (author) {
+    showAffiliation(author, author.closest('.card').paper);
+    return;
+  }
   const button = e.target.closest('[data-action]');
   if (!button) return;
   const action = button.dataset.action;
@@ -695,7 +718,7 @@ deckEl.addEventListener('click', e => {
 });
 
 document.addEventListener('keydown', e => {
-  if (e.key === 'Escape') { closeShareMenu(); return; }
+  if (e.key === 'Escape') { closeShareMenu(); closeAffiliation(); return; }
   if (currentView !== 'stack' || e.metaKey || e.ctrlKey || e.altKey) return;
   if (e.target.closest('input, textarea, select, [role="menu"]')) return;
   const top = stack[index] && cardEls.get(paperKey(stack[index]));
@@ -711,6 +734,50 @@ document.addEventListener('keydown', e => {
   }
   e.preventDefault();
 });
+
+// ================================================================ affiliation popup
+
+const affPop = $('#aff-pop');
+
+function showAffiliation(button, paper) {
+  const i = Number(button.dataset.author);
+  const info = paper.affiliations?.[i];
+  if (!info) return;
+  const key = `${paper.id}:${i}`;
+  if (!affPop.hidden && affPop.dataset.for === key) { closeAffiliation(); return; }
+  affPop.dataset.for = key;
+  $('.aff-name', affPop).textContent = paper.authors[i];
+  $('.aff-list', affPop).replaceChildren(...info.inst.map(text => {
+    const li = document.createElement('li');
+    li.textContent = text;
+    return li;
+  }));
+  const asOf = parseDay(info.asOf)?.toLocaleDateString('en-US', { month: 'short', year: 'numeric' });
+  const note = info.note === 'manual' ? 'Added by hand'
+    : info.asOf ? `Not listed on this paper. Last listed ${asOf}, arXiv:${info.via}` : '';
+  $('.aff-note', affPop).textContent = note;
+  $('.aff-note', affPop).hidden = !note;
+
+  affPop.hidden = false;
+  const r = button.getBoundingClientRect();
+  const m = affPop.getBoundingClientRect();
+  let top = r.bottom + 8;
+  if (top + m.height > window.innerHeight - 10) top = Math.max(10, r.top - m.height - 8);
+  const left = Math.min(Math.max(10, r.left - 6), window.innerWidth - m.width - 10);
+  affPop.style.top = `${top}px`;
+  affPop.style.left = `${left}px`;
+}
+
+function closeAffiliation() {
+  affPop.hidden = true;
+  delete affPop.dataset.for;
+}
+
+document.addEventListener('pointerdown', e => {
+  if (!affPop.hidden && !affPop.contains(e.target) && !e.target.closest('.author')) closeAffiliation();
+});
+deckEl.addEventListener('scroll', closeAffiliation, true);
+window.addEventListener('resize', closeAffiliation);
 
 // ================================================================ sharing
 
@@ -1073,6 +1140,7 @@ function route() {
     else link.removeAttribute('aria-current');
   });
   closeShareMenu();
+  closeAffiliation();
   if (view === 'stack') { renderStatus(); loadFeed(); }
   else if (view === 'list') {
     if (feed && stackDirty) buildStack();

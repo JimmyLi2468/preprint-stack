@@ -21,10 +21,15 @@ from concurrent.futures import ThreadPoolExecutor
 from datetime import datetime, timezone
 from pathlib import Path
 
+import affiliations
 import server
 
 ROOT = Path(__file__).resolve().parent
 STATIC_MARKER = '<meta name="preprint-stack-data" content="static">'
+# Categories whose papers (including cross-lists into them) get author affiliations.
+AFFILIATION_TOPICS = "hep-th,cond-mat.str-el"
+INDEX_PATH = ROOT / "index" / "authors.json"
+OVERRIDES_PATH = ROOT / "index" / "overrides.json"
 
 
 def all_categories():
@@ -63,10 +68,73 @@ def build_category(code, previous_url):
     return feed, "empty"
 
 
+def published_affiliations(previous_url, codes):
+    """Affiliations the published site already has, so a rebuild doesn't fetch the papers again."""
+    known = {}
+    for code in codes if previous_url else []:
+        try:
+            published = json.loads(server.fetch(f"{previous_url.rstrip('/')}/data/{code}.json"))
+        except Exception:
+            continue
+        for paper in published.get("papers", []):
+            if "affiliations" in paper:
+                known[paper["id"] + paper["version"]] = paper["affiliations"]
+    return known
+
+
+def from_paper(entry):
+    return bool(entry) and "asOf" not in entry and "note" not in entry
+
+
+def add_affiliations(feeds, topics, previous_url, index, today):
+    """Attach an affiliations list (one entry per author, or null) to papers in the chosen topics."""
+    targets = {}
+    for code in topics:
+        for paper in feeds.get(code, {}).get("papers", []):
+            targets.setdefault(paper["id"], paper)
+    known = published_affiliations(previous_url, topics)
+    fetcher = affiliations.Fetcher()
+    stats = Counter()
+    results = {}
+    for paper_id, paper in targets.items():
+        key = paper["id"] + paper["version"]
+        if "affiliations" in paper:          # carried over from the published site (weekends)
+            entries = paper["affiliations"]
+        elif key in known:                   # worked out earlier today
+            entries = known[key]
+            stats["reused"] += 1
+        elif paper["type"] in ("new", "cross"):
+            found = affiliations.paper_affiliations(paper, fetcher)
+            entries = [{"inst": found[a]} if found.get(a) else None for a in paper["authors"]]
+            stats["read"] += 1
+            if stats["read"] % 25 == 0:
+                print(f"  read {stats['read']} of up to {len(targets)} papers", flush=True)
+        else:                                # updated versions of older papers: rely on the index
+            entries = [None] * len(paper["authors"])
+        day = paper.get("date") or today
+        for author, entry in zip(paper["authors"], entries):
+            if from_paper(entry):
+                index.add(author, entry["inst"], day, paper["id"], paper["categories"])
+        entries = [entry if from_paper(entry) else index.fallback(author, paper["categories"], today)
+                   for author, entry in zip(paper["authors"], entries)]
+        results[paper_id] = entries
+        stats["authors"] += len(entries)
+        stats["from paper"] += sum(1 for e in entries if from_paper(e))
+        stats["from index"] += sum(1 for e in entries if e and not from_paper(e))
+    for feed in feeds.values():
+        for paper in feed.get("papers", []):
+            if paper["id"] in results:
+                paper["affiliations"] = results[paper["id"]]
+    return len(targets), stats
+
+
 def main():
     parser = argparse.ArgumentParser(description="Build the static, hostable version of Preprint Stack.")
     parser.add_argument("--out", default="_site", help="output folder (default: _site)")
     parser.add_argument("--previous", default="", help="address of the currently published site")
+    parser.add_argument("--affiliations", default=AFFILIATION_TOPICS,
+                        help="comma-separated categories to find author affiliations for ('' to skip)")
+    parser.add_argument("--index", default=str(INDEX_PATH), help="author index file to read and update")
     args = parser.parse_args()
 
     out = Path(args.out).resolve()
@@ -88,23 +156,38 @@ def main():
     statuses = Counter()
     failures = []
     started = time.time()
+    feeds = {}
     with ThreadPoolExecutor(max_workers=4) as pool:
         for code, (feed, status) in zip(codes, pool.map(lambda c: build_category(c, args.previous), codes)):
             feed.setdefault("builtAt", built_at)
-            payload = json.dumps({"category": code, **feed}, ensure_ascii=False, separators=(",", ":"))
-            (data_dir / f"{code}.json").write_text(payload, encoding="utf-8")
+            feeds[code] = feed
             statuses[status] += 1
             if status == "failed":
                 failures.append(f"{code} ({feed['error']})")
-
-    size_mb = sum(f.stat().st_size for f in data_dir.iterdir()) / 1e6
-    print(f"Built {len(codes)} categories into {out} in {time.time() - started:.0f}s ({size_mb:.1f} MB of data)")
+    print(f"Fetched {len(codes)} categories in {time.time() - started:.0f}s")
     print("  " + ", ".join(f"{n} {status}" for status, n in statuses.most_common()))
     if failures:
         print("  Failed: " + "; ".join(failures))
     # If arXiv was unreachable, stop here rather than publish a site with no papers.
     if statuses["failed"] > len(codes) / 2:
         sys.exit("More than half of the categories failed to load; not publishing.")
+
+    topics = [t.strip() for t in args.affiliations.split(",") if t.strip() in feeds]
+    if topics:
+        started = time.time()
+        index = affiliations.AuthorIndex(args.index, OVERRIDES_PATH)
+        today = datetime.now(timezone.utc).date().isoformat()
+        count, stats = add_affiliations(feeds, topics, args.previous, index, today)
+        index.save()
+        print(f"Affiliations for {count} papers in {', '.join(topics)} in {time.time() - started:.0f}s: "
+              f"read {stats['read']}, reused {stats['reused']}; {stats['from paper']} of {stats['authors']} authors "
+              f"from the paper, {stats['from index']} from the author index")
+
+    for code, feed in feeds.items():
+        payload = json.dumps({"category": code, **feed}, ensure_ascii=False, separators=(",", ":"))
+        (data_dir / f"{code}.json").write_text(payload, encoding="utf-8")
+    size_mb = sum(f.stat().st_size for f in data_dir.iterdir()) / 1e6
+    print(f"Wrote {len(codes)} categories to {out} ({size_mb:.1f} MB of data)")
 
 
 if __name__ == "__main__":

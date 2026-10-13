@@ -1,0 +1,3 @@
+{
+  "_readme": "Manual affiliation fixes. Map an author's full name, as arXiv lists it, to their institutions, e.g. \"Jane Doe\": [\"Perimeter Institute for Theoretical Physics, Waterloo, Canada\"]. These fill in when a paper doesn't list the author's affiliation; what a paper itself lists always comes first."
+}
