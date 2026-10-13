@@ -1,9 +1,10 @@
 """Find where each author of a new arXiv paper works, and remember it in a small author index.
 
-Affiliations come from the paper itself: first arXiv's HTML version, whose author block marks each
-author's institutions, and otherwise the title page in the LaTeX source, where we look up the names
-arXiv already gives us and follow their superscript markers to the institutions. Only confident
-matches are kept; anything ambiguous is left out rather than guessed.
+Affiliations come from the paper itself: first the title page in the LaTeX source, where we look up
+the names arXiv already gives us and follow their superscript markers to the institutions, then
+arXiv's HTML version for anyone still missing. (On a day of hep-th and cond-mat.str-el papers the
+source answered more authors and made fewer mistakes than the HTML; the HTML's converter sometimes
+guesses who belongs where.) Only confident matches are kept; anything ambiguous is left out.
 
 The author index remembers the most recent institutions seen for each person, so a paper that
 doesn't list affiliations can still show "last listed" ones. It is only ever added to, newest first.
@@ -22,6 +23,8 @@ from pathlib import Path
 
 import server
 
+# Bump when the reading logic changes, so the next build re-reads papers instead of reusing old results.
+METHOD = 2
 HTML_URL = "https://arxiv.org/html/{}"
 SOURCE_URL = "https://export.arxiv.org/e-print/{}"
 MAX_SOURCE_BYTES = 40_000_000
@@ -125,6 +128,8 @@ def from_html(page, title=""):
         affs = [a for a in affs if a]
         if clean_name and affs:
             found.append((clean_name, affs))
+    if any(re.search(r"\d", n) for n, _ in found):
+        return []  # marker digits left in the names: the converter guessed who belongs where
     return found
 
 
@@ -212,7 +217,9 @@ def to_text(tex):
     s = re.sub(r"\\(textsuperscript|inst)\s*{([^{}]*(?:{[^{}]*}[^{}]*)*)}", sup_or_text, s)
     s = re.sub(r"\$[^$]*\$", " ", s)
     s = re.sub(r"\\(footnote|thanks|email|emailAdd|ead|orcid|vspace|hspace|vskip|hskip|date|subheader|preprint|"
-               r"includegraphics|title|maketitle|keywords|pacs)\*?\s*(\[[^\]]*\])?\s*{[^{}]*({[^{}]*}[^{}]*)*}", " ", s)
+               r"includegraphics|title|maketitle|keywords|pacs|thispagestyle|pagestyle|pagenumbering|setcounter|"
+               r"addtocounter|setlength|label|cite|ref|eqref|color|textcolor|bibliographystyle|hypersetup|"
+               r"input|include|usepackage)\*?\s*(\[[^\]]*\])?\s*{[^{}]*({[^{}]*}[^{}]*)*}", " ", s)
     s = re.sub(r"\\(begin|end)\s*{[^}]*}", "\n", s)
     s = re.sub(r"\\\\(\[[^\]]*\])?|\\par\b|\\newline\b", "\n", s)
     s = s.replace("~", " ").replace("\\&", "&").replace("\\,", " ")
@@ -275,11 +282,17 @@ def from_source(data, authors, title=""):
     result, pending = {}, []
     for i, (a, s, e) in enumerate(order):
         stop = order[i + 1][1] if i + 1 < len(order) else len(text)
-        segment = re.sub(r"^\s*(,|and\b)\s*", "", text[e:stop].strip())
+        segment = re.sub(r"^(\s*(,|and\b|&))+\s*", "", text[e:stop].strip())
         if OPEN in segment:
             return {}  # markers we couldn't pair up: don't guess
         paragraphs = [re.sub(r"\s*\n\s*", ", ", p) for p in re.split(r"\n\s*\n", segment)]
         affs = [x for x in (clean_affiliation(p, title) for p in paragraphs) if x]
+        leftover = re.sub(r"\S+@\S+|https?://\S+|[-+]?\d*\.?\d+\s?(pt|em|ex|cm|mm)\b", " ", segment)
+        if not affs and re.search(r"[A-Za-z]{3,}", leftover):
+            # Something is listed for these authors but it isn't an institution (a home address,
+            # say). Leave them blank rather than let them inherit the next person's institution.
+            pending = []
+            continue
         pending.append(a)
         if affs:
             if len(pending) > 1 and len(affs) > 1:
@@ -311,20 +324,33 @@ class Fetcher:
             self.last[host] = time.time()
 
 
+GENERIC_WORDS = {
+    "school", "department", "dept", "faculty", "institute", "division", "laboratory", "group", "center", "centre",
+    "of", "the", "and", "for", "in", "physics", "physical", "sciences", "science", "mathematics", "mathematical",
+    "theoretical", "applied", "research", "engineering", "graduate", "astronomy", "natural"}
+
+
+def is_vague(institutions):
+    """True when every entry is generic words only, e.g. 'School of Physical Sciences'."""
+    return all(set(name_key(x).split()) <= GENERIC_WORDS for x in institutions)
+
+
 def paper_affiliations(paper, fetcher):
     """{author: [institution, ...]} for the authors we could match confidently."""
     ident = paper["id"] + paper["version"]
     authors = paper["authors"]
-    result = {}
-    page = fetcher.get(HTML_URL.format(ident), gap=1.0)
-    if page:
-        result = match_names(authors, from_html(page.decode("utf-8", "replace"), paper["title"]))
-    if len(result) < len(authors):
-        source = fetcher.get(SOURCE_URL.format(ident), gap=3.0)
-        more = from_source(source, authors, paper["title"])
-        for a in authors:
-            if a not in result and more.get(a):
-                result[a] = more[a]
+    source = fetcher.get(SOURCE_URL.format(ident), gap=3.0)
+    result = {a: v for a, v in from_source(source, authors, paper["title"]).items() if v}
+    missing = [a for a in authors if a not in result]
+    vague = [a for a in result if is_vague(result[a])]
+    if missing or vague:
+        page = fetcher.get(HTML_URL.format(ident), gap=1.0)
+        from_page = match_names(authors, from_html(page.decode("utf-8", "replace"), paper["title"])) if page else {}
+        for a in missing + vague:
+            if from_page.get(a) and not is_vague(from_page[a]):
+                result[a] = from_page[a]
+            elif a in missing and from_page.get(a):
+                result[a] = from_page[a]
     return {a: list(dict.fromkeys(short_affiliation(x) for x in affs)) for a, affs in result.items()}
 
 
@@ -351,19 +377,29 @@ class AuthorIndex:
 
     def add(self, name, institutions, day, paper_id, categories):
         entries = self.data["authors"].setdefault(name_key(name), [])
-        if any(e["paper"] == paper_id for e in entries):
-            return
+        entries[:] = [e for e in entries if e["paper"] != paper_id]  # a re-read replaces the old entry
         entries.append({"name": name, "inst": institutions, "date": day, "paper": paper_id,
                         "fields": sorted(archives(categories))})
         entries.sort(key=lambda e: e["date"], reverse=True)
         del entries[self.KEEP:]
 
-    def fallback(self, name, categories, today):
+    def forget(self, name, paper_id):
+        """Drop what an earlier read of this paper said about this person."""
+        key = name_key(name)
+        entries = [e for e in self.data["authors"].get(key, []) if e["paper"] != paper_id]
+        if entries:
+            self.data["authors"][key] = entries
+        else:
+            self.data["authors"].pop(key, None)
+
+    def fallback(self, name, categories, today, paper_id=None):
         """A manual correction, else the newest listing in the same field from the last ~18 months."""
         key = name_key(name)
         if key in self.overrides:
             return {"inst": self.overrides[key], "note": "manual"}
         for e in self.data["authors"].get(key, []):
+            if e["paper"] == paper_id:
+                continue  # never offer a paper's own (earlier) reading as a fallback for itself
             recent = (date.fromisoformat(today) - date.fromisoformat(e["date"])).days <= self.MAX_AGE_DAYS
             if recent and archives(categories) & set(e["fields"]):
                 return {"inst": e["inst"], "asOf": e["date"], "via": e["paper"]}

@@ -77,7 +77,7 @@ def published_affiliations(previous_url, codes):
         except Exception:
             continue
         for paper in published.get("papers", []):
-            if "affiliations" in paper:
+            if "affiliations" in paper and paper.get("affMethod") == affiliations.METHOD:
                 known[paper["id"] + paper["version"]] = paper["affiliations"]
     return known
 
@@ -98,14 +98,16 @@ def add_affiliations(feeds, topics, previous_url, index, today):
     results = {}
     for paper_id, paper in targets.items():
         key = paper["id"] + paper["version"]
-        if "affiliations" in paper:          # carried over from the published site (weekends)
-            entries = paper["affiliations"]
+        fresh = False
+        if "affiliations" in paper and paper.get("affMethod") == affiliations.METHOD:
+            entries = paper["affiliations"]  # carried over from the published site (weekends)
         elif key in known:                   # worked out earlier today
             entries = known[key]
             stats["reused"] += 1
         elif paper["type"] in ("new", "cross"):
             found = affiliations.paper_affiliations(paper, fetcher)
             entries = [{"inst": found[a]} if found.get(a) else None for a in paper["authors"]]
+            fresh = True
             stats["read"] += 1
             if stats["read"] % 25 == 0:
                 print(f"  read {stats['read']} of up to {len(targets)} papers", flush=True)
@@ -115,7 +117,9 @@ def add_affiliations(feeds, topics, previous_url, index, today):
         for author, entry in zip(paper["authors"], entries):
             if from_paper(entry):
                 index.add(author, entry["inst"], day, paper["id"], paper["categories"])
-        entries = [entry if from_paper(entry) else index.fallback(author, paper["categories"], today)
+            elif fresh:
+                index.forget(author, paper["id"])
+        entries = [entry if from_paper(entry) else index.fallback(author, paper["categories"], today, paper["id"])
                    for author, entry in zip(paper["authors"], entries)]
         results[paper_id] = entries
         stats["authors"] += len(entries)
@@ -125,6 +129,7 @@ def add_affiliations(feeds, topics, previous_url, index, today):
         for paper in feed.get("papers", []):
             if paper["id"] in results:
                 paper["affiliations"] = results[paper["id"]]
+                paper["affMethod"] = affiliations.METHOD
     return len(targets), stats
 
 

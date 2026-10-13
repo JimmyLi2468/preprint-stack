@@ -50,7 +50,7 @@ To try the hosted build on your computer: `python3 build_site.py`, then serve th
 
 For papers in hep-th and cond-mat.str-el, including papers cross-listed into them, author names with a dotted underline show their institution when tapped.
 
-- The daily job reads affiliations from each paper's first page: arXiv's HTML version where it marks up authors, otherwise the title page in the LaTeX source. It only keeps confident matches and leaves the rest out rather than guessing.
+- The daily job reads affiliations from each paper's title page in the LaTeX source, then arXiv's HTML version for anyone still missing. In a comparison on a day of hep-th and cond-mat.str-el papers, the source answered more authors and made fewer mistakes than the HTML or the PDF. It only keeps confident matches and leaves the rest out rather than guessing.
 - When a paper doesn't list someone's institution, the app shows the most recent one seen on their other papers from the last ~18 months, labeled "Last listed" with the date. Those come from `index/authors.json`, which the job adds to and saves back to the repository each day. That daily save also keeps GitHub from pausing the job.
 - To fix a mistake, add the person to `index/overrides.json`.
 - To change which categories get affiliations, edit `AFFILIATION_TOPICS` in `build_site.py`. Each category adds a few minutes to the build.
