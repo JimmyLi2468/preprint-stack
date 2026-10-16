@@ -15,6 +15,20 @@
   ],
   "a a araujo filho": [
    {
+    "date": "2026-10-16",
+    "fields": [
+     "gr-qc",
+     "hep-th"
+    ],
+    "inst": [
+     "Departamento de Física, Universidade Federal da Paraíba, Jo\\ ao Pessoa, Paraíba, Brazil",
+     "Departamento de Física, Universidade Federal de Campina Grande, Paraíba, Brazil",
+     "Center for Theoretical Physics, Khazar University, Baku, Azerbaijan"
+    ],
+    "name": "A. A. Araújo Filho",
+    "paper": "2610.21701"
+   },
+   {
     "date": "2026-10-12",
     "fields": [
      "gr-qc",
@@ -102,6 +116,22 @@
     "paper": "2610.16682"
    }
   ],
+  "a de santis": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "hep-lat",
+     "hep-ph",
+     "hep-th"
+    ],
+    "inst": [
+     "Helmholtz-Institut Mainz, Johannes Gutenberg-Universität Mainz",
+     "GSI Helmholtz Centre for Heavy Ion Research, Germany"
+    ],
+    "name": "A. De Santis",
+    "paper": "2610.22224"
+   }
+  ],
   "a e feiguin": [
    {
     "date": "2026-10-14",
@@ -113,6 +143,35 @@
     ],
     "name": "A. E. Feiguin",
     "paper": "2610.15230"
+   }
+  ],
+  "a evangelista": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "hep-lat",
+     "hep-ph",
+     "hep-th"
+    ],
+    "inst": [
+     "Department of Physics, University of Cyprus, Cyprus"
+    ],
+    "name": "A. Evangelista",
+    "paper": "2610.22224"
+   }
+  ],
+  "a fujimori": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "cond-mat"
+    ],
+    "inst": [
+     "National Synchrotron Radiation Research Center, Taiwan",
+     "Department of Physics, University of Tokyo, Bunkyo-ku, Japan"
+    ],
+    "name": "A. Fujimori",
+    "paper": "2610.21305"
    }
   ],
   "a gonzalez parra": [
@@ -155,6 +214,20 @@
     "paper": "2610.16439"
    }
   ],
+  "a hromov": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "cond-mat"
+    ],
+    "inst": [
+     "Jožef Stefan Institute, Slovenia",
+     "Faculty of Mathematics and Physics, University of Ljubljana, Slovenia"
+    ],
+    "name": "A. Hromov",
+    "paper": "2610.21523"
+   }
+  ],
   "a khansili": [
    {
     "date": "2026-10-14",
@@ -194,6 +267,32 @@
     ],
     "name": "A. Pandey",
     "paper": "2610.12726"
+   }
+  ],
+  "a prokofiev": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "cond-mat"
+    ],
+    "inst": [
+     "Institute of Solid State Physics, Vienna University of Technology, Austria"
+    ],
+    "name": "A. Prokofiev",
+    "paper": "2610.21523"
+   }
+  ],
+  "a r pereira": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "cond-mat"
+    ],
+    "inst": [
+     "Departamento de Física, Universidade Federal de Viçosa, Viçosa, Brazil"
+    ],
+    "name": "A. R. Pereira",
+    "paper": "2610.22140"
    }
   ],
   "a ramesh chandra": [
@@ -250,6 +349,19 @@
     "paper": "2610.16961"
    }
   ],
+  "a solodovnyk": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "cond-mat"
+    ],
+    "inst": [
+     "Physics Department, Villanova University, Villanova, USA"
+    ],
+    "name": "A. Solodovnyk",
+    "paper": "2610.21875"
+   }
+  ],
   "a wereszczynski": [
    {
     "date": "2026-10-14",
@@ -275,6 +387,20 @@
     ],
     "name": "A. Yu. Petrov",
     "paper": "2610.13575"
+   }
+  ],
+  "a zorko": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "cond-mat"
+    ],
+    "inst": [
+     "Jožef Stefan Institute, Slovenia",
+     "Faculty of Mathematics and Physics, University of Ljubljana, Slovenia"
+    ],
+    "name": "A. Zorko",
+    "paper": "2610.21523"
    }
   ],
   "aaghaz mahajan": [
@@ -304,6 +430,33 @@
     ],
     "name": "Aaron Bostwick",
     "paper": "2610.15236"
+   }
+  ],
+  "aaron miller": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "cond-mat",
+     "quant-ph"
+    ],
+    "inst": [
+     "School of Physics, Trinity College Dublin, College Green, Ireland ["
+    ],
+    "name": "Aaron Miller",
+    "paper": "2610.21000"
+   }
+  ],
+  "abdelmoneim elkhouly": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "cond-mat"
+    ],
+    "inst": [
+     "Physics Department, Faculty of Science, Damanhour University, Egypt"
+    ],
+    "name": "Abdelmoneim Elkhouly",
+    "paper": "2610.22253"
    }
   ],
   "abdias aires": [
@@ -353,6 +506,20 @@
     ],
     "name": "Abhijeet Mishra",
     "paper": "2610.16733"
+   }
+  ],
+  "abhisek samanta": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "cond-mat"
+    ],
+    "inst": [
+     "Department of Physics, Indian Institute of Technology Gandhinagar, India",
+     "Department of Physics, The Ohio State University, USA"
+    ],
+    "name": "Abhisek Samanta",
+    "paper": "2610.20734"
    }
   ],
   "abhishek menon": [
@@ -416,6 +583,21 @@
     ],
     "name": "Adolfo Avella",
     "paper": "2610.13251"
+   }
+  ],
+  "adolfo cisterna": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "gr-qc",
+     "hep-th"
+    ],
+    "inst": [
+     "Sede Esmeralda, Universidad de Tarapacá, Iquique, Chile",
+     "Institute of Theoretical Physics, Faculty of Mathematics and Physics, Charles University, Czech Republic"
+    ],
+    "name": "Adolfo Cisterna",
+    "paper": "2610.21860"
    }
   ],
   "ahmed abouelkomsan": [
@@ -518,6 +700,19 @@
     ],
     "name": "Akimasa Miyake",
     "paper": "2610.18681"
+   }
+  ],
+  "akira matsuo": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "cond-mat"
+    ],
+    "inst": [
+     "Institute for Solid State Physics, University of Tokyo, Kashiwa, Japan"
+    ],
+    "name": "Akira Matsuo",
+    "paper": "2610.21154"
    }
   ],
   "akira sekiyama": [
@@ -631,6 +826,19 @@
     "paper": "2610.19124"
    }
   ],
+  "alejandro vilar lopez": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "hep-th"
+    ],
+    "inst": [
+     "Department of Physics and Astronomy, University of British Columbia, Vancouver, Canada"
+    ],
+    "name": "Alejandro Vilar López",
+    "paper": "2610.20699"
+   }
+  ],
   "alessandra lanzara": [
    {
     "date": "2026-10-14",
@@ -709,6 +917,38 @@
     ],
     "name": "Alexander Breev",
     "paper": "2610.19078"
+   }
+  ],
+  "alexander hock": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "hep-th",
+     "math",
+     "math-ph"
+    ],
+    "inst": [
+     "University of Geneva"
+    ],
+    "name": "Alexander Hock",
+    "paper": "2610.21585"
+   }
+  ],
+  "alexander jahn": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "hep-th",
+     "math",
+     "math-ph",
+     "quant-ph"
+    ],
+    "inst": [
+     "Dahlem Center for Complex Quantum Systems, Freie Universität Berlin, Germany",
+     "Asia Pacific Center for Theoretical Physics, Gyeongsangbuk-do, South Korea"
+    ],
+    "name": "Alexander Jahn",
+    "paper": "2610.20790"
    }
   ],
   "alexander keesling": [
@@ -871,6 +1111,22 @@
     "paper": "2610.15251"
    }
   ],
+  "ali g moghaddam": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "cond-mat",
+     "quant-ph"
+    ],
+    "inst": [
+     "Department of Applied Physics, Aalto University, Finland",
+     "Computational Physics Laboratory, Physics Unit, Faculty of Engineering and Natural Sciences, Tampere University, Finland",
+     "Helsinki Institute of Physics P.O. Box 64, Finland"
+    ],
+    "name": "Ali G. Moghaddam",
+    "paper": "2610.20712"
+   }
+  ],
   "ali rayat": [
    {
     "date": "2026-10-14",
@@ -997,6 +1253,21 @@
     "paper": "2610.18279"
    }
   ],
+  "andrea brini": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "hep-th",
+     "math"
+    ],
+    "inst": [
+     "University of Sheffield, School of Mathematical and Physical Sciences, United Kingdom",
+     "On leave from CNRS, Montpellier, France"
+    ],
+    "name": "Andrea Brini",
+    "paper": "2610.22359"
+   }
+  ],
   "andrea damascelli": [
    {
     "date": "2026-10-14",
@@ -1023,6 +1294,47 @@
     ],
     "name": "Andrea F. Sanfilippo",
     "paper": "2610.17215"
+   }
+  ],
+  "andrea sangiovanni": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "hep-th"
+    ],
+    "inst": [
+     "c, Mathematics Institute, Uppsala University, Sweden",
+     "Centre for Geometry and Physics, Uppsala University, Sweden",
+     "Department of Physics and Astronomy, Uppsala University, Sweden"
+    ],
+    "name": "Andrea Sangiovanni",
+    "paper": "2610.20721"
+   }
+  ],
+  "andreas haller": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "cond-mat"
+    ],
+    "inst": [
+     "Department of Physics and Materials Science, University of Luxembourg, Luxembourg"
+    ],
+    "name": "Andreas Haller",
+    "paper": "2610.22348"
+   }
+  ],
+  "andreas honecker": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "cond-mat"
+    ],
+    "inst": [
+     "0.98 [1] Laboratoire de Physique Théorique et, Modélisation, CNRS UMR 8089, CY Cergy Paris Université, France"
+    ],
+    "name": "Andreas Honecker",
+    "paper": "2610.21955"
    }
   ],
   "andreas karch": [
@@ -1052,6 +1364,35 @@
     ],
     "name": "Andreas Kreisel",
     "paper": "2610.16930"
+   }
+  ],
+  "andreas schafer": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "cond-mat",
+     "hep-th",
+     "quant-ph"
+    ],
+    "inst": [
+     "Institut für Theoretische Physik, Universität Regensburg, Regensburg, Germany"
+    ],
+    "name": "Andreas Schäfer",
+    "paper": "2610.20768"
+   }
+  ],
+  "andreas von manteuffel": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "hep-ph",
+     "hep-th"
+    ],
+    "inst": [
+     "Institut für Theoretische Physik, Universität Regensburg, Germany"
+    ],
+    "name": "Andreas von Manteuffel",
+    "paper": "2610.20820"
    }
   ],
   "andreas w w ludwig": [
@@ -1571,6 +1912,19 @@
     "paper": "2610.18987"
    }
   ],
+  "audrey lindsay": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "hep-th"
+    ],
+    "inst": [
+     "Department of Physics, Northeastern University, Boston, USA"
+    ],
+    "name": "Audrey Lindsay",
+    "paper": "2610.20707"
+   }
+  ],
   "avi vadali": [
    {
     "date": "2026-10-14",
@@ -1671,6 +2025,35 @@
     "paper": "2610.16961"
    }
   ],
+  "b kostrzewa": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "hep-lat",
+     "hep-ph",
+     "hep-th"
+    ],
+    "inst": [
+     "High Performance Computing and Analytics Lab, Rheinische Friedrich-Wilhelms-Universität Bonn, Germany"
+    ],
+    "name": "B. Kostrzewa",
+    "paper": "2610.22224"
+   }
+  ],
+  "babli khatun": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "gr-qc",
+     "hep-th"
+    ],
+    "inst": [
+     "International Centre for Theoretical Sciences (ICTS-TIFR) Tata Institute of Fundamental Research, Shivakote, Hesaraghatta, India"
+    ],
+    "name": "Babli Khatun",
+    "paper": "2610.20770"
+   }
+  ],
   "bei kang": [
    {
     "date": "2026-10-15",
@@ -1712,6 +2095,20 @@
     ],
     "name": "Benjamin Corbett",
     "paper": "2610.18681"
+   }
+  ],
+  "benjamin leather": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "gr-qc",
+     "hep-th"
+    ],
+    "inst": [
+     "School of Mathematical Sciences and STAG Research Centre, University of Southampton, United Kingdom"
+    ],
+    "name": "Benjamin Leather",
+    "paper": "2610.20708"
    }
   ],
   "benjamin t zhou": [
@@ -1768,6 +2165,20 @@
     ],
     "name": "Bikram Keshari Pradhan",
     "paper": "2610.17423"
+   }
+  ],
+  "bilal hawashin": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "cond-mat",
+     "hep-th"
+    ],
+    "inst": [
+     "Theoretische Physik III, Ruhr-Universität Bochum, Germany"
+    ],
+    "name": "Bilal Hawashin",
+    "paper": "2610.20717"
    }
   ],
   "bo han": [
@@ -1842,6 +2253,19 @@
     "paper": "2610.15236"
    }
   ],
+  "brian swingle": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "hep-th"
+    ],
+    "inst": [
+     "Martin Fisher School of Physics, Brandeis University Waltham, USA"
+    ],
+    "name": "Brian Swingle",
+    "paper": "2610.20699"
+   }
+  ],
   "bruce weaver": [
    {
     "date": "2026-10-14",
@@ -1855,6 +2279,22 @@
     "paper": "2610.17984"
    }
   ],
+  "c alexandrou": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "hep-lat",
+     "hep-ph",
+     "hep-th"
+    ],
+    "inst": [
+     "Department of Physics, University of Cyprus, Cyprus",
+     "Computation-based Science and Technology Research Center, The Cyprus Institute, Cyprus"
+    ],
+    "name": "C. Alexandrou",
+    "paper": "2610.22224"
+   }
+  ],
   "c s helman": [
    {
     "date": "2026-10-14",
@@ -1866,6 +2306,36 @@
     ],
     "name": "C. S. Helman",
     "paper": "2610.15230"
+   }
+  ],
+  "c schneider": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "hep-lat",
+     "hep-ph",
+     "hep-th"
+    ],
+    "inst": [
+     "Department of Physics, University of Cyprus, Cyprus"
+    ],
+    "name": "C. Schneider",
+    "paper": "2610.22224"
+   }
+  ],
+  "c urbach": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "hep-lat",
+     "hep-ph",
+     "hep-th"
+    ],
+    "inst": [
+     "HISKP (Theory), Rheinische Friedrich-Wilhelms-Universität Bonn, Germany"
+    ],
+    "name": "C. Urbach",
+    "paper": "2610.22224"
    }
   ],
   "can kozcaz": [
@@ -1950,6 +2420,34 @@
     "paper": "2610.18715"
    }
   ],
+  "carolina matte gregory": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "hep-th"
+    ],
+    "inst": [
+     "Universidade de Brasília, Instituto de Física",
+     "International Center of Physics, Brasília, DF, Brasil"
+    ],
+    "name": "Carolina Matté Gregory",
+    "paper": "2610.20853"
+   }
+  ],
+  "cesare carlo mella": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "hep-ph",
+     "hep-th"
+    ],
+    "inst": [
+     "Rudolf Peierls Centre for Theoretical Physics, University of Oxford, Clarendon Laboratory"
+    ],
+    "name": "Cesare Carlo Mella",
+    "paper": "2610.20820"
+   }
+  ],
   "chan bin bark": [
    {
     "date": "2026-10-12",
@@ -1994,6 +2492,19 @@
   ],
   "chao cao": [
    {
+    "date": "2026-10-16",
+    "fields": [
+     "cond-mat"
+    ],
+    "inst": [
+     "New Cornerstone Science Laboratory, Center for Correlated Matter, Zhejiang University, China",
+     "School of Physics, Zhejiang University, China",
+     "Institute for Advanced Study in Physics, Zhejiang University, China"
+    ],
+    "name": "Chao Cao",
+    "paper": "2610.21854"
+   },
+   {
     "date": "2026-10-14",
     "fields": [
      "cond-mat"
@@ -2021,6 +2532,34 @@
     "paper": "2610.17984"
    }
   ],
+  "chen zhang": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "cond-mat"
+    ],
+    "inst": [
+     "Department of Physics, Southern University of Science and Technology, China",
+     "School of Physical Sciences, Great Bay University and Great Bay Institute for Advanced Study, China"
+    ],
+    "name": "Chen Zhang",
+    "paper": "2610.21154"
+   }
+  ],
+  "chenglin shang": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "cond-mat"
+    ],
+    "inst": [
+     "Laboratory for Neutron Scattering, School of Physics, Renmin University of China, China",
+     "Key Laboratory of Quantum State Construction and Manipulation (Ministry of Education), Renmin University of China, Beijing, China"
+    ],
+    "name": "Chenglin Shang",
+    "paper": "2610.21154"
+   }
+  ],
   "chenyuan li": [
    {
     "date": "2026-10-15",
@@ -2033,6 +2572,20 @@
     ],
     "name": "Chenyuan Li",
     "paper": "2610.20553"
+   }
+  ],
+  "chih hung wu": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "gr-qc",
+     "hep-th"
+    ],
+    "inst": [
+     "Department of Physics, University of Washington, Seattle, USA"
+    ],
+    "name": "Chih-Hung Wu",
+    "paper": "2610.20705"
    }
   ],
   "chikun ding": [
@@ -2063,6 +2616,22 @@
     "paper": "2610.20451"
    }
   ],
+  "christian schilling": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "cond-mat",
+     "physics",
+     "quant-ph"
+    ],
+    "inst": [
+     "Department of Physical Chemistry, University of Geneva, Geneva, Switzerland",
+     "Arnold Sommerfeld Centre for Theoretical Physics, Ludwig-Maximilians-Universität München, Munich, Germany"
+    ],
+    "name": "Christian Schilling",
+    "paper": "2610.22134"
+   }
+  ],
   "christopher j fewster": [
    {
     "date": "2026-10-14",
@@ -2089,6 +2658,21 @@
     ],
     "name": "Christopher P. Herzog",
     "paper": "2610.14176"
+   }
+  ],
+  "christopher pollack": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "gr-qc",
+     "hep-th"
+    ],
+    "inst": [
+     "Department of Applied Mathematics, University of Waterloo, 200 University Avenue West, Waterloo, Ontario, Canada",
+     "Perimeter Institute for Theoretical Physics, Waterloo, Ontario, Canada"
+    ],
+    "name": "Christopher Pollack",
+    "paper": "2610.21058"
    }
   ],
   "chun lin": [
@@ -2130,6 +2714,23 @@
     ],
     "name": "Clemens Ritter",
     "paper": "2610.16856"
+   }
+  ],
+  "clemens seidl": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "cond-mat",
+     "hep-th",
+     "quant-ph"
+    ],
+    "inst": [
+     "Institut für Theoretische Physik, Universität Regensburg, Regensburg, Germany",
+     "Department of Physics and Arnold Sommerfeld Center for Theoretical Physics (ASC), Ludwig Maximilian University of Munich, Germany",
+     "Munich Center for Quantum Science and Technology (MCQST), Germany"
+    ],
+    "name": "Clemens Seidl",
+    "paper": "2610.20768"
    }
   ],
   "cumrun vafa": [
@@ -2252,6 +2853,34 @@
     "paper": "2610.20383"
    }
   ],
+  "d g c mckeon": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "gr-qc",
+     "hep-th"
+    ],
+    "inst": [
+     "Department of Applied Mathematics, The University of Western Ontario, London, Canada",
+     "Department of Mathematics and Computer Science, Algoma University, Sault Ste. Marie, Canada"
+    ],
+    "name": "D. G. C. McKeon",
+    "paper": "2610.21706"
+   }
+  ],
+  "d j huang": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "cond-mat"
+    ],
+    "inst": [
+     "National Synchrotron Radiation Research Center, Taiwan"
+    ],
+    "name": "D. J. Huang",
+    "paper": "2610.21305"
+   }
+  ],
   "d m penafiel": [
    {
     "date": "2026-10-14",
@@ -2267,6 +2896,22 @@
     "paper": "2610.17480"
    }
   ],
+  "d miguelez caballero": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "hep-th",
+     "math",
+     "math-ph",
+     "nlin"
+    ],
+    "inst": [
+     "Departamento de Física Teorica, Atómica y Óptica and Laboratory for Disruptive Interdisciplinary Science (LaDIS), Universidad de Valladolid, Spain"
+    ],
+    "name": "D. Miguélez-Caballero",
+    "paper": "2610.21930"
+   }
+  ],
   "d s inosov": [
    {
     "date": "2026-10-14",
@@ -2278,6 +2923,19 @@
     ],
     "name": "D. S. Inosov",
     "paper": "2610.16439"
+   }
+  ],
+  "d shiga": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "cond-mat"
+    ],
+    "inst": [
+     "Institute of Multidisciplinary Research for Advanced Materials (IMRAM), Tohoku University, Japan"
+    ],
+    "name": "D. Shiga",
+    "paper": "2610.21305"
    }
   ],
   "d t adroja": [
@@ -2483,6 +3141,33 @@
     "paper": "2610.17362"
    }
   ],
+  "darian hall": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "cond-mat"
+    ],
+    "inst": [
+     "Department of Physics, University of California, Berkeley, USA",
+     "Kavli Energy NanoScience Institute, Berkeley, USA"
+    ],
+    "name": "Darian Hall",
+    "paper": "2610.22361"
+   }
+  ],
+  "dario t walter cardona": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "hep-th"
+    ],
+    "inst": [
+     "Department of Physics and Astronomy, Embry-Riddle Aeronautical University, Prescott, AZ, USA"
+    ],
+    "name": "Dario T. Walter-Cardona",
+    "paper": "2610.21066"
+   }
+  ],
   "david dudal": [
    {
     "date": "2026-10-12",
@@ -2539,6 +3224,22 @@
     "paper": "2610.12559"
    }
   ],
+  "david trestini": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "gr-qc",
+     "hep-th"
+    ],
+    "inst": [
+     "GReCO, Institut d’Astrophysique de Paris, CNRS & Sorbonne Université, France",
+     "Centre national d’études spatiales (CNES), Place Maurice Quentin, Paris, France",
+     "School of Mathematical Sciences and STAG Research Centre, University of Southampton, United Kingdom"
+    ],
+    "name": "David Trestini",
+    "paper": "2610.20708"
+   }
+  ],
   "davide usseglio": [
    {
     "date": "2026-10-15",
@@ -2579,6 +3280,20 @@
     ],
     "name": "De-Cheng Zou",
     "paper": "2610.15508"
+   }
+  ],
+  "debanjan karan": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "gr-qc",
+     "hep-th"
+    ],
+    "inst": [
+     "International Centre for Theoretical Sciences (ICTS-TIFR) Tata Institute of Fundamental Research, Shivakote, Hesaraghatta, India"
+    ],
+    "name": "Debanjan Karan",
+    "paper": "2610.20770"
    }
   ],
   "debargha sarkar": [
@@ -2653,6 +3368,19 @@
     "paper": "2610.19286"
    }
   ],
+  "didier perrodin": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "cond-mat"
+    ],
+    "inst": [
+     "Materials Sciences Division, Lawrence Berkeley National Laboratory, Berkeley, USA"
+    ],
+    "name": "Didier Perrodin",
+    "paper": "2610.22361"
+   }
+  ],
   "diego h correa": [
    {
     "date": "2026-10-15",
@@ -2664,6 +3392,35 @@
     ],
     "name": "Diego H. Correa",
     "paper": "2610.20602"
+   }
+  ],
+  "dimitris saraidaris": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "hep-th",
+     "math",
+     "math-ph",
+     "quant-ph"
+    ],
+    "inst": [
+     "Dahlem Center for Complex Quantum Systems, Freie Universität Berlin, Germany"
+    ],
+    "name": "Dimitris Saraidaris",
+    "paper": "2610.20790"
+   }
+  ],
+  "dinesh dixit": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "cond-mat"
+    ],
+    "inst": [
+     "Central Research Facility, Indian Institute of Technology Delhi, India"
+    ],
+    "name": "Dinesh Dixit",
+    "paper": "2610.22253"
    }
   ],
   "dipan sengupta": [
@@ -2694,6 +3451,19 @@
     ],
     "name": "Divya Jaganathan",
     "paper": "2610.16733"
+   }
+  ],
+  "divya prakash dubey": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "cond-mat"
+    ],
+    "inst": [
+     "Department of Microtechnology and Nanoscience, Chalmers University of Technology, Gothenburg, Sweden"
+    ],
+    "name": "Divya Prakash Dubey",
+    "paper": "2610.22253"
    }
   ],
   "dong xu liu": [
@@ -2897,6 +3667,19 @@
     "paper": "2610.15236"
    }
   ],
+  "elio j konig": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "cond-mat"
+    ],
+    "inst": [
+     "Department of Physics, University of Wisconsin-Madison, Madison, USA"
+    ],
+    "name": "Elio J. König",
+    "paper": "2610.22348"
+   }
+  ],
   "emma campillo": [
    {
     "date": "2026-10-14",
@@ -3019,6 +3802,21 @@
     "paper": "2610.12726"
    }
   ],
+  "f margari": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "hep-lat",
+     "hep-ph",
+     "hep-th"
+    ],
+    "inst": [
+     "Dipartimento di Fisica and INFN, Università di Roma “Tor Vergata”, Italy"
+    ],
+    "name": "F. Margari",
+    "paper": "2610.22224"
+   }
+  ],
   "f orlandi": [
    {
     "date": "2026-10-14",
@@ -3032,6 +3830,50 @@
     "paper": "2610.16682"
    }
   ],
+  "f pittler": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "hep-lat",
+     "hep-ph",
+     "hep-th"
+    ],
+    "inst": [
+     "Computation-based Science and Technology Research Center, The Cyprus Institute, Cyprus"
+    ],
+    "name": "F. Pittler",
+    "paper": "2610.22224"
+   }
+  ],
+  "f sanfilippo": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "hep-lat",
+     "hep-ph",
+     "hep-th"
+    ],
+    "inst": [
+     "Istituto Nazionale di Fisica Nucleare, Sezione di Roma Tre, Italy"
+    ],
+    "name": "F. Sanfilippo",
+    "paper": "2610.22224"
+   }
+  ],
+  "f t brandt": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "gr-qc",
+     "hep-th"
+    ],
+    "inst": [
+     "Instituto de Física, Universidade de S\\ ao Paulo, S\\ ao Paulo, Brazil"
+    ],
+    "name": "F. T. Brandt",
+    "paper": "2610.21706"
+   }
+  ],
   "fabrice bert": [
    {
     "date": "2026-10-12",
@@ -3043,6 +3885,21 @@
     ],
     "name": "Fabrice Bert",
     "paper": "2610.13346"
+   }
+  ],
+  "fabrizio canfora": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "cond-mat",
+     "hep-th",
+     "quant-ph"
+    ],
+    "inst": [
+     "Universidad San Sebastián, sede Valdivia, Chile"
+    ],
+    "name": "Fabrizio Canfora",
+    "paper": "2610.20897"
    }
   ],
   "faisal karimi": [
@@ -3141,6 +3998,21 @@
     ],
     "name": "Farid Labib",
     "paper": "2610.19727"
+   }
+  ],
+  "fayez abu ajamieh": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "cs",
+     "hep-th",
+     "math"
+    ],
+    "inst": [
+     "Formerly: The Indian Institute of Science, Bangalore, India"
+    ],
+    "name": "Fayez Abu-Ajamieh",
+    "paper": "2610.20653"
    }
   ],
   "federico piazza": [
@@ -3255,6 +4127,35 @@
     "paper": "2610.18970"
    }
   ],
+  "florian girelli": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "gr-qc",
+     "hep-th"
+    ],
+    "inst": [
+     "Department of Applied Mathematics, University of Waterloo, 200 University Avenue West, Waterloo, Ontario, Canada"
+    ],
+    "name": "Florian Girelli",
+    "paper": "2610.21058"
+   }
+  ],
+  "florian matz": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "cond-mat",
+     "physics",
+     "quant-ph"
+    ],
+    "inst": [
+     "Arnold Sommerfeld Centre for Theoretical Physics, Ludwig-Maximilians-Universität München, Munich, Germany"
+    ],
+    "name": "Florian Matz",
+    "paper": "2610.22134"
+   }
+  ],
   "francesca fassioli": [
    {
     "date": "2026-10-15",
@@ -3355,6 +4256,21 @@
     ],
     "name": "G. Fejős",
     "paper": "2610.13754"
+   }
+  ],
+  "g gagliardi": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "hep-lat",
+     "hep-ph",
+     "hep-th"
+    ],
+    "inst": [
+     "Istituto Nazionale di Fisica Nucleare, Sezione di Roma Tre, Italy"
+    ],
+    "name": "G. Gagliardi",
+    "paper": "2610.22224"
    }
   ],
   "g roy": [
@@ -3656,6 +4572,21 @@
     "paper": "2610.20522"
    }
   ],
+  "gopal yadav": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "gr-qc",
+     "hep-th"
+    ],
+    "inst": [
+     "Chennai Mathematical Institute, India",
+     "Instituto de Física, Pontificia Universidad Católica de Valparaíso, Av. Universidad 330, Curauma, Valparaíso, Chile"
+    ],
+    "name": "Gopal Yadav",
+    "paper": "2610.22101"
+   }
+  ],
   "goro nozue": [
    {
     "date": "2026-10-15",
@@ -3740,6 +4671,20 @@
     "paper": "2610.20156"
    }
   ],
+  "gunnar ingelman": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "hep-ph",
+     "hep-th"
+    ],
+    "inst": [
+     "Department of Physics and Astronomy, Uppsala University, Sweden"
+    ],
+    "name": "Gunnar Ingelman",
+    "paper": "2610.21751"
+   }
+  ],
   "guo yi zhu": [
    {
     "date": "2026-10-15",
@@ -3780,6 +4725,61 @@
     "paper": "2610.13514"
    }
   ],
+  "h eisaki": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "cond-mat"
+    ],
+    "inst": [
+     "National Institute of Advanced Industrial Science and Technology, Tsukuba, Japan"
+    ],
+    "name": "H. Eisaki",
+    "paper": "2610.21305"
+   }
+  ],
+  "h kumigashira": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "cond-mat"
+    ],
+    "inst": [
+     "Institute of Multidisciplinary Research for Advanced Materials (IMRAM), Tohoku University, Japan"
+    ],
+    "name": "H. Kumigashira",
+    "paper": "2610.21305"
+   }
+  ],
+  "h q yuan": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "cond-mat"
+    ],
+    "inst": [
+     "New Cornerstone Science Laboratory, Center for Correlated Matter, Zhejiang University, China",
+     "School of Physics, Zhejiang University, China",
+     "Institute for Advanced Study in Physics, Zhejiang University, China"
+    ],
+    "name": "H. -Q. Yuan",
+    "paper": "2610.21854"
+   }
+  ],
+  "h suzuki": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "cond-mat"
+    ],
+    "inst": [
+     "Frontier Research Institute for Interdisciplinary Sciences, Tohoku University, Japan",
+     "Institute of Multidisciplinary Research for Advanced Materials (IMRAM), Tohoku University, Japan"
+    ],
+    "name": "H. Suzuki",
+    "paper": "2610.21305"
+   }
+  ],
   "h t c stoof": [
    {
     "date": "2026-10-12",
@@ -3792,6 +4792,32 @@
     ],
     "name": "H. T. C. Stoof",
     "paper": "2610.13246"
+   }
+  ],
+  "h wadati": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "cond-mat"
+    ],
+    "inst": [
+     "Department of Material Science, Graduate School of Science, University of Hyogo, Ako, Japan"
+    ],
+    "name": "H. Wadati",
+    "paper": "2610.21305"
+   }
+  ],
+  "h y huang": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "cond-mat"
+    ],
+    "inst": [
+     "National Synchrotron Radiation Research Center, Taiwan"
+    ],
+    "name": "H. Y. Huang",
+    "paper": "2610.21305"
    }
   ],
   "h y kee": [
@@ -3835,6 +4861,20 @@
     "paper": "2610.13346"
    }
   ],
+  "hai bing fu": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "gr-qc",
+     "hep-th"
+    ],
+    "inst": [
+     "Department of Physics, Guizhou Minzu University, China"
+    ],
+    "name": "Hai-Bing Fu",
+    "paper": "2610.21574"
+   }
+  ],
   "hai qing lin": [
    {
     "date": "2026-10-14",
@@ -3860,6 +4900,21 @@
     ],
     "name": "Haitang Yang",
     "paper": "2610.20180"
+   }
+  ],
+  "hajime otsuka": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "hep-ph",
+     "hep-th"
+    ],
+    "inst": [
+     "Department of Physics, Kyushu University, Nishi-ku, Japan",
+     "Quantum and Spacetime Research Institute (QuaSR), Kyushu University, Nishi-ku, Japan"
+    ],
+    "name": "Hajime Otsuka",
+    "paper": "2610.21688"
    }
   ],
   "han ma": [
@@ -3932,6 +4987,19 @@
     "paper": "2610.14556"
    }
   ],
+  "hanxiang di": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "cond-mat"
+    ],
+    "inst": [
+     "State Key Laboratory of Metastable Materials Science and Technology, Hebei Key Laboratory of Microstructural Material Physics, School of Science, Yanshan University, Qinhuangdao, China"
+    ],
+    "name": "Hanxiang Di",
+    "paper": "2610.21580"
+   }
+  ],
   "hao yu sun": [
    {
     "date": "2026-10-14",
@@ -4002,6 +5070,20 @@
     "paper": "2610.15236"
    }
   ],
+  "hassan firouzjahi": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "gr-qc",
+     "hep-th"
+    ],
+    "inst": [
+     "School of Astronomy, Institute for Research in Fundamental Sciences (IPM), Tehran, Iran"
+    ],
+    "name": "Hassan Firouzjahi",
+    "paper": "2610.21426"
+   }
+  ],
   "haydn s adlong": [
    {
     "date": "2026-10-15",
@@ -4014,6 +5096,19 @@
     ],
     "name": "Haydn S. Adlong",
     "paper": "2610.20522"
+   }
+  ],
+  "henrik m rnnow": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "cond-mat"
+    ],
+    "inst": [
+     "Laboratory for Quantum Magnetism, Institute of Physics, École Polytechnique Fédérale de Lausanne (EPFL), Switzerland"
+    ],
+    "name": "Henrik M. Rønnow",
+    "paper": "2610.21154"
    }
   ],
   "hidekazu mukuda": [
@@ -4168,6 +5263,19 @@
     "paper": "2610.13346"
    }
   ],
+  "hui ke jin": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "cond-mat"
+    ],
+    "inst": [
+     "School of Physical Science and Technology, ShanghaiTech University, China"
+    ],
+    "name": "Hui-Ke Jin",
+    "paper": "2610.22212"
+   }
+  ],
   "hui zhou": [
    {
     "date": "2026-10-14",
@@ -4237,6 +5345,21 @@
     "paper": "2610.15230"
    }
   ],
+  "i v krasnov": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "astro-ph",
+     "hep-ph",
+     "hep-th"
+    ],
+    "inst": [
+     "N.S, Institute for Nuclear Research of Russian Academy of Sciences, Russia"
+    ],
+    "name": "I. V Krasnov",
+    "paper": "2610.21992"
+   }
+  ],
   "ian mcculloch": [
    {
     "date": "2026-10-15",
@@ -4248,6 +5371,20 @@
     ],
     "name": "Ian McCulloch",
     "paper": "2610.19995"
+   }
+  ],
+  "igor f herbut": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "cond-mat",
+     "hep-th"
+    ],
+    "inst": [
+     "Department of Physics, Simon Fraser University, Burnaby, British Columbia"
+    ],
+    "name": "Igor F. Herbut",
+    "paper": "2610.20717"
    }
   ],
   "inna vishik": [
@@ -4303,6 +5440,35 @@
     ],
     "name": "Isao Kishimoto",
     "paper": "2610.13191"
+   }
+  ],
+  "ishita modak": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "cond-mat",
+     "quant-ph"
+    ],
+    "inst": [
+     "Department of Physics, Indian Institute of Technology Bombay, India"
+    ],
+    "name": "Ishita Modak",
+    "paper": "2610.21631"
+   }
+  ],
+  "ismail zahed": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "hep-ph",
+     "hep-th",
+     "quant-ph"
+    ],
+    "inst": [
+     "Center for Nuclear Theory, Department of Physics and Astronomy, Stony Brook University, Stony Brook, USA"
+    ],
+    "name": "Ismail Zahed",
+    "paper": "2610.20793"
    }
   ],
   "israel klich": [
@@ -4364,6 +5530,21 @@
     "paper": "2610.13575"
    }
   ],
+  "j finkenrath": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "hep-lat",
+     "hep-ph",
+     "hep-th"
+    ],
+    "inst": [
+     "Department of Physics, Bergische Universität Wuppertal, Wuppertal, Germany"
+    ],
+    "name": "J. Finkenrath",
+    "paper": "2610.22224"
+   }
+  ],
   "j francois": [
    {
     "date": "2026-10-14",
@@ -4376,6 +5557,20 @@
     ],
     "name": "J. François",
     "paper": "2610.15737"
+   }
+  ],
+  "j frenkel": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "gr-qc",
+     "hep-th"
+    ],
+    "inst": [
+     "Instituto de Física, Universidade de S\\ ao Paulo, S\\ ao Paulo, Brazil"
+    ],
+    "name": "J. Frenkel",
+    "paper": "2610.21706"
    }
   ],
   "j gurzo": [
@@ -4433,6 +5628,32 @@
     ],
     "name": "J. Lass",
     "paper": "2610.16439"
+   }
+  ],
+  "j miyawaki": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "cond-mat"
+    ],
+    "inst": [
+     "NanoTerasu Center, National Institutes for Quantum Science and Technology (QST), Sendai, Japan"
+    ],
+    "name": "J. Miyawaki",
+    "paper": "2610.21305"
+   }
+  ],
+  "j okamoto": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "cond-mat"
+    ],
+    "inst": [
+     "National Synchrotron Radiation Research Center, Taiwan"
+    ],
+    "name": "J. Okamoto",
+    "paper": "2610.21305"
    }
   ],
   "j osiecki": [
@@ -4528,6 +5749,36 @@
     "paper": "2610.20340"
    }
   ],
+  "jakob j minar": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "cond-mat",
+     "hep-th",
+     "quant-ph"
+    ],
+    "inst": [
+     "Institut für Theoretische Physik, Universität Regensburg, Regensburg, Germany"
+    ],
+    "name": "Jakob J. Minar",
+    "paper": "2610.20768"
+   }
+  ],
+  "james g analytis": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "cond-mat"
+    ],
+    "inst": [
+     "Department of Physics, University of California, Berkeley, USA",
+     "Kavli Energy NanoScience Institute, Berkeley, USA",
+     "Materials Sciences Division, Lawrence Berkeley National Laboratory, Berkeley, USA"
+    ],
+    "name": "James G. Analytis",
+    "paper": "2610.22361"
+   }
+  ],
   "james gray": [
    {
     "date": "2026-10-12",
@@ -4620,6 +5871,17 @@
   ],
   "jehyun lee": [
    {
+    "date": "2026-10-16",
+    "fields": [
+     "hep-th"
+    ],
+    "inst": [
+     "[] Department of Physics, Korea Advanced Institute of Science and Technology, Korea"
+    ],
+    "name": "Jehyun Lee",
+    "paper": "2610.22054"
+   },
+   {
     "date": "2026-10-15",
     "fields": [
      "hep-th"
@@ -4643,6 +5905,22 @@
     ],
     "name": "Jennifer Cano",
     "paper": "2610.20553"
+   }
+  ],
+  "jens eisert": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "hep-th",
+     "math",
+     "math-ph",
+     "quant-ph"
+    ],
+    "inst": [
+     "Dahlem Center for Complex Quantum Systems, Freie Universität Berlin, Germany"
+    ],
+    "name": "Jens Eisert",
+    "paper": "2610.20790"
    }
   ],
   "jeremy p carlo": [
@@ -4702,6 +5980,19 @@
     "paper": "2610.15684"
    }
   ],
+  "jiangping hu": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "cond-mat"
+    ],
+    "inst": [
+     "New Cornerstone Science Laboratory, Beijing National Laboratory for Condensed Matter Physics and Institute of Physics, Chinese Academy of Sciences, China"
+    ],
+    "name": "Jiangping Hu",
+    "paper": "2610.22212"
+   }
+  ],
   "jianhui dai": [
    {
     "date": "2026-10-14",
@@ -4728,6 +6019,20 @@
     ],
     "name": "Jianpeng Dai",
     "paper": "2610.16688"
+   }
+  ],
+  "jianpeng liu": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "cond-mat"
+    ],
+    "inst": [
+     "School of Physical Science and Technology, ShanghaiTech Laboratory for Topological Physics, State Key Laboratory of Quantum Functional Materials, ShanghaiTech University, China",
+     "Liaoning Academy of Materials, China"
+    ],
+    "name": "Jianpeng Liu",
+    "paper": "2610.21310"
    }
   ],
   "jianqi zhong": [
@@ -4788,6 +6093,19 @@
     "paper": "2610.17222"
    }
   ],
+  "jieming sheng": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "cond-mat"
+    ],
+    "inst": [
+     "School of Physical Sciences, Great Bay University and Great Bay Institute for Advanced Study, China"
+    ],
+    "name": "Jieming Sheng",
+    "paper": "2610.21154"
+   }
+  ],
   "jin gene wong": [
    {
     "date": "2026-10-14",
@@ -4805,6 +6123,22 @@
     "paper": "2610.15236"
    }
   ],
+  "jinchen wang": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "cond-mat"
+    ],
+    "inst": [
+     "Laboratory for Neutron Scattering, School of Physics, Renmin University of China, China",
+     "Key Laboratory of Quantum State Construction and Manipulation (Ministry of Education), Renmin University of China, Beijing, China",
+     "Laboratory for Quantum Magnetism, Institute of Physics, École Polytechnique Fédérale de Lausanne (EPFL), Switzerland",
+     "PSI Center for Neutron and Muon Sciences, Switzerland"
+    ],
+    "name": "Jinchen Wang",
+    "paper": "2610.21154"
+   }
+  ],
   "jing wang": [
    {
     "date": "2026-10-14",
@@ -4817,6 +6151,21 @@
     ],
     "name": "Jing Wang",
     "paper": "2610.16659"
+   }
+  ],
+  "jingxiang ma": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "hep-th",
+     "math"
+    ],
+    "inst": [
+     "University of Sheffield, School of Mathematical and Physical Sciences, United Kingdom",
+     "Department of Mathematics, Ohio State University, Columbus"
+    ],
+    "name": "Jingxiang Ma",
+    "paper": "2610.22359"
    }
   ],
   "jinwei chu": [
@@ -4849,6 +6198,36 @@
     ],
     "name": "Jiro Soda",
     "paper": "2610.15249"
+   }
+  ],
+  "joakim flinckman": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "gr-qc",
+     "hep-th"
+    ],
+    "inst": [
+     "Department of Physics & The Oskar Klein Centre",
+     "Stockholm University, AlbaNova University Centre, Sweden"
+    ],
+    "name": "Joakim Flinckman",
+    "paper": "2610.20839"
+   }
+  ],
+  "joel e moore": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "cond-mat"
+    ],
+    "inst": [
+     "Department of Physics, University of California, Berkeley, USA",
+     "Kavli Energy NanoScience Institute, Berkeley, USA",
+     "Materials Sciences Division, Lawrence Berkeley National Laboratory, Berkeley, USA"
+    ],
+    "name": "Joel E. Moore",
+    "paper": "2610.22361"
    }
   ],
   "johann chevrier": [
@@ -4970,6 +6349,21 @@
     "paper": "2610.18956"
    }
   ],
+  "jose barrientos": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "gr-qc",
+     "hep-th"
+    ],
+    "inst": [
+     "Institute of Mathematics of the Czech Academy of Sciences, Czech Republic",
+     "Vicerrectoría de Investigación y Postgrado, Universidad de La Serena, Chile"
+    ],
+    "name": "José Barrientos",
+    "paper": "2610.21860"
+   }
+  ],
   "jose luis v cerdeira": [
    {
     "date": "2026-10-12",
@@ -4997,6 +6391,20 @@
     ],
     "name": "Joseph Tooby-Smith",
     "paper": "2610.14059"
+   }
+  ],
+  "josue rodriguez": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "cond-mat"
+    ],
+    "inst": [
+     "Department of Physics, University of California, Berkeley, USA",
+     "Materials Sciences Division, Lawrence Berkeley National Laboratory, Berkeley, USA"
+    ],
+    "name": "Josue Rodriguez",
+    "paper": "2610.22361"
    }
   ],
   "joy prakash das": [
@@ -5042,6 +6450,46 @@
     ],
     "name": "Joydeep Naskar",
     "paper": "2610.13899"
+   }
+  ],
+  "jozef strecka": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "cond-mat"
+    ],
+    "inst": [
+     "Faculty of Science, P. J.\\ Šafárik University, Košice, Slovakia"
+    ],
+    "name": "Jozef Strecka",
+    "paper": "2610.21955"
+   }
+  ],
+  "juanjuan liu": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "cond-mat"
+    ],
+    "inst": [
+     "Laboratory for Neutron Scattering, School of Physics, Renmin University of China, China",
+     "Key Laboratory of Quantum State Construction and Manipulation (Ministry of Education), Renmin University of China, Beijing, China"
+    ],
+    "name": "Juanjuan Liu",
+    "paper": "2610.21154"
+   }
+  ],
+  "jukka i vayrynen": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "cond-mat"
+    ],
+    "inst": [
+     "Department of Physics and Astronomy, Purdue University, West Lafayette, USA"
+    ],
+    "name": "Jukka I. Väyrynen",
+    "paper": "2610.22348"
    }
   ],
   "julian choi": [
@@ -5096,6 +6544,33 @@
     "paper": "2610.13514"
    }
   ],
+  "jun kun zhao": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "gr-qc",
+     "hep-th"
+    ],
+    "inst": [
+     "Institute of Theoretical Physics, Chinese Academy of Sciences, China"
+    ],
+    "name": "Jun-Kun Zhao",
+    "paper": "2610.22274"
+   }
+  ],
+  "jun li": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "cond-mat"
+    ],
+    "inst": [
+     "State Key Laboratory of Metastable Materials Science and Technology, Hebei Key Laboratory of Microstructural Material Physics, School of Science, Yanshan University, Qinhuangdao, China"
+    ],
+    "name": "Jun Li",
+    "paper": "2610.21580"
+   }
+  ],
   "jun tao": [
    {
     "date": "2026-10-15",
@@ -5140,6 +6615,21 @@
     "paper": "2610.17179"
    }
   ],
+  "jungwon lim": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "hep-ph",
+     "hep-th"
+    ],
+    "inst": [
+     "Deutsches Elektronen-Synchrotron DESY, Germany",
+     "Max-Planck-Institut für Physik, Werner-Heisenberg-Institut, Germany"
+    ],
+    "name": "Jungwon Lim",
+    "paper": "2610.20820"
+   }
+  ],
   "jury radkovski": [
    {
     "date": "2026-10-12",
@@ -5169,6 +6659,23 @@
     ],
     "name": "K. A. Modic",
     "paper": "2610.16961"
+   }
+  ],
+  "k l ramya": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "cs",
+     "hep-ph",
+     "hep-th",
+     "math",
+     "quant-ph"
+    ],
+    "inst": [
+     "Department of Physics and Computer Science, Dayalbagh Educational Institute, India"
+    ],
+    "name": "K. L. Ramya",
+    "paper": "2610.21879"
    }
   ],
   "k makino": [
@@ -5227,6 +6734,32 @@
     "paper": "2610.20383"
    }
   ],
+  "k watanabe": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "cond-mat"
+    ],
+    "inst": [
+     "National Institute for Materials Science, Tsukuba, Japan"
+    ],
+    "name": "K. Watanabe",
+    "paper": "2610.21875"
+   }
+  ],
+  "k yamamoto": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "cond-mat"
+    ],
+    "inst": [
+     "NanoTerasu Center, National Institutes for Quantum Science and Technology (QST), Sendai, Japan"
+    ],
+    "name": "K. Yamamoto",
+    "paper": "2610.21305"
+   }
+  ],
   "kaiwen sun": [
    {
     "date": "2026-10-14",
@@ -5257,6 +6790,20 @@
     ],
     "name": "Kangkan Goswami",
     "paper": "2610.16829"
+   }
+  ],
+  "kanhu kishore nanda": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "gr-qc",
+     "hep-th"
+    ],
+    "inst": [
+     "Chennai Mathematical Institute, India"
+    ],
+    "name": "Kanhu Kishore Nanda",
+    "paper": "2610.22101"
    }
   ],
   "kanta ono": [
@@ -5315,6 +6862,45 @@
     ],
     "name": "Kasia Budzik",
     "paper": "2610.18987"
+   }
+  ],
+  "katarina karlova": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "cond-mat"
+    ],
+    "inst": [
+     "Faculty of Science, P. J. Šafárik University, Košice, Slovakia"
+    ],
+    "name": "Katarina Karlova",
+    "paper": "2610.21955"
+   }
+  ],
+  "kaustuv manna": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "cond-mat"
+    ],
+    "inst": [
+     "Department of Physics, Indian Institute of Technology Delhi, India"
+    ],
+    "name": "Kaustuv Manna",
+    "paper": "2610.22253"
+   }
+  ],
+  "kayleigh mathieson": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "hep-th"
+    ],
+    "inst": [
+     "Mandelstam Institute for Theoretical Physics, School of Physics, University of the Witwatersrand, South Africa"
+    ],
+    "name": "Kayleigh Mathieson",
+    "paper": "2610.22332"
    }
   ],
   "kazuya murakami": [
@@ -5389,6 +6975,22 @@
     "paper": "2610.17264"
    }
   ],
+  "keisuke ohashi": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "hep-th",
+     "math",
+     "math-ph",
+     "nlin"
+    ],
+    "inst": [
+     "Department of Physics & Research and Education Center for Natural Sciences, Keio University, Yokohama, Japan"
+    ],
+    "name": "Keisuke Ohashi",
+    "paper": "2610.21930"
+   }
+  ],
   "kenta takahashi": [
    {
     "date": "2026-10-14",
@@ -5429,6 +7031,19 @@
     "paper": "2610.17222"
    }
   ],
+  "kirin chanteloup": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "cond-mat"
+    ],
+    "inst": [
+     "Department of Physics, University of California, Berkeley, USA"
+    ],
+    "name": "Kirin Chanteloup",
+    "paper": "2610.22361"
+   }
+  ],
   "kohei uno": [
    {
     "date": "2026-10-14",
@@ -5440,6 +7055,32 @@
     ],
     "name": "Kohei Uno",
     "paper": "2610.17807"
+   }
+  ],
+  "kohtaro yamakawa": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "cond-mat"
+    ],
+    "inst": [
+     "Department of Physics, University of California, Berkeley, USA"
+    ],
+    "name": "Kohtaro Yamakawa",
+    "paper": "2610.22361"
+   }
+  ],
+  "koichi kindo": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "cond-mat"
+    ],
+    "inst": [
+     "Institute for Solid State Physics, University of Tokyo, Kashiwa, Japan"
+    ],
+    "name": "Koichi Kindo",
+    "paper": "2610.21154"
    }
   ],
   "kojiro mimura": [
@@ -5484,6 +7125,21 @@
     "paper": "2610.20128"
    }
   ],
+  "kris sigurdson": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "astro-ph",
+     "hep-ph",
+     "hep-th"
+    ],
+    "inst": [
+     "Department of Physics and Astronomy, University of British Columbia, Vancouver, Canada"
+    ],
+    "name": "Kris Sigurdson",
+    "paper": "2610.20702"
+   }
+  ],
   "krishan saraswat": [
    {
     "date": "2026-10-12",
@@ -5499,6 +7155,20 @@
     ],
     "name": "Krishan Saraswat",
     "paper": "2610.13899"
+   }
+  ],
+  "kun jiang": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "cond-mat"
+    ],
+    "inst": [
+     "Beijing National Laboratory for Condensed Matter Physics and, Institute of Physics, Chinese Academy of Sciences, China",
+     "School of Physical Sciences, University of Chinese Academy of Sciences, China"
+    ],
+    "name": "Kun Jiang",
+    "paper": "2610.22212"
    }
   ],
   "kun zhai": [
@@ -5542,6 +7212,21 @@
     ],
     "name": "Kyle M. Shen",
     "paper": "2610.15236"
+   }
+  ],
+  "l maio": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "hep-lat",
+     "hep-ph",
+     "hep-th"
+    ],
+    "inst": [
+     "Dipartimento di Fisica and INFN, Università di Roma “Tor Vergata”, Italy"
+    ],
+    "name": "L. Maio",
+    "paper": "2610.22224"
    }
   ],
   "l maisel liceran": [
@@ -5624,6 +7309,32 @@
     ],
     "name": "L. Šmejkal",
     "paper": "2610.20383"
+   }
+  ],
+  "l w engel": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "cond-mat"
+    ],
+    "inst": [
+     "National High Magnetic Field Laboratory, Tallahassee, USA"
+    ],
+    "name": "L. W. Engel",
+    "paper": "2610.21875"
+   }
+  ],
+  "lankun wang": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "cond-mat"
+    ],
+    "inst": [
+     "State Key Laboratory of Precision Welding and Joining of Materials and Structures, Harbin Institute of Technology, Harbin, China"
+    ],
+    "name": "Lankun Wang",
+    "paper": "2610.22253"
    }
   ],
   "lara b anderson": [
@@ -5777,7 +7488,32 @@
     "paper": "2610.20553"
    }
   ],
+  "lei hua liu": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "gr-qc",
+     "hep-th"
+    ],
+    "inst": [
+     "Department of Physics, College of Physics, Mechanical and Electrical Engineering, Jishou University, China"
+    ],
+    "name": "Lei-Hua Liu",
+    "paper": "2610.21574"
+   }
+  ],
   "lei wang": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "cond-mat"
+    ],
+    "inst": [
+     "National Laboratory of Solid-State Microstructures, Collaborative Innovation Center of Advanced Microstructures, School of Physics, Nanjing University, Nanjing, China"
+    ],
+    "name": "Lei Wang",
+    "paper": "2610.21310"
+   },
    {
     "date": "2026-10-14",
     "fields": [
@@ -5790,6 +7526,38 @@
     ],
     "name": "Lei Wang",
     "paper": "2610.17030"
+   }
+  ],
+  "lennart bittel": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "hep-th",
+     "math",
+     "math-ph",
+     "quant-ph"
+    ],
+    "inst": [
+     "Dahlem Center for Complex Quantum Systems, Freie Universität Berlin, Germany"
+    ],
+    "name": "Lennart Bittel",
+    "paper": "2610.20790"
+   }
+  ],
+  "leo shaposhnik": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "hep-th",
+     "math",
+     "math-ph",
+     "quant-ph"
+    ],
+    "inst": [
+     "Dahlem Center for Complex Quantum Systems, Freie Universität Berlin, Germany"
+    ],
+    "name": "Leo Shaposhnik",
+    "paper": "2610.20790"
    }
   ],
   "leon garcia": [
@@ -5805,6 +7573,21 @@
     ],
     "name": "Leon Garcia",
     "paper": "2610.15236"
+   }
+  ],
+  "leonhard schmotzer": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "cond-mat",
+     "hep-th",
+     "quant-ph"
+    ],
+    "inst": [
+     "Institut für Theoretische Physik, Universität Regensburg, Regensburg, Germany"
+    ],
+    "name": "Leonhard Schmotzer",
+    "paper": "2610.20768"
    }
   ],
   "liang fu": [
@@ -5878,6 +7661,51 @@
     ],
     "name": "Loïc Herviou",
     "paper": "2610.14183"
+   }
+  ],
+  "lorenz eberhardt": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "hep-th"
+    ],
+    "inst": [
+     "Institute for Theoretical Physics, University of Amsterdam, Amsterdam, NL"
+    ],
+    "name": "Lorenz Eberhardt",
+    "paper": "2610.20696"
+   }
+  ],
+  "lorenzo leone": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "hep-th",
+     "math",
+     "math-ph",
+     "quant-ph"
+    ],
+    "inst": [
+     "Dipartimento di Ingegneria Industriale, Università degli Studi di Salerno, Italy",
+     "Istituto Nazionale di Fisica Nucleare (INFN) Sezione di Napoli, Gruppo Collegato di Salerno, Italy",
+     "Dahlem Center for Complex Quantum Systems, Freie Universität Berlin, Germany"
+    ],
+    "name": "Lorenzo Leone",
+    "paper": "2610.20790"
+   }
+  ],
+  "lorenzo tancredi": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "hep-ph",
+     "hep-th"
+    ],
+    "inst": [
+     "Technical University of Munich, TUM School of Natural Sciences, Physics Department, Germany"
+    ],
+    "name": "Lorenzo Tancredi",
+    "paper": "2610.20820"
    }
   ],
   "louis primeau": [
@@ -5968,6 +7796,22 @@
     "paper": "2610.16856"
    }
   ],
+  "luigi rosa": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "cond-mat",
+     "hep-th",
+     "quant-ph"
+    ],
+    "inst": [
+     "INFN, Sezione di Napoli, Complesso Universitario di Monte S. Angelo, Italia",
+     "Dipartimento di Matematica e Applicazioni “R. Caccioppoli, ” Universitá di Napoli Federico II, Complesso Universitario di Monte S. Angelo, Italia"
+    ],
+    "name": "Luigi Rosa",
+    "paper": "2610.20897"
+   }
+  ],
   "luis a anchordoqui": [
    {
     "date": "2026-10-14",
@@ -5985,6 +7829,22 @@
     "paper": "2610.15209"
    }
   ],
+  "luka vinck": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "gr-qc",
+     "hep-th",
+     "physics"
+    ],
+    "inst": [
+     "Institute of Physics, University of Amsterdam, The Netherlands",
+     "Dutch Institute for Emergent Phenomena, The Netherlands"
+    ],
+    "name": "Luka Vinck",
+    "paper": "2610.22042"
+   }
+  ],
   "luke martin": [
    {
     "date": "2026-10-12",
@@ -5999,6 +7859,19 @@
     "paper": "2610.12559"
    }
   ],
+  "luke pritchard cairns": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "cond-mat"
+    ],
+    "inst": [
+     "Department of Physics, University of California, Berkeley, USA"
+    ],
+    "name": "Luke Pritchard Cairns",
+    "paper": "2610.22361"
+   }
+  ],
   "m ali akbari": [
    {
     "date": "2026-10-14",
@@ -6010,6 +7883,35 @@
     ],
     "name": "M. Ali-Akbari",
     "paper": "2610.18716"
+   }
+  ],
+  "m garofalo": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "hep-lat",
+     "hep-ph",
+     "hep-th"
+    ],
+    "inst": [
+     "HISKP (Theory), Rheinische Friedrich-Wilhelms-Universität Bonn, Germany"
+    ],
+    "name": "M. Garofalo",
+    "paper": "2610.22224"
+   }
+  ],
+  "m gomilsek": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "cond-mat"
+    ],
+    "inst": [
+     "Jožef Stefan Institute, Slovenia",
+     "Faculty of Mathematics and Physics, University of Ljubljana, Slovenia"
+    ],
+    "name": "M. Gomilšek",
+    "paper": "2610.21523"
    }
   ],
   "m h vahidinia": [
@@ -6063,6 +7965,20 @@
     ],
     "name": "M. M. Daryaei Goki",
     "paper": "2610.18716"
+   }
+  ],
+  "m pregelj": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "cond-mat"
+    ],
+    "inst": [
+     "Jožef Stefan Institute, Slovenia",
+     "Faculty of Mathematics and Physics, University of Ljubljana, Slovenia"
+    ],
+    "name": "M. Pregelj",
+    "paper": "2610.21523"
    }
   ],
   "m r lees": [
@@ -6120,6 +8036,22 @@
     ],
     "name": "Ma-Ke Yuan",
     "paper": "2610.18086"
+   }
+  ],
+  "maciej a nowak": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "hep-ph",
+     "hep-th",
+     "quant-ph"
+    ],
+    "inst": [
+     "Institute of Theoretical Physics and Mark Kac Center for Complex Systems Research",
+     "Jagiellonian University, Kraków, Poland"
+    ],
+    "name": "Maciej A. Nowak",
+    "paper": "2610.20793"
    }
   ],
   "mads t frandsen": [
@@ -6206,6 +8138,19 @@
     "paper": "2610.15236"
    }
   ],
+  "malo rouxel": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "cond-mat"
+    ],
+    "inst": [
+     "0.98 [1] Laboratoire de Physique Théorique et, Modélisation, CNRS UMR 8089, CY Cergy Paris Université, France"
+    ],
+    "name": "Malo Rouxel",
+    "paper": "2610.21955"
+   }
+  ],
   "manikantha panda": [
    {
     "date": "2026-10-12",
@@ -6230,6 +8175,21 @@
     ],
     "name": "Mantasha Ansari",
     "paper": "2610.12996"
+   }
+  ],
+  "marc kamionkowski": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "astro-ph",
+     "hep-ph",
+     "hep-th"
+    ],
+    "inst": [
+     "William H.\\ Miller III Department of Physics & Astronomy, Johns Hopkins University, Baltimore, USA"
+    ],
+    "name": "Marc Kamionkowski",
+    "paper": "2610.20702"
    }
   ],
   "marc schiffer": [
@@ -6274,6 +8234,22 @@
     ],
     "name": "Marcelo F. Ciappina",
     "paper": "2610.15251"
+   }
+  ],
+  "marek m rams": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "hep-ph",
+     "hep-th",
+     "quant-ph"
+    ],
+    "inst": [
+     "Institute of Theoretical Physics and Mark Kac Center for Complex Systems Research",
+     "Jagiellonian University, Kraków, Poland"
+    ],
+    "name": "Marek M. Rams",
+    "paper": "2610.20793"
    }
   ],
   "mariam abdelaziz": [
@@ -6390,6 +8366,22 @@
     "paper": "2610.17920"
    }
   ],
+  "markus penz": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "cond-mat",
+     "physics",
+     "quant-ph"
+    ],
+    "inst": [
+     "Arnold Sommerfeld Centre for Theoretical Physics, Ludwig-Maximilians-Universität München, Munich, Germany",
+     "Department of Computer Science, Oslo Metropolitan University, Oslo, Norway"
+    ],
+    "name": "Markus Penz",
+    "paper": "2610.22134"
+   }
+  ],
   "marta bucca": [
    {
     "date": "2026-10-14",
@@ -6402,6 +8394,22 @@
     ],
     "name": "Marta Bucca",
     "paper": "2610.16888"
+   }
+  ],
+  "marten reehorst": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "cond-mat",
+     "hep-th",
+     "math",
+     "math-ph"
+    ],
+    "inst": [
+     "Department of Mathematics, King's College London, Strand, United Kingdom"
+    ],
+    "name": "Marten Reehorst",
+    "paper": "2610.20701"
    }
   ],
   "martin beneke": [
@@ -6473,6 +8481,19 @@
     "paper": "2610.16968"
    }
   ],
+  "martin sasieta": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "hep-th"
+    ],
+    "inst": [
+     "Leinweber Institute for Theoretical Physics and Department of Physics, University of California, Berkeley, USA"
+    ],
+    "name": "Martin Sasieta",
+    "paper": "2610.20699"
+   }
+  ],
   "masaki oura": [
    {
     "date": "2026-10-15",
@@ -6512,6 +8533,20 @@
     ],
     "name": "Masataka Kakoi",
     "paper": "2610.20446"
+   }
+  ],
+  "masataka watanabe": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "gr-qc",
+     "hep-th"
+    ],
+    "inst": [
+     "Faculty of Science, The University of Tokyo, Japan"
+    ],
+    "name": "Masataka Watanabe",
+    "paper": "2610.22101"
    }
   ],
   "mason grieb": [
@@ -6625,6 +8660,20 @@
     ],
     "name": "Matthew Yu",
     "paper": "2610.14165"
+   }
+  ],
+  "matthias r gaberdiel": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "hep-th"
+    ],
+    "inst": [
+     "Institut für Theoretische Physik, ETH Zürich, Switzerland",
+     "Kavli Institute for Theoretical Sciences (KITS) and School of Quantum, University of the Chinese Academy of Sciences, China"
+    ],
+    "name": "Matthias R. Gaberdiel",
+    "paper": "2610.20696"
    }
   ],
   "mattia di mauro": [
@@ -6775,6 +8824,18 @@
   ],
   "michael m scherer": [
    {
+    "date": "2026-10-16",
+    "fields": [
+     "cond-mat",
+     "hep-th"
+    ],
+    "inst": [
+     "Theoretische Physik III, Ruhr-Universität Bochum, Germany"
+    ],
+    "name": "Michael M. Scherer",
+    "paper": "2610.20717"
+   },
+   {
     "date": "2026-10-14",
     "fields": [
      "cond-mat"
@@ -6874,6 +8935,19 @@
     "paper": "2610.12800"
    }
   ],
+  "min li": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "cond-mat"
+    ],
+    "inst": [
+     "School of Physical Science and Technology, ShanghaiTech Laboratory for Topological Physics, State Key Laboratory of Quantum Functional Materials, ShanghaiTech University, China"
+    ],
+    "name": "Min Li",
+    "paper": "2610.21310"
+   }
+  ],
   "min xin huang": [
    {
     "date": "2026-10-14",
@@ -6956,6 +9030,20 @@
     "paper": "2610.18279"
    }
   ],
+  "minkyoo kim": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "hep-th"
+    ],
+    "inst": [
+     "School of Science, Huzhou Normal University, China",
+     "Research Institute of Basic Sciences, Seoul National University, Republic of Korea"
+    ],
+    "name": "Minkyoo Kim",
+    "paper": "2610.21592"
+   }
+  ],
   "mitsuaki kawamura": [
    {
     "date": "2026-10-12",
@@ -6994,6 +9082,19 @@
     ],
     "name": "Mohammad H. Amin",
     "paper": "2610.16046"
+   }
+  ],
+  "mohit randeria": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "cond-mat"
+    ],
+    "inst": [
+     "Department of Physics, The Ohio State University, USA"
+    ],
+    "name": "Mohit Randeria",
+    "paper": "2610.20734"
    }
   ],
   "monika choudhary": [
@@ -7068,7 +9169,49 @@
     "paper": "2610.12559"
    }
   ],
+  "mrinal kanti giri": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "cond-mat",
+     "quant-ph"
+    ],
+    "inst": [
+     "School of Physical and Mathematical Sciences, Nanyang Technological University"
+    ],
+    "name": "Mrinal Kanti Giri",
+    "paper": "2610.21761"
+   }
+  ],
+  "mukund rangamani": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "hep-th"
+    ],
+    "inst": [
+     "Center for Quantum Mathematics and Physics (QMAP) Department of Physics & Astronomy, University of California, Davis"
+    ],
+    "name": "Mukund Rangamani",
+    "paper": "2610.20696"
+   }
+  ],
   "muneto nitta": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "hep-th",
+     "math",
+     "math-ph",
+     "nlin"
+    ],
+    "inst": [
+     "Department of Physics & Research and Education Center for Natural Sciences, Keio University, Yokohama, Japan",
+     "International Institute for Sustainability with Knotted Chiral Meta Matter (WPI-SKCM"
+    ],
+    "name": "Muneto Nitta",
+    "paper": "2610.21930"
+   },
    {
     "date": "2026-10-15",
     "fields": [
@@ -7084,6 +9227,20 @@
     ],
     "name": "Muneto Nitta",
     "paper": "2610.19963"
+   }
+  ],
+  "murtaza ali mir": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "cond-mat",
+     "quant-ph"
+    ],
+    "inst": [
+     "Computational Physics Laboratory, Physics Unit, Faculty of Engineering and Natural Sciences, Tampere University, Finland"
+    ],
+    "name": "Murtaza Ali Mir",
+    "paper": "2610.20712"
    }
   ],
   "muxin han": [
@@ -7125,6 +9282,51 @@
     ],
     "name": "N. D. Andriushin",
     "paper": "2610.16439"
+   }
+  ],
+  "n kalntis": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "hep-lat",
+     "hep-ph",
+     "hep-th"
+    ],
+    "inst": [
+     "Institute for Theoretical Physics, Albert Einstein Center for Fundamental Physics, University of Bern, Switzerland"
+    ],
+    "name": "N. Kalntis",
+    "paper": "2610.22224"
+   }
+  ],
+  "n s nedelko": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "astro-ph",
+     "hep-ph",
+     "hep-th"
+    ],
+    "inst": [
+     "N.S, Institute for Nuclear Research of Russian Academy of Sciences, Russia"
+    ],
+    "name": "N. S. Nedelko",
+    "paper": "2610.21992"
+   }
+  ],
+  "n tantalo": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "hep-lat",
+     "hep-ph",
+     "hep-th"
+    ],
+    "inst": [
+     "Dipartimento di Fisica and INFN, Università di Roma “Tor Vergata”, Italy"
+    ],
+    "name": "N. Tantalo",
+    "paper": "2610.22224"
    }
   ],
   "naga dileep varikuti": [
@@ -7328,6 +9530,19 @@
     ],
     "name": "Niclas Heinsdorf",
     "paper": "2610.16046"
+   }
+  ],
+  "nico rowland": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "cond-mat"
+    ],
+    "inst": [
+     "Department of Physics, University of California, Berkeley, USA"
+    ],
+    "name": "Nico Rowland",
+    "paper": "2610.22361"
    }
   ],
   "nicola baglioni": [
@@ -7636,6 +9851,19 @@
     "paper": "2610.17292"
    }
   ],
+  "p colgan": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "cond-mat"
+    ],
+    "inst": [
+     "Physics Department, Villanova University, Villanova, USA"
+    ],
+    "name": "P. Colgan",
+    "paper": "2610.21875"
+   }
+  ],
   "p d hatton": [
    {
     "date": "2026-10-14",
@@ -7647,6 +9875,19 @@
     ],
     "name": "P. D. Hatton",
     "paper": "2610.16682"
+   }
+  ],
+  "p j baker": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "cond-mat"
+    ],
+    "inst": [
+     "ISIS facility, Rutherford Appleton Laboratory, Chilton, Didcot, Oxfordshire, UK"
+    ],
+    "name": "P. J. Baker",
+    "paper": "2610.21523"
    }
   ],
   "p j hirschfeld": [
@@ -7718,6 +9959,20 @@
    }
   ],
   "pablo pais": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "cond-mat",
+     "hep-th",
+     "quant-ph"
+    ],
+    "inst": [
+     "Instituto de Ciencias Físicas y Matemáticas, Universidad Austral de Chile, Valdivia, Chile",
+     "IPNP - Faculty of Mathematics and Physics, Charles University, Czech Republic"
+    ],
+    "name": "Pablo Pais",
+    "paper": "2610.20897"
+   },
    {
     "date": "2026-10-14",
     "fields": [
@@ -7846,6 +10101,20 @@
     "paper": "2610.18279"
    }
   ],
+  "patrick meessen": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "hep-th"
+    ],
+    "inst": [
+     "HEP Theory Group, Departamento de Física, Universidad de Oviedo Avda. Calvo Sotelo s/n, Spain",
+     "Instituto Universitario de Ciencias y Tecnologías Espaciales de Asturias (ICTEA) Calle de la Independencia, Spain"
+    ],
+    "name": "Patrick Meessen",
+    "paper": "2610.20931"
+   }
+  ],
   "pau figueras": [
    {
     "date": "2026-10-12",
@@ -7858,6 +10127,21 @@
     ],
     "name": "Pau Figueras",
     "paper": "2610.13612"
+   }
+  ],
+  "paul g graf": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "cond-mat",
+     "physics",
+     "quant-ph"
+    ],
+    "inst": [
+     "Arnold Sommerfeld Centre for Theoretical Physics, Ludwig-Maximilians-Universität München, Munich, Germany"
+    ],
+    "name": "Paul G. Graf",
+    "paper": "2610.22134"
    }
   ],
   "paul h frampton": [
@@ -7915,6 +10199,20 @@
     "paper": "2610.07174"
    }
   ],
+  "peng cheng": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "cond-mat"
+    ],
+    "inst": [
+     "Laboratory for Neutron Scattering, School of Physics, Renmin University of China, China",
+     "Key Laboratory of Quantum State Construction and Manipulation (Ministry of Education), Renmin University of China, Beijing, China"
+    ],
+    "name": "Peng Cheng",
+    "paper": "2610.21154"
+   }
+  ],
   "perla medina": [
    {
     "date": "2026-10-12",
@@ -7927,6 +10225,20 @@
     ],
     "name": "Perla Medina",
     "paper": "2610.13566"
+   }
+  ],
+  "petr jakubcik": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "hep-ph",
+     "hep-th"
+    ],
+    "inst": [
+     "Rudolf Peierls Centre for Theoretical Physics, University of Oxford, Clarendon Laboratory"
+    ],
+    "name": "Petr Jakubčík",
+    "paper": "2610.20820"
    }
   ],
   "phil d c king": [
@@ -8048,6 +10360,20 @@
     ],
     "name": "Pietro M. Bonetti",
     "paper": "2610.17222"
+   }
+  ],
+  "pinaki sengupta": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "cond-mat",
+     "quant-ph"
+    ],
+    "inst": [
+     "School of Physical and Mathematical Sciences, Nanyang Technological University"
+    ],
+    "name": "Pinaki Sengupta",
+    "paper": "2610.21761"
    }
   ],
   "piotr cwiklinski": [
@@ -8182,6 +10508,19 @@
     "paper": "2610.15684"
    }
   ],
+  "qiang gao": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "cond-mat"
+    ],
+    "inst": [
+     "Department of Physics, Massachusetts Institute of Technology, Cambridge, USA"
+    ],
+    "name": "Qiang Gao",
+    "paper": "2610.21317"
+   }
+  ],
   "qimiao si": [
    {
     "date": "2026-10-15",
@@ -8209,6 +10548,19 @@
     "paper": "2610.17222"
    }
   ],
+  "quentin g bailey": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "hep-th"
+    ],
+    "inst": [
+     "Department of Physics and Astronomy, Embry-Riddle Aeronautical University, Prescott, AZ, USA"
+    ],
+    "name": "Quentin G. Bailey",
+    "paper": "2610.21066"
+   }
+  ],
   "r bindu": [
    {
     "date": "2026-10-12",
@@ -8220,6 +10572,19 @@
     ],
     "name": "R. Bindu",
     "paper": "2610.13155"
+   }
+  ],
+  "r c silva": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "cond-mat"
+    ],
+    "inst": [
+     "Departamento de Ciências Naturais, Universidade Federal do Espírito Santo, S\\ ao Mateus, Brazil"
+    ],
+    "name": "R. C. Silva",
+    "paper": "2610.22140"
    }
   ],
   "r cubitt": [
@@ -8261,6 +10626,34 @@
     "paper": "2610.16961"
    }
   ],
+  "r frezzotti": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "hep-lat",
+     "hep-ph",
+     "hep-th"
+    ],
+    "inst": [
+     "Dipartimento di Fisica and INFN, Università di Roma “Tor Vergata”, Italy"
+    ],
+    "name": "R. Frezzotti",
+    "paper": "2610.22224"
+   }
+  ],
+  "r l silva": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "cond-mat"
+    ],
+    "inst": [
+     "Departamento de Ciências Naturais, Universidade Federal do Espírito Santo, S\\ ao Mateus, Brazil"
+    ],
+    "name": "R. L. Silva",
+    "paper": "2610.22140"
+   }
+  ],
   "r loganayagam": [
    {
     "date": "2026-10-15",
@@ -8273,6 +10666,19 @@
     ],
     "name": "R. Loganayagam",
     "paper": "2610.20589"
+   }
+  ],
+  "r takahashi": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "cond-mat"
+    ],
+    "inst": [
+     "Department of Material Science, Graduate School of Science, University of Hyogo, Ako, Japan"
+    ],
+    "name": "R. Takahashi",
+    "paper": "2610.21305"
    }
   ],
   "rabindranath bag": [
@@ -8377,6 +10783,32 @@
     "paper": "2610.14847"
    }
   ],
+  "ratnamala chatterjee": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "cond-mat"
+    ],
+    "inst": [
+     "Department of Physics, Indian Institute of Technology Delhi, India"
+    ],
+    "name": "Ratnamala Chatterjee",
+    "paper": "2610.22253"
+   }
+  ],
+  "raul cardoso gil": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "cond-mat"
+    ],
+    "inst": [
+     "Max-Planck-Institut für Chemische Physik fester Stoﬀe, Germany"
+    ],
+    "name": "Raúl Cardoso-Gil",
+    "paper": "2610.22253"
+   }
+  ],
   "raul jimenez": [
    {
     "date": "2026-10-15",
@@ -8449,6 +10881,19 @@
     "paper": "2610.17438"
    }
   ],
+  "reza moazzemi": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "hep-th"
+    ],
+    "inst": [
+     "Department of Physics, Faculty of Science, University of Qom, I.R. Iran"
+    ],
+    "name": "Reza Moazzemi",
+    "paper": "2610.20745"
+   }
+  ],
   "ricardo l silva": [
    {
     "date": "2026-10-14",
@@ -8474,6 +10919,49 @@
     ],
     "name": "Ricardo Landim",
     "paper": "2610.14357"
+   }
+  ],
+  "riccardo gonzo": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "gr-qc",
+     "hep-th"
+    ],
+    "inst": [
+     "School of Mathematical Sciences and STAG Research Centre, University of Southampton, United Kingdom",
+     "Queen Mary University of London, United Kingdom"
+    ],
+    "name": "Riccardo Gonzo",
+    "paper": "2610.20708"
+   }
+  ],
+  "rie y umetsu": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "cond-mat"
+    ],
+    "inst": [
+     "Institute for Materials Research, Tohoku University, Japan",
+     "[Also at ] Center for Science and Innovation in Spintronics, Tohoku University, Japan"
+    ],
+    "name": "Rie Y. Umetsu",
+    "paper": "2610.22253"
+   }
+  ],
+  "rikard enberg": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "hep-ph",
+     "hep-th"
+    ],
+    "inst": [
+     "Department of Physics and Astronomy, Uppsala University, Sweden"
+    ],
+    "name": "Rikard Enberg",
+    "paper": "2610.21751"
    }
   ],
   "rishabh saraswat": [
@@ -8506,6 +10994,20 @@
     "paper": "2610.13938"
    }
   ],
+  "robert de mello koch": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "hep-th"
+    ],
+    "inst": [
+     "School of Science, Huzhou Normal University, China",
+     "Mandelstam Institute for Theoretical Physics, School of Physics, University of the Witwatersrand, South Africa"
+    ],
+    "name": "Robert de Mello Koch",
+    "paper": "2610.21592"
+   }
+  ],
   "robert ferydouni": [
    {
     "date": "2026-10-14",
@@ -8534,6 +11036,20 @@
     ],
     "name": "Roberta Dárlla",
     "paper": "2610.14357"
+   }
+  ],
+  "robertus potting": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "hep-th"
+    ],
+    "inst": [
+     "Departamento de Fí sica, Faculdade de Ciências e Tecnologia, Universidade do Algarve, Portugal",
+     "Centre for Research and Development in Mathematics and Applications (CIDMA), Universidade de Aveiro, Campus de Santiago, Portugal"
+    ],
+    "name": "Robertus Potting",
+    "paper": "2610.21066"
    }
   ],
   "robie a hennigar": [
@@ -8590,6 +11106,35 @@
     ],
     "name": "Romain Vasseur",
     "paper": "2610.18965"
+   }
+  ],
+  "romuald a janik": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "hep-ph",
+     "hep-th",
+     "quant-ph"
+    ],
+    "inst": [
+     "Institute of Theoretical Physics and Mark Kac Center for Complex Systems Research",
+     "Jagiellonian University, Kraków, Poland"
+    ],
+    "name": "Romuald A. Janik",
+    "paper": "2610.20793"
+   }
+  ],
+  "rong yu": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "cond-mat"
+    ],
+    "inst": [
+     "Key Laboratory of Quantum State Construction and Manipulation (Ministry of Education), Renmin University of China, Beijing, China"
+    ],
+    "name": "Rong Yu",
+    "paper": "2610.21154"
    }
   ],
   "ruben lier": [
@@ -8652,6 +11197,18 @@
   ],
   "ryo yokokura": [
    {
+    "date": "2026-10-16",
+    "fields": [
+     "hep-ph",
+     "hep-th"
+    ],
+    "inst": [
+     "Department of Physics & Research and Education Center for Natural Sciences, Keio University, Yokohama, Japan"
+    ],
+    "name": "Ryo Yokokura",
+    "paper": "2610.21688"
+   },
+   {
     "date": "2026-10-15",
     "fields": [
      "hep-ph",
@@ -8680,6 +11237,21 @@
     "paper": "2610.19727"
    }
   ],
+  "s bacchio": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "hep-lat",
+     "hep-ph",
+     "hep-th"
+    ],
+    "inst": [
+     "Computation-based Science and Technology Research Center, The Cyprus Institute, Cyprus"
+    ],
+    "name": "S. Bacchio",
+    "paper": "2610.22224"
+   }
+  ],
   "s cottrell": [
    {
     "date": "2026-10-12",
@@ -8692,6 +11264,19 @@
     ],
     "name": "S. Cottrell",
     "paper": "2610.12726"
+   }
+  ],
+  "s dietrich": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "cond-mat"
+    ],
+    "inst": [
+     "Physics Department, Villanova University, Villanova, USA"
+    ],
+    "name": "S. Dietrich",
+    "paper": "2610.21875"
    }
   ],
   "s ghosh": [
@@ -8735,6 +11320,19 @@
     "paper": "2610.20383"
    }
   ],
+  "s ishida": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "cond-mat"
+    ],
+    "inst": [
+     "National Institute of Advanced Industrial Science and Technology, Tsukuba, Japan"
+    ],
+    "name": "S. Ishida",
+    "paper": "2610.21305"
+   }
+  ],
   "s khalid": [
    {
     "date": "2026-10-12",
@@ -8746,6 +11344,79 @@
     ],
     "name": "S. Khalid",
     "paper": "2610.13155"
+   }
+  ],
+  "s martins filho": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "gr-qc",
+     "hep-th"
+    ],
+    "inst": [
+     "Instituto de Física Teórica, Universidade Estadual, Paulista, S\\ ao Paulo, Brazil"
+    ],
+    "name": "S. Martins-Filho",
+    "paper": "2610.21706"
+   }
+  ],
+  "s nakata": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "cond-mat"
+    ],
+    "inst": [
+     "Department of Material Science, Graduate School of Science, University of Hyogo, Ako, Japan"
+    ],
+    "name": "S. Nakata",
+    "paper": "2610.21305"
+   }
+  ],
+  "s navarro obregon": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "hep-th",
+     "math",
+     "math-ph",
+     "nlin"
+    ],
+    "inst": [
+     "Departamento de Física Teorica, Atómica y Óptica and Laboratory for Disruptive Interdisciplinary Science (LaDIS), Universidad de Valladolid, Spain"
+    ],
+    "name": "S. Navarro-Obregón",
+    "paper": "2610.21930"
+   }
+  ],
+  "s romiti": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "hep-lat",
+     "hep-ph",
+     "hep-th"
+    ],
+    "inst": [
+     "Institute for Theoretical Physics, Albert Einstein Center for Fundamental Physics, University of Bern, Switzerland"
+    ],
+    "name": "S. Romiti",
+    "paper": "2610.22224"
+   }
+  ],
+  "s simula": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "hep-lat",
+     "hep-ph",
+     "hep-th"
+    ],
+    "inst": [
+     "Istituto Nazionale di Fisica Nucleare, Sezione di Roma Tre, Italy"
+    ],
+    "name": "S. Simula",
+    "paper": "2610.22224"
    }
   ],
   "sabino matarrese": [
@@ -8789,6 +11460,34 @@
     ],
     "name": "Salomon Malka",
     "paper": "2610.13389"
+   }
+  ],
+  "sam van leuven": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "hep-th"
+    ],
+    "inst": [
+     "Mandelstam Institute for Theoretical Physics, School of Physics, University of the Witwatersrand, South Africa",
+     "DSI-NRF Centre of Excellence in Mathematical and Statistical Sciences (CoE-MaSS), South Africa",
+     "National Institute for Theoretical and Computational Sciences (NITheCS), Gauteng, South Africa"
+    ],
+    "name": "Sam van Leuven",
+    "paper": "2610.22332"
+   }
+  ],
+  "sameer murthy": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "hep-th"
+    ],
+    "inst": [
+     "Department of Mathematics, King’s College London, The Strand, UK"
+    ],
+    "name": "Sameer Murthy",
+    "paper": "2610.20696"
    }
   ],
   "samuel o scalet": [
@@ -8880,6 +11579,19 @@
     ],
     "name": "Sanjaye Ramgoolam",
     "paper": "2610.20368"
+   }
+  ],
+  "sankar das sarma": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "cond-mat"
+    ],
+    "inst": [
+     "Condensed Matter Theory Center and Joint Quantum Institute, Department of Physics, University of Maryland, College Park, USA"
+    ],
+    "name": "Sankar Das Sarma",
+    "paper": "2610.22037"
    }
   ],
   "santanu pradhan": [
@@ -9008,6 +11720,22 @@
     "paper": "2610.18722"
    }
   ],
+  "sebastian de haro": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "gr-qc",
+     "hep-th",
+     "physics"
+    ],
+    "inst": [
+     "Institute of Physics, University of Amsterdam, The Netherlands",
+     "Institute for Logic, Language and Computation, University of Amsterdam, The Netherlands"
+    ],
+    "name": "Sebastian De Haro",
+    "paper": "2610.22042"
+   }
+  ],
   "seik pak": [
    {
     "date": "2026-10-12",
@@ -9038,6 +11766,19 @@
   ],
   "sergey shadrin": [
    {
+    "date": "2026-10-16",
+    "fields": [
+     "hep-th",
+     "math",
+     "math-ph"
+    ],
+    "inst": [
+     "University of Amsterdam"
+    ],
+    "name": "Sergey Shadrin",
+    "paper": "2610.21585"
+   },
+   {
     "date": "2026-10-15",
     "fields": [
      "hep-th",
@@ -9065,6 +11806,21 @@
     ],
     "name": "Sergey Sibiryakov",
     "paper": "2610.00503"
+   }
+  ],
+  "sergio e aguilar gutierrez": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "gr-qc",
+     "hep-th",
+     "quant-ph"
+    ],
+    "inst": [
+     "Qubits and Spacetime Unit, Okinawa Institute of Science and Technology Graduate University, Onna, Japan"
+    ],
+    "name": "Sergio E. Aguilar-Gutierrez",
+    "paper": "2610.20703"
    }
   ],
   "sergio ferrando solera": [
@@ -9304,6 +12060,36 @@
     "paper": "2610.19727"
    }
   ],
+  "shiroman prakash": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "cs",
+     "hep-ph",
+     "hep-th",
+     "math",
+     "quant-ph"
+    ],
+    "inst": [
+     "Department of Physics and Computer Science, Dayalbagh Educational Institute, India"
+    ],
+    "name": "Shiroman Prakash",
+    "paper": "2610.21879"
+   }
+  ],
+  "shivam rathod": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "cond-mat"
+    ],
+    "inst": [
+     "Department of Physics, Indian Institute of Technology Delhi, India"
+    ],
+    "name": "Shivam Rathod",
+    "paper": "2610.22253"
+   }
+  ],
   "shixiong xu": [
    {
     "date": "2026-10-15",
@@ -9389,6 +12175,32 @@
     "paper": "2610.13555"
    }
   ],
+  "shuaihua zhang": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "cond-mat"
+    ],
+    "inst": [
+     "State Key Laboratory of Metastable Materials Science and Technology, Hebei Key Laboratory of Microstructural Material Physics, School of Science, Yanshan University, Qinhuangdao, China"
+    ],
+    "name": "Shuaihua Zhang",
+    "paper": "2610.21580"
+   }
+  ],
+  "shubhadeep bej": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "cond-mat"
+    ],
+    "inst": [
+     "Department of Physics, Indian Institute of Technology Delhi, India"
+    ],
+    "name": "Shubhadeep Bej",
+    "paper": "2610.22253"
+   }
+  ],
   "shubhadeep chakraborty": [
    {
     "date": "2026-10-14",
@@ -9415,6 +12227,22 @@
     ],
     "name": "Shubhankar Paul",
     "paper": "2610.16189"
+   }
+  ],
+  "shuma nakashiba": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "cond-mat",
+     "hep-th",
+     "math",
+     "math-ph"
+    ],
+    "inst": [
+     "Physics Division, National Center of Theoretical Sciences, National Taiwan University, Taiwan 2 Institute for Solid State Physics, University of Tokyo, Japan"
+    ],
+    "name": "Shuma Nakashiba",
+    "paper": "2610.21478"
    }
   ],
   "shunhui yao": [
@@ -9458,6 +12286,19 @@
     "paper": "2610.20128"
    }
   ],
+  "sicheng he": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "cond-mat"
+    ],
+    "inst": [
+     "State Key Laboratory of Metastable Materials Science and Technology, Hebei Key Laboratory of Microstructural Material Physics, School of Science, Yanshan University, Qinhuangdao, China"
+    ],
+    "name": "Sicheng He",
+    "paper": "2610.21580"
+   }
+  ],
   "siddhant panda": [
    {
     "date": "2026-10-14",
@@ -9498,6 +12339,19 @@
     "paper": "2610.18965"
    }
   ],
+  "sinong liu": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "hep-th"
+    ],
+    "inst": [
+     "Department of Physics, Kyung Hee University, Kyungheedae-ro, Dongdaemun-gu, Seoul, Republic of Korea"
+    ],
+    "name": "Sinong Liu",
+    "paper": "2610.21592"
+   }
+  ],
   "sirui wang": [
    {
     "date": "2026-10-15",
@@ -9523,6 +12377,19 @@
     ],
     "name": "Sitangshu Bhattacharya",
     "paper": "2610.12996"
+   }
+  ],
+  "sneh": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "cond-mat"
+    ],
+    "inst": [
+     "Department of Physics, Indian Institute of Technology Delhi, India"
+    ],
+    "name": "Sneh",
+    "paper": "2610.22253"
    }
   ],
   "soham ghatak": [
@@ -9569,6 +12436,20 @@
     ],
     "name": "Somnath Maity",
     "paper": "2610.13782"
+   }
+  ],
+  "somnath porey": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "gr-qc",
+     "hep-th"
+    ],
+    "inst": [
+     "Chennai Mathematical Institute, India"
+    ],
+    "name": "Somnath Porey",
+    "paper": "2610.22101"
    }
   ],
   "songyuan geng": [
@@ -9624,6 +12505,48 @@
     ],
     "name": "Soumitra Sengupta",
     "paper": "2610.13016"
+   }
+  ],
+  "soumya bera": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "cond-mat",
+     "quant-ph"
+    ],
+    "inst": [
+     "Department of Physics, Indian Institute of Technology Bombay, India"
+    ],
+    "name": "Soumya Bera",
+    "paper": "2610.21631"
+   }
+  ],
+  "soumyadeep chaudhuri": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "cond-mat",
+     "hep-th"
+    ],
+    "inst": [
+     "Physique Théorique et Mathématique, Université Libre de Bruxelles, Belgium"
+    ],
+    "name": "Soumyadeep Chaudhuri",
+    "paper": "2610.20717"
+   }
+  ],
+  "soumyadip kundu": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "hep-ph",
+     "hep-th"
+    ],
+    "inst": [
+     "Indian Institute of Science Education and Research Thiruvananthapuram, Vithura, Kerala, India"
+    ],
+    "name": "Soumyadip Kundu",
+    "paper": "2610.21751"
    }
   ],
   "soundarya p": [
@@ -9761,6 +12684,19 @@
     "paper": "2610.12559"
    }
   ],
+  "steffen bollmann": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "cond-mat"
+    ],
+    "inst": [
+     "Max-Planck Institute for Solid State Research, Germany"
+    ],
+    "name": "Steffen Bollmann",
+    "paper": "2610.22348"
+   }
+  ],
   "stephane fay": [
    {
     "date": "2026-10-14",
@@ -9815,6 +12751,21 @@
     ],
     "name": "Su-Peng Kou",
     "paper": "2610.18175"
+   }
+  ],
+  "subhadip mitra": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "hep-ph",
+     "hep-th"
+    ],
+    "inst": [
+     "Center for Computational Natural Sciences and Bioinformatics, International Institute of Information Technology, India",
+     "Center for Quantum Science and Technology, International Institute of Information Technology, India"
+    ],
+    "name": "Subhadip Mitra",
+    "paper": "2610.21751"
    }
   ],
   "subhash mahapatra": [
@@ -9894,6 +12845,19 @@
     "paper": "2610.17179"
    }
   ],
+  "sumilan banerjee": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "cond-mat"
+    ],
+    "inst": [
+     "Centre for Condensed Matter Theory, Department of Physics, Indian Institute of Science, India"
+    ],
+    "name": "Sumilan Banerjee",
+    "paper": "2610.20734"
+   }
+  ],
   "sung kwan mo": [
    {
     "date": "2026-10-14",
@@ -9906,6 +12870,19 @@
     ],
     "name": "Sung-Kwan Mo",
     "paper": "2610.15236"
+   }
+  ],
+  "sungjoon kim": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "hep-th"
+    ],
+    "inst": [
+     "[] Department of Physics, Korea Advanced Institute of Science and Technology, Korea"
+    ],
+    "name": "Sungjoon Kim",
+    "paper": "2610.22054"
    }
   ],
   "sunil nair": [
@@ -10087,6 +13064,19 @@
     "paper": "2610.13575"
    }
   ],
+  "t taniguchi": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "cond-mat"
+    ],
+    "inst": [
+     "National Institute for Materials Science, Tsukuba, Japan"
+    ],
+    "name": "T. Taniguchi",
+    "paper": "2610.21875"
+   }
+  ],
   "t w chamberlain": [
    {
     "date": "2026-10-14",
@@ -10127,6 +13117,20 @@
     ],
     "name": "Taewook Youn",
     "paper": "2610.13930"
+   }
+  ],
+  "taige wang": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "cond-mat"
+    ],
+    "inst": [
+     "Materials Research Laboratory, Massachusetts Institute of Technology, Cambridge, USA",
+     "Department of Physics, Harvard University, Cambridge, USA"
+    ],
+    "name": "Taige Wang",
+    "paper": "2610.21317"
    }
   ],
   "takafumi d yamamoto": [
@@ -10171,6 +13175,19 @@
     ],
     "name": "Takayuki Kiss",
     "paper": "2610.19727"
+   }
+  ],
+  "takayuki yokoyama": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "cond-mat"
+    ],
+    "inst": [
+     "Quantum Matter Program, Graduate School of Advanced Science and Engineering, Hiroshima University, Higashihiroshima, Japan"
+    ],
+    "name": "Takayuki Yokoyama",
+    "paper": "2610.22257"
    }
   ],
   "takeshi kondo": [
@@ -10229,6 +13246,19 @@
     "paper": "2610.17179"
    }
   ],
+  "tanay kibe": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "hep-th"
+    ],
+    "inst": [
+     "Instituto Balseiro, Centro Atómico Bariloche, S.C. de Bariloche, Río Negro, Argentina"
+    ],
+    "name": "Tanay Kibe",
+    "paper": "2610.22332"
+   }
+  ],
   "tanmay vachaspati": [
    {
     "date": "2026-10-15",
@@ -10256,6 +13286,34 @@
     ],
     "name": "Tanny Chavez",
     "paper": "2610.15236"
+   }
+  ],
+  "tanumoy mandal": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "hep-ph",
+     "hep-th"
+    ],
+    "inst": [
+     "Indian Institute of Science Education and Research Thiruvananthapuram, Vithura, Kerala, India"
+    ],
+    "name": "Tanumoy Mandal",
+    "paper": "2610.21751"
+   }
+  ],
+  "tao li": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "gr-qc",
+     "hep-th"
+    ],
+    "inst": [
+     "Department of Physics, Guizhou Minzu University, China"
+    ],
+    "name": "Tao Li",
+    "paper": "2610.21574"
    }
   ],
   "tapas paramanik": [
@@ -10300,6 +13358,21 @@
     ],
     "name": "Tatsuya Daniel",
     "paper": "2610.12719"
+   }
+  ],
+  "teemu ojanen": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "cond-mat",
+     "quant-ph"
+    ],
+    "inst": [
+     "Computational Physics Laboratory, Physics Unit, Faculty of Engineering and Natural Sciences, Tampere University, Finland",
+     "Helsinki Institute of Physics P.O. Box 64, Finland"
+    ],
+    "name": "Teemu Ojanen",
+    "paper": "2610.20712"
    }
   ],
   "teng fei ying": [
@@ -10360,6 +13433,20 @@
     "paper": "2610.16968"
    }
   ],
+  "thomas gehrmann": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "hep-ph",
+     "hep-th"
+    ],
+    "inst": [
+     "Physik-Institut, Universität Zurich, Switzerland"
+    ],
+    "name": "Thomas Gehrmann",
+    "paper": "2610.20820"
+   }
+  ],
   "thomas jackson": [
    {
     "date": "2026-10-14",
@@ -10387,6 +13474,19 @@
     ],
     "name": "Thomas James Hicken",
     "paper": "2610.13346"
+   }
+  ],
+  "thomas l schmidt": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "cond-mat"
+    ],
+    "inst": [
+     "Department of Physics and Materials Science, University of Luxembourg, Luxembourg"
+    ],
+    "name": "Thomas L. Schmidt",
+    "paper": "2610.22348"
    }
   ],
   "thomas metzger": [
@@ -10558,6 +13658,17 @@
   ],
   "tomas ortin": [
    {
+    "date": "2026-10-16",
+    "fields": [
+     "hep-th"
+    ],
+    "inst": [
+     "Instituto de Física Teórica UAM/CSIC C/ Nicolás Cabrera, C.U. Cantoblanco"
+    ],
+    "name": "Tomás Ortín",
+    "paper": "2610.20931"
+   },
+   {
     "date": "2026-10-12",
     "fields": [
      "gr-qc",
@@ -10568,6 +13679,20 @@
     ],
     "name": "Tomás Ortín",
     "paper": "2610.13377"
+   }
+  ],
+  "tomasz r taylor": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "hep-th"
+    ],
+    "inst": [
+     "Department of Physics, Northeastern University, Boston, USA",
+     "Faculty of Physics, University of Warsaw, Poland"
+    ],
+    "name": "Tomasz R. Taylor",
+    "paper": "2610.20707"
    }
   ],
   "tomaz prosen": [
@@ -10724,6 +13849,35 @@
     "paper": "2610.12800"
    }
   ],
+  "u wenger": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "hep-lat",
+     "hep-ph",
+     "hep-th"
+    ],
+    "inst": [
+     "Institute for Theoretical Physics, Albert Einstein Center for Fundamental Physics, University of Bern, Switzerland"
+    ],
+    "name": "U. Wenger",
+    "paper": "2610.22224"
+   }
+  ],
+  "ulf danielsson": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "hep-ph",
+     "hep-th"
+    ],
+    "inst": [
+     "Department of Physics and Astronomy, Uppsala University, Sweden"
+    ],
+    "name": "Ulf Danielsson",
+    "paper": "2610.21751"
+   }
+  ],
   "ulrich starke": [
    {
     "date": "2026-10-14",
@@ -10762,6 +13916,21 @@
     ],
     "name": "V. Felea",
     "paper": "2610.16439"
+   }
+  ],
+  "v lubicz": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "hep-lat",
+     "hep-ph",
+     "hep-th"
+    ],
+    "inst": [
+     "Dipartimento di Matematica e Fisica, Università Roma Tre and INFN, Sezione di Roma Tre, Italy"
+    ],
+    "name": "V. Lubicz",
+    "paper": "2610.22224"
    }
   ],
   "v prata": [
@@ -10818,6 +13987,19 @@
     "paper": "2610.12800"
    }
   ],
+  "valerie bettaque": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "hep-th"
+    ],
+    "inst": [
+     "Quantum Horizons Alberta, Department of Physics and Astronomy, University of Calgary, 2500 University Drive NW, Calgary, Canada"
+    ],
+    "name": "Valérie Bettaque",
+    "paper": "2610.20699"
+   }
+  ],
   "varghese mathai": [
    {
     "date": "2026-10-12",
@@ -10864,6 +14046,20 @@
     "paper": "2610.19959"
    }
   ],
+  "vatsana tiwari": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "cond-mat",
+     "quant-ph"
+    ],
+    "inst": [
+     "Department of Physics, Indian Institute of Technology Bombay, India"
+    ],
+    "name": "Vatsana Tiwari",
+    "paper": "2610.21631"
+   }
+  ],
   "venkata suryanarayana m": [
    {
     "date": "2026-10-14",
@@ -10875,6 +14071,23 @@
     ],
     "name": "Venkata Suryanarayana M",
     "paper": "2610.15608"
+   }
+  ],
+  "vera gluscevic": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "astro-ph",
+     "hep-ph",
+     "hep-th"
+    ],
+    "inst": [
+     "Department of Physics & Astronomy, University of Southern California, Los Angeles, USA",
+     "Institute for Advanced Study, Princeton, USA",
+     "Center for Computational Astrophysics, Flatiron Institute, New York, USA"
+    ],
+    "name": "Vera Gluscevic",
+    "paper": "2610.20702"
    }
   ],
   "vibha reddy": [
@@ -10932,6 +14145,19 @@
     ],
     "name": "Vidur Niranjan",
     "paper": "2610.16733"
+   }
+  ],
+  "vikas chahar": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "cond-mat"
+    ],
+    "inst": [
+     "Department of Physics, Indian Institute of Technology Delhi, India"
+    ],
+    "name": "Vikas Chahar",
+    "paper": "2610.22253"
    }
   ],
   "vincent f he": [
@@ -11186,6 +14412,19 @@
     "paper": "2610.16973"
    }
   ],
+  "weiqiang yu": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "cond-mat"
+    ],
+    "inst": [
+     "Key Laboratory of Quantum State Construction and Manipulation (Ministry of Education), Renmin University of China, Beijing, China"
+    ],
+    "name": "Weiqiang Yu",
+    "paper": "2610.21154"
+   }
+  ],
   "wen hao bian": [
    {
     "date": "2026-10-14",
@@ -11340,6 +14579,19 @@
     "paper": "2610.15358"
    }
   ],
+  "xiao xu": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "cond-mat"
+    ],
+    "inst": [
+     "Department of Materials Science, Graduate School of Engineering, Tohoku University, Japan"
+    ],
+    "name": "Xiao Xu",
+    "paper": "2610.22253"
+   }
+  ],
   "xiao yan chew": [
    {
     "date": "2026-10-14",
@@ -11365,6 +14617,48 @@
     ],
     "name": "Xiao-Yong Feng",
     "paper": "2610.14556"
+   }
+  ],
+  "xiaoqun wang": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "cond-mat"
+    ],
+    "inst": [
+     "School of Physics, Zhejiang University, China",
+     "Institute for Advanced Study in Physics, Zhejiang University, China"
+    ],
+    "name": "Xiaoqun Wang",
+    "paper": "2610.21854"
+   }
+  ],
+  "xiaoyan huo": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "cs",
+     "hep-th",
+     "math"
+    ],
+    "inst": [
+     "Universiti Teknologi Malaysia, Malaysia"
+    ],
+    "name": "Xiaoyan Huo",
+    "paper": "2610.20653"
+   }
+  ],
+  "xin lu": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "cond-mat"
+    ],
+    "inst": [
+     "School of Physical Science and Technology, ShanghaiTech Laboratory for Topological Physics, State Key Laboratory of Quantum Functional Materials, ShanghaiTech University, China"
+    ],
+    "name": "Xin Lu",
+    "paper": "2610.21310"
    }
   ],
   "xin yi pan": [
@@ -11394,6 +14688,20 @@
     ],
     "name": "Xingyao Wu",
     "paper": "2610.15387"
+   }
+  ],
+  "xu guang zhou": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "cond-mat"
+    ],
+    "inst": [
+     "High Magnetic Field Laboratory, Hefei Institutes of Physical Science, Chinese Academy of Sciences, Anhui, China",
+     "Institute for Solid State Physics, University of Tokyo, Kashiwa, Japan"
+    ],
+    "name": "Xu-Guang Zhou",
+    "paper": "2610.21154"
    }
   ],
   "xu ye": [
@@ -11440,6 +14748,20 @@
     ],
     "name": "Xuejian Shen",
     "paper": "2610.16968"
+   }
+  ],
+  "xuejuan gui": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "cond-mat"
+    ],
+    "inst": [
+     "Laboratory for Neutron Scattering, School of Physics, Renmin University of China, China",
+     "Key Laboratory of Quantum State Construction and Manipulation (Ministry of Education), Renmin University of China, Beijing, China"
+    ],
+    "name": "Xuejuan Gui",
+    "paper": "2610.21154"
    }
   ],
   "xufen zhang": [
@@ -11524,6 +14846,19 @@
     "paper": "2610.14480"
    }
   ],
+  "yang zhi chou": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "cond-mat"
+    ],
+    "inst": [
+     "Condensed Matter Theory Center and Joint Quantum Institute, Department of Physics, University of Maryland, College Park, USA"
+    ],
+    "name": "Yang-Zhi Chou",
+    "paper": "2610.22037"
+   }
+  ],
   "yang zhou": [
    {
     "date": "2026-10-14",
@@ -11540,6 +14875,19 @@
     ],
     "name": "Yang Zhou",
     "paper": "2610.18086"
+   }
+  ],
+  "yanling wu": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "cond-mat"
+    ],
+    "inst": [
+     "State Key Laboratory of Metastable Materials Science and Technology, Hebei Key Laboratory of Microstructural Material Physics, School of Science, Yanshan University, Qinhuangdao, China"
+    ],
+    "name": "Yanling Wu",
+    "paper": "2610.21580"
    }
   ],
   "yanmei cai": [
@@ -11568,6 +14916,33 @@
     ],
     "name": "Yasir Iqbal",
     "paper": "2610.16733"
+   }
+  ],
+  "yasuhiro h matsuda": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "cond-mat"
+    ],
+    "inst": [
+     "Institute for Solid State Physics, University of Tokyo, Kashiwa, Japan"
+    ],
+    "name": "Yasuhiro H. Matsuda",
+    "paper": "2610.21154"
+   }
+  ],
+  "yasuhiro tada": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "cond-mat"
+    ],
+    "inst": [
+     "Quantum Matter Program, Graduate School of Advanced Science and Engineering, Hiroshima University, Higashihiroshima, Japan",
+     "Institute for Solid State Physics, University of Tokyo, Japan"
+    ],
+    "name": "Yasuhiro Tada",
+    "paper": "2610.22257"
    }
   ],
   "yasuhiro takei": [
@@ -11977,6 +15352,19 @@
     "paper": "2610.19995"
    }
   ],
+  "yuan sun": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "cond-mat"
+    ],
+    "inst": [
+     "Laboratory for Neutron Scattering, School of Physics, Renmin University of China, China"
+    ],
+    "name": "Yuan Sun",
+    "paper": "2610.21154"
+   }
+  ],
   "yuan wan": [
    {
     "date": "2026-10-14",
@@ -12002,6 +15390,19 @@
     ],
     "name": "Yuan Yang",
     "paper": "2610.16674"
+   }
+  ],
+  "yuanqi lyu": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "cond-mat"
+    ],
+    "inst": [
+     "Department of Physics, University of California, Berkeley, USA"
+    ],
+    "name": "Yuanqi Lyu",
+    "paper": "2610.22361"
    }
   ],
   "yucheng guo": [
@@ -12130,6 +15531,19 @@
     "paper": "2610.19727"
    }
   ],
+  "yuxin wang": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "cond-mat"
+    ],
+    "inst": [
+     "Kavli Institute for Theoretical Sciences, University of Chinese Academy of Sciences, Beijing, China"
+    ],
+    "name": "Yuxin Wang",
+    "paper": "2610.22212"
+   }
+  ],
   "z song": [
    {
     "date": "2026-10-14",
@@ -12182,6 +15596,19 @@
     ],
     "name": "Zenan Liu Yi-Ming Ding",
     "paper": "2610.16494"
+   }
+  ],
+  "zhan wang": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "cond-mat"
+    ],
+    "inst": [
+     "Beijing National Laboratory for Condensed Matter Physics and, Institute of Physics, Chinese Academy of Sciences, China"
+    ],
+    "name": "Zhan Wang",
+    "paper": "2610.22212"
    }
   ],
   "zhangyu yang": [
@@ -12286,6 +15713,32 @@
     "paper": "2610.17984"
    }
   ],
+  "zhixuan zhao": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "cond-mat"
+    ],
+    "inst": [
+     "State Key Laboratory of Metastable Materials Science and Technology, Hebei Key Laboratory of Microstructural Material Physics, School of Science, Yanshan University, Qinhuangdao, China"
+    ],
+    "name": "Zhixuan Zhao",
+    "paper": "2610.21580"
+   }
+  ],
+  "zhongcen sun": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "cond-mat"
+    ],
+    "inst": [
+     "Laboratory for Neutron Scattering, School of Physics, Renmin University of China, China"
+    ],
+    "name": "Zhongcen Sun",
+    "paper": "2610.21154"
+   }
+  ],
   "zhurun ji": [
    {
     "date": "2026-10-14",
@@ -12316,6 +15769,19 @@
     "paper": "2610.18086"
    }
   ],
+  "zihang liu": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "cond-mat"
+    ],
+    "inst": [
+     "State Key Laboratory of Precision Welding and Joining of Materials and Structures, Harbin Institute of Technology, Harbin, China"
+    ],
+    "name": "Zihang Liu",
+    "paper": "2610.22253"
+   }
+  ],
   "zihao liu": [
    {
     "date": "2026-10-14",
@@ -12329,6 +15795,20 @@
     ],
     "name": "ZiHao Liu",
     "paper": "2610.16095"
+   }
+  ],
+  "zilong li": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "cond-mat"
+    ],
+    "inst": [
+     "New Cornerstone Science Laboratory, Center for Correlated Matter, Zhejiang University, China",
+     "School of Physics, Zhejiang University, China"
+    ],
+    "name": "Zilong Li",
+    "paper": "2610.21854"
    }
   ],
   "ziqiang wang": [
@@ -12370,6 +15850,19 @@
     ],
     "name": "Ziyu Dong",
     "paper": "2610.19149"
+   }
+  ],
+  "zohreh ashkipoor gofreh": [
+   {
+    "date": "2026-10-16",
+    "fields": [
+     "hep-th"
+    ],
+    "inst": [
+     "Department of Physics, Faculty of Science, University of Qom, I.R. Iran"
+    ],
+    "name": "Zohreh Ashkipoor Gofreh",
+    "paper": "2610.20745"
    }
   ],
   "zongyuan wang": [
