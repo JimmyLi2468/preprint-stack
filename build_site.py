@@ -191,8 +191,12 @@ def main():
     for code, feed in feeds.items():
         payload = json.dumps({"category": code, **feed}, ensure_ascii=False, separators=(",", ":"))
         (data_dir / f"{code}.json").write_text(payload, encoding="utf-8")
+    # A tiny file the app and the overnight checks read to tell whether there's a newer build.
+    dates = [f["date"] for f in feeds.values() if f.get("date")]
+    status = {"date": max(dates) if dates else None, "builtAt": built_at}
+    (data_dir / "status.json").write_text(json.dumps(status), encoding="utf-8")
     size_mb = sum(f.stat().st_size for f in data_dir.iterdir()) / 1e6
-    print(f"Wrote {len(codes)} categories to {out} ({size_mb:.1f} MB of data)")
+    print(f"Wrote {len(codes)} categories to {out} ({size_mb:.1f} MB of data); announcement date {status['date']}")
 
 
 if __name__ == "__main__":

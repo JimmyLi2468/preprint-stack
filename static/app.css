@@ -164,6 +164,12 @@ svg path, svg polyline, svg circle { fill: none; stroke: currentColor; stroke-wi
 .ios-short .view-stack { padding-bottom: 4px; --card-gap: 8px; }
 .ios-short .card[data-depth="1"] { transform: translateY(4px) scale(.966); }
 .ios-short .card[data-depth="2"] { transform: translateY(8px) scale(.932); }
+.update-banner {
+  align-self: center; display: inline-flex; align-items: center; gap: 8px;
+  min-height: 36px; padding: 0 16px; border: 0; border-radius: 999px; cursor: pointer;
+  background: var(--hot); color: var(--on-accent); font: 600 .9rem/1 var(--font-ui); box-shadow: var(--shadow-fab);
+}
+.update-banner:active { transform: scale(.96); }
 .notice { margin: 0; padding: 10px 14px; border-radius: 12px; background: var(--paper); color: var(--ink-2); font-size: .84rem; line-height: 1.4; }
 .deck { position: relative; flex: 1 1 auto; min-height: 0; }
 

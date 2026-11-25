@@ -35,7 +35,8 @@ The app remembers where you stopped: reopening it starts at the first paper you 
 
 The workflow in `.github/workflows/publish.yml` publishes a hosted copy that anyone with the link can use:
 
-- Every weekday at 05:30 UTC, shortly after arXiv refreshes its feeds, it runs `build_site.py`. That downloads the latest announcement for every arXiv category (about 8 MB of data) and deploys it with the app to GitHub Pages.
+- arXiv posts new papers at 20:00 US Eastern, Sunday to Thursday, and refreshes its feeds around midnight Eastern. Through that window the job checks every 10 minutes (`check_arxiv.py`, which reads only the top of one feed) and, as soon as a new announcement appears, runs `build_site.py`. That downloads the announcement for every arXiv category (about 8 MB of data) and deploys it with the app to GitHub Pages. A midday check catches anything the overnight ones missed. Each check also logs the date on arXiv's own "new" listing page, which shows when those pages update compared with the feeds.
+- The app checks for a newer build when you open it or come back to it, and every 5 minutes while it's open. If you're partway through the stack it shows a "New papers for …" button instead of replacing the stack under you.
 - It also runs on every push to `main`, and you can start it by hand from the repository's Actions tab.
 - On weekends and holidays the site keeps showing the most recent announcement.
 - Each person picks their own topics. Settings and saved papers stay in each person's own browser.
@@ -66,6 +67,7 @@ For papers in hep-th and cond-mat.str-el, including papers cross-listed into the
 
 - `server.py`: local web server and arXiv fetching
 - `build_site.py`: builds the hosted copy with every category's papers prefetched
+- `check_arxiv.py`: the quick overnight check for a new arXiv announcement
 - `affiliations.py`: reads author affiliations from papers and keeps the author index
 - `index/authors.json`, `index/overrides.json`: the author index and manual corrections
 - `.github/workflows/publish.yml`: rebuilds and publishes the hosted copy each weekday

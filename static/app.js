@@ -267,10 +267,20 @@ async function fetchServerFeed(topics) {
   return data;
 }
 
+/** The published build's date and time, from a tiny file that skips every cache. */
+async function fetchStatus() {
+  const res = await fetch(`data/status.json?t=${Date.now()}`, { cache: 'no-store' });
+  if (!res.ok) throw new Error(`status ${res.status}`);
+  return res.json();
+}
+
 async function fetchPublishedFeed(topics) {
+  // Tag the data requests with the build they belong to, so a new build is never hidden by a cache.
+  const version = await fetchStatus().then(s => s.builtAt || '', () => '');
+  const suffix = version ? `?v=${encodeURIComponent(version)}` : '';
   const results = await Promise.all(topics.map(async topic => {
     try {
-      const res = await fetch(`data/${encodeURIComponent(topic)}.json`);
+      const res = await fetch(`data/${encodeURIComponent(topic)}.json${suffix}`);
       if (!res.ok) throw new Error(res.status === 404 ? 'not on this site yet' : `download failed (${res.status})`);
       return { topic, feed: await res.json() };
     } catch (error) {
@@ -293,8 +303,41 @@ async function fetchPublishedFeed(topics) {
     }
   }
   const papers = [...byId.values()].sort((a, b) => rank(a) - rank(b));
-  return { source: 'announcement', date, topics, papers, errors };
+  return { source: 'announcement', date, topics, papers, errors, version };
 }
+
+// ---------------------------------------------------------------- noticing new builds (hosted copy)
+
+let pendingUpdate = null;  // a newer day's papers, waiting for the reader to ask for them
+
+async function checkForUpdate() {
+  if (!HOSTED || !feed || document.visibilityState !== 'visible') return;
+  const status = await fetchStatus().catch(() => null);
+  if (!status?.builtAt || status.builtAt === feed.data.version) return;
+  const newDay = Boolean(status.date) && status.date !== feed.data.date;
+  const midStack = currentView === 'stack' && index > 0 && index < stack.length;
+  if (newDay && midStack) {
+    pendingUpdate = status;  // don't pull the stack out from under someone reading
+    renderUpdateBanner();
+    return;
+  }
+  loadFeed({ force: true, quiet: !newDay });  // same day: refresh quietly and keep your place
+}
+
+function renderUpdateBanner() {
+  const banner = $('#update-banner');
+  banner.hidden = !pendingUpdate;
+  if (pendingUpdate) {
+    const day = parseDay(pendingUpdate.date)?.toLocaleDateString('en-US', { weekday: 'long', month: 'short', day: 'numeric' });
+    banner.textContent = `New papers for ${day} · Show`;
+  }
+}
+
+$('#update-banner').addEventListener('click', () => {
+  pendingUpdate = null;
+  renderUpdateBanner();
+  loadFeed({ force: true });
+});
 
 async function loadFeed({ force = false, quiet = false } = {}) {
   if (!prefs.topics.length) {
@@ -341,6 +384,8 @@ async function loadFeed({ force = false, quiet = false } = {}) {
 
 function buildStack() {
   stackDirty = false;
+  pendingUpdate = null;
+  renderUpdateBanner();
   const pattern = keywordPattern();
   let papers = feed.data.papers.filter(p => prefs.include[kindOf(p.type)]);
   if (pattern) {
@@ -1157,11 +1202,14 @@ function route() {
 window.addEventListener('hashchange', route);
 
 // Pick up a new day's papers if the tab has been sitting open for a while.
+// Pick up new papers soon after they're published: when you come back to the app, and every few
+// minutes while it's open. (The local server copy just refetches if it has been a while.)
 document.addEventListener('visibilitychange', () => {
-  if (document.visibilityState === 'visible' && feed && Date.now() - feed.loadedAt > 30 * 60e3) {
-    loadFeed({ force: true, quiet: true });
-  }
+  if (document.visibilityState !== 'visible' || !feed) return;
+  if (HOSTED) checkForUpdate();
+  else if (Date.now() - feed.loadedAt > 30 * 60e3) loadFeed({ force: true, quiet: true });
 });
+setInterval(checkForUpdate, 5 * 60e3);
 
 // Some iOS versions draw a home-screen app from under the status bar but stop the page that
 // much short of the bottom edge, where iOS paints its own strip. The page can't reach the home
