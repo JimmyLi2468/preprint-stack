@@ -52,7 +52,7 @@ GitHub pauses scheduled workflows in a repository that has had no commits for 60
 2. On cron-job.org, create a job:
    - URL: `https://api.github.com/repos/<your-username>/preprint-stack/actions/workflows/publish.yml/dispatches`
    - Schedule: minute 45, hours 0, 2 and 6, Monday to Friday, time zone America/New_York
-   - Method `POST`, headers `Authorization: Bearer <token>`, `Accept: application/vnd.github+json`, `X-GitHub-Api-Version: 2022-11-28`
+   - Method `POST`, headers `Authorization: Bearer <token>`, `Accept: application/vnd.github+json`, `X-GitHub-Api-Version: 2026-03-10`
    - Body: `{"ref": "main", "inputs": {"check_only": "true"}}`
    - A successful call returns HTTP 204, and a short "check" run appears in the repository's Actions tab.
 3. When the token expires, generate a new one and paste it into the job's Authorization header.
