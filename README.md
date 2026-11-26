@@ -54,7 +54,7 @@ GitHub pauses scheduled workflows in a repository that has had no commits for 60
    - Schedule: minute 45, hours 0, 2 and 6, Monday to Friday, time zone America/New_York
    - Method `POST`, headers `Authorization: Bearer <token>`, `Accept: application/vnd.github+json`, `X-GitHub-Api-Version: 2026-03-10`
    - Body: `{"ref": "main", "inputs": {"check_only": "true"}}`
-   - A successful call returns HTTP 204, and a short "check" run appears in the repository's Actions tab.
+   - A successful call returns HTTP 200 (204 with the older 2022-11-28 API version), and a short "check" run appears in the repository's Actions tab.
 3. When the token expires, generate a new one and paste it into the job's Authorization header.
 
 To try the hosted build on your computer: `python3 build_site.py`, then serve the `_site` folder with any static file server.
