@@ -35,7 +35,7 @@ The app remembers where you stopped: reopening it starts at the first paper you 
 
 The workflow in `.github/workflows/publish.yml` publishes a hosted copy that anyone with the link can use:
 
-- arXiv's feeds refresh around 12:25 am US Eastern after each announcement (Sunday to Thursday nights). An outside scheduler, cron-job.org, starts a check at 12:45, 2:45 and 6:45 am Eastern. Each check (`check_arxiv.py`) reads only the top of two feeds and the site's status file, and only when arXiv has newer papers does it run `build_site.py`, which downloads the announcement for every arXiv category (about 8 MB of data) and deploys it with the app to GitHub Pages. A normal night's papers are live by about 12:55 am.
+- arXiv's feeds refresh between midnight and about 12:25 am US Eastern after each announcement (Sunday to Thursday nights). An outside scheduler, cron-job.org, starts a check at 12:45, 2:45 and 6:45 am Eastern. Each check (`check_arxiv.py`) reads only the top of two feeds and the site's status file, and only when arXiv has newer papers does it run `build_site.py`, which downloads the announcement for every arXiv category (about 8 MB of data) and deploys it with the app to GitHub Pages. A normal night's papers are live by about 12:55 am.
 - GitHub's own scheduler is only a safety net (7:15 am Eastern on weekdays). It starts runs hours late, which is why the outside scheduler exists.
 - The app checks for a newer build when you open it or come back to it, and every 5 minutes while it's open. If you're partway through the stack it shows a "New papers for …" button instead of replacing the stack under you.
 - It also runs on every push to `main`, and you can start it by hand from the repository's Actions tab.
