@@ -1,13 +1,12 @@
 name: Publish to GitHub Pages
 
 on:
+  # arXiv's feeds refresh around 12:25 am US Eastern after each announcement (Sunday to Thursday
+  # nights). GitHub starts scheduled runs hours late, so an outside scheduler (cron-job.org) starts
+  # check-only runs at 12:45, 2:45 and 6:45 am Eastern; see README. This is just a safety net.
   schedule:
-    # arXiv posts new papers at 20:00 US Eastern, Sunday to Thursday, and refreshes its feeds
-    # around midnight Eastern. Check every 10 minutes through that window (00:00-07:59 UTC covers
-    # both EST and EDT) and rebuild as soon as a new announcement shows up.
-    - cron: "*/10 0-7 * * 1-5"
-    # One midday check in case the overnight ones were skipped or arXiv ran late.
-    - cron: "17 12 * * 1-5"
+    - cron: "15 7 * * 1-5"
+      timezone: "America/New_York"
   push:
     branches: [main]
   workflow_dispatch:

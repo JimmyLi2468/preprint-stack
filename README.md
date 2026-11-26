@@ -35,7 +35,8 @@ The app remembers where you stopped: reopening it starts at the first paper you 
 
 The workflow in `.github/workflows/publish.yml` publishes a hosted copy that anyone with the link can use:
 
-- arXiv posts new papers at 20:00 US Eastern, Sunday to Thursday, and refreshes its feeds around midnight Eastern. Through that window the job checks every 10 minutes (`check_arxiv.py`, which reads only the top of one feed) and, as soon as a new announcement appears, runs `build_site.py`. That downloads the announcement for every arXiv category (about 8 MB of data) and deploys it with the app to GitHub Pages. A midday check catches anything the overnight ones missed. Each check also logs the date on arXiv's own "new" listing page, which shows when those pages update compared with the feeds.
+- arXiv's feeds refresh around 12:25 am US Eastern after each announcement (Sunday to Thursday nights). An outside scheduler, cron-job.org, starts a check at 12:45, 2:45 and 6:45 am Eastern. Each check (`check_arxiv.py`) reads only the top of two feeds and the site's status file, and only when arXiv has newer papers does it run `build_site.py`, which downloads the announcement for every arXiv category (about 8 MB of data) and deploys it with the app to GitHub Pages. A normal night's papers are live by about 12:55 am.
+- GitHub's own scheduler is only a safety net (7:15 am Eastern on weekdays). It starts runs hours late, which is why the outside scheduler exists.
 - The app checks for a newer build when you open it or come back to it, and every 5 minutes while it's open. If you're partway through the stack it shows a "New papers for …" button instead of replacing the stack under you.
 - It also runs on every push to `main`, and you can start it by hand from the repository's Actions tab.
 - On weekends and holidays the site keeps showing the most recent announcement.
@@ -44,6 +45,17 @@ The workflow in `.github/workflows/publish.yml` publishes a hosted copy that any
 To set it up, push this folder to a GitHub repository, then under **Settings → Pages** set **Source** to **GitHub Actions**. The site appears at `https://<your-username>.github.io/<repository>/`.
 
 GitHub pauses scheduled workflows in a repository that has had no commits for 60 days. If the site stops updating, open the Actions tab and re-enable the workflow.
+
+### The outside scheduler (cron-job.org)
+
+1. On GitHub: **Settings → Developer settings → Personal access tokens → Fine-grained tokens → Generate new token**. Give it access to **only** the `preprint-stack` repository, with **Actions: Read and write** and nothing else. It can start this repository's workflow and nothing more. Note its expiry date.
+2. On cron-job.org, create a job:
+   - URL: `https://api.github.com/repos/<your-username>/preprint-stack/actions/workflows/publish.yml/dispatches`
+   - Schedule: minute 45, hours 0, 2 and 6, Monday to Friday, time zone America/New_York
+   - Method `POST`, headers `Authorization: Bearer <token>`, `Accept: application/vnd.github+json`, `X-GitHub-Api-Version: 2022-11-28`
+   - Body: `{"ref": "main", "inputs": {"check_only": "true"}}`
+   - A successful call returns HTTP 204, and a short "check" run appears in the repository's Actions tab.
+3. When the token expires, generate a new one and paste it into the job's Authorization header.
 
 To try the hosted build on your computer: `python3 build_site.py`, then serve the `_site` folder with any static file server.
 
